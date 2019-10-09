@@ -1,17 +1,17 @@
 # encoding: utf-8
 #
 
-grub_superusers = attribute(
+grub_superusers = input(
   'grub_superusers',
-  description: 'superusers for grub boot ( array )',
+  description: 'superusers for grub boot (array)',
   value: ['root']
 )
-grub_user_boot_files = attribute(
+grub_user_boot_files = input(
  'grub_user_boot_files',
  description: 'grub boot config files',
  value: ['/boot/grub2/user.cfg']
 )
-grub_main_cfg = attribute(
+grub_main_cfg = input(
  'grub_main_cfg',
  description: 'main grub boot config file',
  value: '/boot/grub2/grub.cfg'
@@ -33,7 +33,6 @@ to boot into single-user mode or make modifications to the boot menu."
   tag "cci": ["CCI-000213"]
   tag "documentable": false
   tag "nist": ["AC-3", "Rev_4"]
-  tag "subsystems": ['grub']
   tag "check": "For systems that use UEFI, this is Not Applicable.
 
 Check to see if an encrypted root password is set. On systems that use a BIOS,
@@ -75,16 +74,68 @@ commands:
 # mv /tmp/grub2.cfg /boot/grub2/grub.cfg
 "
   tag "fix_id": "F-78313r2_fix"
-  describe file(grub_main_cfg) do
-    its('content') { should match %r{^\s*password_pbkdf2\s+root } }
+
+  grub_main_content = file(grub_main_cfg).content
+  pattern = %r{\s*set superusers=\"(\w+)\"}i
+  matches = grub_main_content.match(pattern)
+  superusers = matches.nil? ? [] : matches.captures  
+
+  # Fail if a superuser account is specified in grub.cfg, but, not in grub_superusers
+  superusers.each do |superuser|
+    next if grub_superusers.include? superuser
+    describe 'Found #{superuser} which is not specified in #{grub_superusers}' do
+     subject {grub_superusers}
+     it { should include superuser }
+    end 
+  end	   
+
+  # Check all superuser entries without environment variables to make sure 
+  # they start with 'password_pbkdf2'.
+  superusers.each do |superuser|
+    # Need each password entry that has the superuser
+    pattern = %r{(.*)\s#{superuser}\s}i
+    matches = grub_main_content.match(pattern)
+    password_entries = matches.nil? ? [] : matches.captures
+    # Each of the entries should start with password_pbkdf2
+    describe 'The grub2 #{superuser} password entry must begin with \'password_pbkdf2\'' do
+      subject { password_entries }
+      its('length') { is_expected.to be >= 1}
+      password_entries.each do |entry|
+        subject { entry }
+        it { should include 'password_pbkdf2'}
+      end
+    end
   end
 
-  grub_user_boot_files.each do |user_cfg_file|
-    next if !file(user_cfg_file).exist?
-    describe.one do
-      grub_superusers.each do |user|
-        describe file(user_cfg_file) do
-          its('content') { should match %r{^\s*password_pbkdf2\s+#{user} } }
+  # Check all superuser entries with environment variables to make sure
+  # they start with 'password_pbkdf2'.
+  # Get lines such as 'password_pbkdf2 [superuser] ${ENV}'
+  superusers.each do |superuser|
+    pattern = %r{password_pbkdf2\s#{superuser}\s(\${\w+})}i
+    matches = grub_main_content.match(pattern)
+    env_vars = matches.nil? ? [] : matches.captures
+      if env_vars.length > 0
+        # If there is an environment variable in the configuration file check 
+        # that it is set with correct values by looking in user.cfg files.
+        env_vars = env_vars.map { |env_var| env_var.gsub(/[${}]/, '') }
+        present_user_boot_files = grub_user_boot_files.select { |user_boot_file| file(user_boot_file).exist? }
+        describe 'grub2 user configuration files for the superuser should be present if they set an environment variable' do
+          subject { present_user_boot_files }
+          its('length') { is_expected.to be >= 1 }
+          present_user_boot_files.each do |user_boot_file|
+            env_vars.each do |env_var|
+            describe "#{user_boot_file} should set #{env_var} to a pbkdf2 value" do
+              subject { file(user_boot_file) }
+              its('content') { should match %r{^#{env_var}=grub.pbkdf2}i }
+            end
+          end
+        end
+      else
+        # If there are no environment variable set, look for pbkdf2 after the superuser name
+        pattern = %r{password_pbkdf2\s#{superuser}\sgrub\.pbkdf2}i
+        describe 'The grub2 superuser account password should be encrypted with pbkdf2.' do
+          subject { grub_main_content }
+          it { should match pattern }
         end
       end
     end
