@@ -1,29 +1,10 @@
-# encoding: utf-8
-#
-
-mfa_pkg_list = input(
-    'mfa_pkg_list',
-    description: 'The list of packages needed for MFA on RHEL',
-    value: [
-      'esc',
-      'pam_pkcs11',
-      'authconfig-gtk',
-    ])
-
-smart_card_status = input(
-  'smart_card_status',
-  value: 'enabled', # values(enabled|disabled)
-  description: 'Smart Card Status'
-)
-
 control "V-72417" do
-  title "The operating system must have the required packages for multifactor
-authentication installed."
-  desc  "
-    Using an authentication device, such as a CAC or token that is separate
-from the information system, ensures that even if the information system is
-compromised, that compromise will not affect credentials stored on the
-authentication device.
+  title "The Red Hat Enterprise Linux operating system must have the required
+packages for multifactor authentication installed."
+  desc  "Using an authentication device, such as a CAC or token that is
+separate from the information system, ensures that even if the information
+system is compromised, that compromise will not affect credentials stored on
+the authentication device.
 
     Multifactor solutions that require devices separate from information
 systems gaining access include, for example, hardware tokens providing
@@ -44,49 +25,53 @@ function of the device or has the concept of an organizational user (e.g., VPN,
 proxy capability). This does not apply to authentication for the purpose of
 configuring the device itself (management).
 
-    Requires further clarification from NIST.
+
+  "
+  desc  "rationale", ""
+  desc  "check", "
+    Verify the operating system has the packages required for multifactor
+authentication installed.
+
+    Check for the presence of the packages required to support multifactor
+authentication with the following commands:
+
+    # yum list installed esc
+    esc-1.1.0-26.el7.noarch.rpm
+
+    # yum list installed pam_pkcs11
+    pam_pkcs11-0.6.2-14.el7.noarch.rpm
+
+
+    If the \"esc\" and \"pam_pkcs11\" packages are not installed, this is a
+finding.
+  "
+  desc  "fix", "
+    Configure the operating system to implement multifactor authentication by
+installing the required packages.
+
+    Install the \"esc\" and \"pam_pkcs11\" packages on the system with the
+following command:
+
+    # yum install esc pam_pkcs11
   "
   if smart_card_status.eql?('enabled')
-  impact 0.5
+    impact 0.5
   else
     impact 0.0
   end
-  tag "gtitle": "SRG-OS-000375-GPOS-00160"
-  tag "satisfies": ["SRG-OS-000375-GPOS-00160", "SRG-OS-000375-GPOS-00161",
+  tag severity: nil
+  tag gtitle: "SRG-OS-000375-GPOS-00160"
+  tag satisfies: ["SRG-OS-000375-GPOS-00160", "SRG-OS-000375-GPOS-00161",
 "SRG-OS-000375-GPOS-00162"]
-  tag "gid": "V-72417"
-  tag "rid": "SV-87041r2_rule"
-  tag "stig_id": "RHEL-07-041001"
-  tag "cci": ["CCI-001948", "CCI-001953", "CCI-001954"]
-  tag "documentable": false
-  tag "nist": ["IA-2 (11)", "IA-2 (12)", "IA-2 (12)", "Rev_4"]
-  tag "subsystems": ['MFA', 'smartcard']
-  tag "pki","MFA","pam","pkcs11","networking"
-  desc "check", "Verify the operating system has the packages required for
-multifactor authentication installed.
+  tag gid: "V-72417"
+  tag rid: "SV-87041r4_rule"
+  tag stig_id: "RHEL-07-041001"
+  tag fix_id: "F-78769r4_fix"
+  tag cci: ["CCI-001948", "CCI-001953", "CCI-001954"]
+  tag nist: ["IA-2 (11)", "IA-2 (12)", "IA-2 (12)", "Rev_4"]
 
-Check for the presence of the packages required to support multifactor
-authentication with the following commands:
-
-# yum list installed esc
-esc-1.1.0-26.el7.noarch.rpm
-
-# yum list installed pam_pkcs11
-pam_pkcs11-0.6.2-14.el7.noarch.rpm
-
-# yum list installed authconfig-gtk
-authconfig-gtk-6.1.12-19.el7.noarch.rpm
-
-If the \"esc\", \"pam_pkcs11\", and \"authconfig-gtk\" packages are not
-installed, this is a finding."
-  desc "fix", "Configure the operating system to implement multifactor
-authentication by installing the required packages.
-
-Install the \"esc\", \"pam_pkcs11\", \"authconfig\", and \"authconfig-gtk\"
-packages on the system with the following command:
-
-# yum install esc pam_pkcs11 authconfig-gtk"
-  tag "fix_id": "F-78769r3_fix"
+  mfa_pkg_list = input('mfa_pkg_list')
+  smart_card_status = input('smart_card_status')
 
   mfa_pkg_list.each do |pkg|
     describe package("#{pkg}") do
@@ -98,3 +83,4 @@ packages on the system with the following command:
     skip "The system is not using Smartcards / PIVs to fulfil the MFA requirement, this control is Not Applicable."
   end if !smart_card_status.eql?('enabled')
 end
+
