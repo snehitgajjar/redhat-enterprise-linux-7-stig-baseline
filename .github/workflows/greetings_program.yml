@@ -7,6 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     container: chef/chefworkstation
     steps:
+      - name: add needed packages
+        run: apt-get install -y build-essentials
+
       - name: Configure AWS credentials
         env:
           AWS_SG_ID: ${{ secrets.AWS_SG_ID }}
@@ -49,7 +52,7 @@ jobs:
         run: CHEF_LICENSE=accept inspec check .
 
       - name: Run kitchen create
-        run: CHEF_LICENSE=accept-no-persist KITCHEN_YAML=./kitchen-ec2-test.yml kitchen create
+        run: CHEF_LICENSE=accept KITCHEN_YAML=./kitchen-ec2-test.yml kitchen create
 
       - name: Run kitchen destroy
-        run: CHEF_LICENSE=accept-no-persist KITCHEN_YAML=./kitchen-ec2-test.yml kitchen destroy
+        run: CHEF_LICENSE=accept KITCHEN_YAML=./kitchen-ec2-test.yml kitchen destroy
