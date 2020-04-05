@@ -31,9 +31,17 @@ jobs:
           chmod 400 ~/.ssh/${{ secrets.AWS_SSH_KEY_ID }}.pem
           ls -alh ~/.ssh/${{ secrets.AWS_SSH_KEY_ID }}.pem
 
-#       - name: Check out repository
-#         uses: actions/checkout@v2
-#       - name: Get InSpec Version
-#         run: CHEF_LICENSE=accept inspec -v
-#       - name: Check the profile
-#         run: CHEF_LICENSE=accept inspec check .
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Get InSpec Version
+        run: CHEF_LICENSE=accept inspec -v
+
+      - name: Check the profile
+        run: CHEF_LICENSE=accept inspec check .
+
+      - name: Run kitchen create
+        run: CHEF_LICENSE=accept-no-persist KITCHEN_YAML=./kitchen-ec2-test.yml kitchen create
+
+      - name: Run kitchen destroy
+        run: CHEF_LICENSE=accept-no-persist KITCHEN_YAML=./kitchen-ec2-test.yml kitchen destroy

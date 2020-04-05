@@ -26,9 +26,7 @@ driver:
   interface: public
   require_chef_for_busser: false
   privileged: true
-  security_group_ids: <%= ENV['AWS_SG_ID'] %>
-  # aws_ssh_key_id: aaronl-aws
-  subnet_id: <%= ENV['AWS_SUBNET_ID'] %>
+
   # image_id: ami-06e9e5a68a55a62da
 
 provisioner:
@@ -45,7 +43,7 @@ provisioner:
 transport:
   name: sftp
   # username: ec2-user
-  ssh_key: ~/aaronl-aws.pem
+  ssh_key: ~/.ssh/<%= ENV[('AWS_SSH_KEY_ID')] %>.pem
 
 verifier:
   name: inspec
