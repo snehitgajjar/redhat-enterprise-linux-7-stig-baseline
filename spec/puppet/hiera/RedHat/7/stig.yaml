@@ -37,15 +37,18 @@ profiles::rhel7::base::merged::services_to_disable:
 profiles::rhel7::base::sudoers_stig_enabled: True
 profiles::rhel7::base::exclude_sudoers: False
 profiles::rhel7::base::sudoers_purge_exclude:
-  - packer
-  - vagrant
-  - ec2-user
+  - 'packer'
+  - 'vagrant'
+  - 'ec2-user'
+
 profiles::rhel7::base::sudoers_stig_exclude:
-  - packer
-  - vagrant
-  - ec2-user
+  - 'packer'
+  - 'vagrant'
+  - 'ec2-user'
+
 profiles::rhel7::base::merged::exclude_users:
-  - 
+  - 'ec2-user'
+
 profiles::rhel7::base::merged::yum_config:
   # RHEL-07-020050
   'gpgcheck': '1'

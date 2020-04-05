@@ -40,9 +40,9 @@ verifier:
 platforms:
   - name: rhel-7
     lifecycle:
-      pre_converge:
+      post_create:
         # - remote: sudo yum upgrade
-        - remote: sudo yum install bc bind-utils redhat-lsb-core
+        - remote: sudo yum install bc bind-utils redhat-lsb-core vim
         - remote: sudo chage -d $(( $( date +%s ) / 86400 )) vagrant
     driver:
       box: bento/centos-7

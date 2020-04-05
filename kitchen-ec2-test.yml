@@ -14,33 +14,38 @@ use_ebs = ENV['USE_EBS']
 ---
 driver:
   name: ec2
-  chef_version: latest
-  privileged: true
-  security_group_ids: <%= ENV['AWS_SG_ID'] %>
-  aws_ssh_key_id: <%= ENV['AWS_SSH_KEY_ID'] %>
-  subnet_id: <%= ENV['AWS_SUBNET_ID'] %>
-  ebs_optimized: true
-  instance_type: a1.metal
-  image_id: ami-06e9e5a68a55a62da
+  associate_public_ip: true
+  # ebs_optimized: true
   block_device_mappings:
     - device_name: /dev/sda1
       ebs:
-        volume_type: gp2
         delete_on_termination: true
+        volume_size: 30
+        volume_type: gp2
+  instance_type: t2.medium
+  interface: public
+  require_chef_for_busser: false
+  privileged: true
+  security_group_ids: <%= ENV['AWS_SG_ID'] %>
+  # aws_ssh_key_id: aaronl-aws
+  subnet_id: <%= ENV['AWS_SUBNET_ID'] %>
+  # image_id: ami-06e9e5a68a55a62da
 
 provisioner:
   name: puppet_apply
-  # Not installing chef since inspec is used for testing
+  sudo: true
   require_chef_for_busser: false
-  manifests_path: spec/fixtures/kitchen/manifests
-  modules_path: spec/fixtures/kitchen/modules
+  manifests_path: ./spec/puppet/manifests
+  modules_path: ./spec/puppet/modules
+  hiera_config_path: ./spec/puppet/hiera.yaml
+  hiera_data_path: ./spec/puppet/hiera
   resolve_with_librarian_puppet: true
   ignore_spec_fixtures: true
 
 transport:
-  name: ssh
-  username: maintuser
-  ssh_key: ~/.ssh/<%= ENV['AWS_SSH_KEY_ID'] %>.pem
+  name: sftp
+  # username: ec2-user
+  ssh_key: ~/aaronl-aws.pem
 
 verifier:
   name: inspec
@@ -52,13 +57,20 @@ verifier:
   input_files:
     - inputs.example.yml
   reporter:
+    - cli
     - json:%{platform}_%{suite}-<%= Time.now.iso8601 %>.json
 
 platforms:
-  - name: rhel7-amazon
+  - name: rhel-7
 
 suites:
   - name: default
+    lifecycle:
+      post_create:
+        - remote: echo "NOTICE - Installing needed packages"
+        - remote: sudo yum install -y bc bind-utils redhat-lsb-core vim
+        - remote: echo "NOTICE - Updating the ec2-user to keep sudo working"
+        - remote: sudo chage -d $(( $( date +%s ) / 86400 )) ec2-user
     provisioner:
       manifest: stig.pp
     verifier:
