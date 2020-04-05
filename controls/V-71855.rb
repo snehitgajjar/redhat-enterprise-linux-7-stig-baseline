@@ -50,7 +50,7 @@ command:
   tag cci: ["CCI-001749"]
   tag nist: ["CM-5 (3)", "Rev_4"]
 
-if disable_slow_controls
+if input('disable_slow_controls')
     describe "This control consistently takes a long to run and has been disabled
     using the disable_slow_controls attribute." do
       skip "This control consistently takes a long to run and has been disabled

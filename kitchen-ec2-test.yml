@@ -1,0 +1,67 @@
+# NOTE: To use this file you must export or set the following:
+# AWS_SG_ID : your aws security group id
+# AWS_SSH_KEY_ID : your aws ssh key id
+# AWS_SUBNET_ID : your aws subnet id for your vpc
+# USE_JSON : set to true if you want inspec to output JSON
+# NOTE: This file assumes your aws ssh private key is in your home dir .ssh dir
+# USE_EBS : implements a beefier amazon instance to support ebs-optimized storage
+<%
+require 'time';
+platforms = %w(rhel-7)
+use_json = ENV['USE_JSON']
+use_ebs = ENV['USE_EBS']
+%>
+---
+driver:
+  name: ec2
+  chef_version: latest
+  privileged: true
+  security_group_ids: <%= ENV['AWS_SG_ID'] %>
+  aws_ssh_key_id: <%= ENV['AWS_SSH_KEY_ID'] %>
+  subnet_id: <%= ENV['AWS_SUBNET_ID'] %>
+  ebs_optimized: true
+  instance_type: a1.metal
+  image_id: ami-06e9e5a68a55a62da
+  block_device_mappings:
+    - device_name: /dev/sda1
+      ebs:
+        volume_type: gp2
+        delete_on_termination: true
+
+provisioner:
+  name: puppet_apply
+  # Not installing chef since inspec is used for testing
+  require_chef_for_busser: false
+  manifests_path: spec/fixtures/kitchen/manifests
+  modules_path: spec/fixtures/kitchen/modules
+  resolve_with_librarian_puppet: true
+  ignore_spec_fixtures: true
+
+transport:
+  name: ssh
+  username: maintuser
+  ssh_key: ~/.ssh/<%= ENV['AWS_SSH_KEY_ID'] %>.pem
+
+verifier:
+  name: inspec
+  sudo: true
+  inspec_tests:
+    - name: disa_stig-el7
+      git: https://github.com/mitre/redhat-enterprise-linux-7-stig-baseline.git
+      branch: v2.6
+  input_files:
+    - inputs.example.yml
+  reporter:
+    - json:%{platform}_%{suite}-<%= Time.now.iso8601 %>.json
+
+platforms:
+  - name: rhel7-amazon
+
+suites:
+  - name: default
+    provisioner:
+      manifest: stig.pp
+    verifier:
+      name: inspec
+      inputs:
+        disable_slow_controls: true

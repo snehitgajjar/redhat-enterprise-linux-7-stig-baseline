@@ -1,7 +1,7 @@
 control "V-72037" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that local initialization files do not execute world-writable programs."
-  if disable_slow_controls
+  if input('disable_slow_controls')
     desc "This control consistently takes a long to run and has been disabled
           using the disable_slow_controls attribute."
   else
@@ -47,11 +47,10 @@ the following command:
   tag cci: ["CCI-000366"]
   tag nist: ["CM-6 b", "Rev_4"]
 
-  disable_slow_controls = input('disable_slow_controls')
   exempt_home_users = input('exempt_home_users')
   non_interactive_shells = input('non_interactive_shells')
 
-  if disable_slow_controls
+  if input('disable_slow_controls')
     describe "This control consistently takes a long to run and has been disabled
   using the disable_slow_controls attribute." do
       skip "This control consistently takes a long to run and has been disabled
