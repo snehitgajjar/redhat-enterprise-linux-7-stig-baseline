@@ -49,8 +49,9 @@ jobs:
 
       - name: Bundle install
         run: |
-          bundle config --global --jobs 8
-          bundle install --no-document
+          number_of_cores=`sysctl -n hw.ncpu`
+          bundle config --global jobs `expr $number_of_cores - 1`
+          bundle install
 
       - name: Get InSpec Version
         run: CHEF_LICENSE=accept inspec -v
