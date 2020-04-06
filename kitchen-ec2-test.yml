@@ -39,6 +39,7 @@ provisioner:
   hiera_data_path: ./spec/puppet/hiera
   resolve_with_librarian_puppet: true
   ignore_spec_fixtures: true
+  puppet_version: 5
 
 transport:
   name: sftp

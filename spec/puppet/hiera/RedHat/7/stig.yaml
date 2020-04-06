@@ -36,18 +36,19 @@ profiles::rhel7::base::merged::services_to_disable:
 # RHEL-07-010340,010350
 profiles::rhel7::base::sudoers_stig_enabled: True
 profiles::rhel7::base::exclude_sudoers: False
+
+# to exclude sudo privs for a set of users in the /etc/sudoers.d 
+# please add the filename in the two below arrays
+
 profiles::rhel7::base::sudoers_purge_exclude:
   - 'packer'
   - 'vagrant'
-  - 'ec2-user'
+  - '90-cloud-init-users' # aws ec2 support
 
 profiles::rhel7::base::sudoers_stig_exclude:
   - 'packer'
   - 'vagrant'
-  - 'ec2-user'
-
-profiles::rhel7::base::merged::exclude_users:
-  - 'ec2-user'
+  - '90-cloud-init-users' # aws ec2 support
 
 profiles::rhel7::base::merged::yum_config:
   # RHEL-07-020050
