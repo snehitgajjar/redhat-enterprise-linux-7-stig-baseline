@@ -46,6 +46,7 @@ jobs:
 
       - name: Bundle install
         run: |
+          chef shell-init
           bundle install
           gem install inspec_tools --no-document
 
