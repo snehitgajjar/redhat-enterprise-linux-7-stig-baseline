@@ -1,46 +1,82 @@
+# NOTE: To use this file you must export or set the following:
+# AWS_SG_ID : your aws security group id
+# AWS_SSH_KEY_ID : your aws ssh key id
+# AWS_SUBNET_ID : your aws subnet id for your vpc
+# USE_JSON : set to true if you want inspec to output JSON
+# NOTE: This file assumes your aws ssh private key is in your home dir .ssh dir
+# USE_EBS : implements a beefier amazon instance to support ebs-optimized storage
+<%
+require 'time';
+platforms = %w(rhel-7)
+use_json = ENV['USE_JSON']
+use_ebs = ENV['USE_EBS']
+%>
+---
 driver:
-  name: vagrant
-  customize:
-    natdnsproxy1: 'on'
-    natdnshostresolver1: 'on'
+  name: ec2
+  associate_public_ip: true
+  # ebs_optimized: true
+  block_device_mappings:
+    - device_name: /dev/sda1
+      ebs:
+        delete_on_termination: true
+        volume_size: 30
+        volume_type: gp2
+  instance_type: t2.medium
+  interface: public
+  require_chef_for_busser: false
+  privileged: true
+
+  # image_id: ami-06e9e5a68a55a62da
 
 provisioner:
   name: puppet_apply
-  # Not installing chef since inspec is used for testing
+  sudo: true
   require_chef_for_busser: false
-  manifests_path: spec/fixtures/kitchen/manifests
-  modules_path: spec/fixtures/kitchen/modules
+  manifests_path: ./spec/puppet/manifests
+  modules_path: ./spec/puppet/modules
+  hiera_config_path: ./spec/puppet/hiera.yaml
+  hiera_data_path: ./spec/puppet/hiera
   resolve_with_librarian_puppet: true
   ignore_spec_fixtures: true
+  puppet_version: "5.5.19"
+
+transport:
+  name: ssh
+  # username: ec2-user
+  ssh_key: ~/.ssh/<%= ENV[('AWS_SSH_KEY_ID')] %>.pem
 
 verifier:
   name: inspec
   sudo: true
+  inspec_tests:
+    - name: disa_stig-el7
+      path: .
+  input_files:
+    - inputs.example.yml
   reporter:
     - cli
-    - json:./sec_results/inspec/%{platform}_%{suite}_<%= Time.now.strftime("%m-%d-%Y_%H:%M:%S") %>.json
-  attr:
-    - disable_slow_controls: true
+    - json:test-result.json
 
 platforms:
-  - name: centos-7
-    driver:
-      box: centos/7
+  - name: rhel-7
 
 suites:
   - name: default
+    lifecycle:
+      post_create:
+        - remote: echo "NOTICE - Installing needed packages"
+        - remote: sudo yum install -y bc bind-utils redhat-lsb-core vim
+        - remote: echo "NOTICE - Updating the ec2-user to keep sudo working"
+        - remote: sudo chage -d $(( $( date +%s ) / 86400 )) ec2-user
+        - remote: echo "NOTICE - Updating root passwd"
+        - remote: echo 'password' | sudo passwd --stdin root
+        - remote: echo "NOTICE - updating ec2-user sudo config"
+        - remote: sudo chmod 600 /etc/sudoers && sudo sed -i'' "/ec2-user/d" /etc/sudoers && sudo chmod 400 /etc/sudoers
+
     provisioner:
-      manifest: site.pp
+      manifest: stig.pp
     verifier:
-      inspec_tests:
-        # if you want to use your local code
-        #- name: happy
-        #  path: <%= ENV[('PWD')] %>/spec/fixtures/inspec_profiles/CentOS-7-disa_stig
-        # If you want to use your local code on a Windows machine from the parent directory
-        #- path: ./spec/fixtures/inspec_profiles/RedHat-7-disa_stig
-        # if you want to use the current profile in the git repo
-        - git: https://github.com/simp/inspec-profile-disa_stig-el7.git
-      #controls:
-      #  - V-72309
-      attrs:
-        - <%= ENV[('PWD')] %>/attributes.yml
+      name: inspec
+      inputs:
+        disable_slow_controls: true

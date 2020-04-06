@@ -12,7 +12,8 @@ jobs:
       - name: add needed packages
         run: |
           sudo apt-get update -y
-          sudo apt-get install -y build-essential
+          sudo apt-get install -y build-essential jq
+          sudo ls -alh *.*
           sudo dpkg -i chef-workstation_*.deb
       - name: configure the chef env
         run: echo 'eval "$(chef shell-init bash)"' >> ~/.bash_profile
@@ -54,19 +55,19 @@ jobs:
       - name: Check the profile
         run: CHEF_LICENSE=accept inspec check .
       - name: Run kitchen create
-        run: CHEF_LICENSE=accept KITCHEN_YAML=./kitchen-ec2-test.yml kitchen create
+        run: CHEF_LICENSE=accept KITCHEN_YAML=./kitchen.ec2.yml kitchen create
       - name: Run kitchen converge
-        run: CHEF_LICENSE=accept KITCHEN_YAML=./kitchen-ec2-test.yml kitchen converge
+        run: CHEF_LICENSE=accept KITCHEN_YAML=./kitchen.ec2.yml kitchen converge
       - name: Run kitchen verify
-        run: CHEF_LICENSE=accept KITCHEN_YAML=./kitchen-ec2-test.yml kitchen verify || true
+        run: CHEF_LICENSE=accept KITCHEN_YAML=./kitchen.ec2.yml kitchen verify || true
+      - name: Run kitchen destroy
+        run: CHEF_LICENSE=accept KITCHEN_YAML=./kitchen.ec2.yml kitchen destroy
+      - name: Display our results summary
+        run: inspec_tools summary -j test-result.json --json-counts | jq .
       - name: Ensure the scan meets our threshold
         run: inspec_tools compliance -j test-result.json -f threshold.yml
-      - name: Archive InSpec Test Results
+      - name: Archive_InSpec_Test_Results
         uses: actions/upload-artifact@v1
         with:
-          name: Inspec test results
+          name: Test-Run-Artifacts
           path: test-result.json
-      # - name: export our results to Heimdall
-      #   run: curl -F "file=@./$RESULTS" -F "email=lippold@gmail.com" -F "api_key="${{ secret.HEIMDALL_API_KEY}}" -F circle="rhel7-stig-baseline" http://heimdall-demo.mitre.org:3000/evaluation_upload_api
-      # - name: Destroy our test instance
-      #   run: CHEF_LICENSE=accept KITCHEN_YAML=./kitchen-ec2-test.yml kitchen destroy
