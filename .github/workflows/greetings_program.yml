@@ -45,7 +45,9 @@ jobs:
           ruby-version: "2.6"
 
       - name: Bundle install
-        run: bundle install
+        run: |
+          bundle install
+          gem install inspec_tools --no-document
 
       - name: Get InSpec Version
         run: CHEF_LICENSE=accept inspec -v
@@ -54,7 +56,16 @@ jobs:
         run: CHEF_LICENSE=accept inspec check .
 
       - name: Run kitchen create
-        run: CHEF_LICENSE=accept KITCHEN_YAML=./kitchen-ec2-test.yml kitchen create
+        run: CHEF_LICENSE=accept KITCHEN_YAML=./kitchen-ec2-test.yml kitchen verify || true
 
-      - name: Run kitchen destroy
+      - name: Get the results of our scan
+        run: export RESULTS=$(ls results/*.json)
+
+      - name: Ensure the scan meets our threshold
+        run: inspec_tools compliance -j $RESULTS -f threshold.yml
+
+      - name: export our results to Heimdall
+        run: curl -F "file=@./$RESULTS" -F "email=lippold@gmail.com" -F "api_key=${{ secret.HEIMDALL_API_KEY}}" -F circle="rhel7-stig-baseline" http://heimdall-demo.mitre.org:3000/evaluation_upload_api
+
+      - name: Destroy our test instance
         run: CHEF_LICENSE=accept KITCHEN_YAML=./kitchen-ec2-test.yml kitchen destroy

@@ -39,10 +39,10 @@ provisioner:
   hiera_data_path: ./spec/puppet/hiera
   resolve_with_librarian_puppet: true
   ignore_spec_fixtures: true
-  puppet_version: 5
+  puppet_version: "5.5.19"
 
 transport:
-  name: sftp
+  name: ssh
   # username: ec2-user
   ssh_key: ~/.ssh/<%= ENV[('AWS_SSH_KEY_ID')] %>.pem
 
@@ -51,8 +51,7 @@ verifier:
   sudo: true
   inspec_tests:
     - name: disa_stig-el7
-      git: https://github.com/mitre/redhat-enterprise-linux-7-stig-baseline.git
-      branch: v2.6
+      path: .
   input_files:
     - inputs.example.yml
   reporter:
@@ -70,6 +69,11 @@ suites:
         - remote: sudo yum install -y bc bind-utils redhat-lsb-core vim
         - remote: echo "NOTICE - Updating the ec2-user to keep sudo working"
         - remote: sudo chage -d $(( $( date +%s ) / 86400 )) ec2-user
+        - remote: echo "NOTICE - Updating root passwd"
+        - remote: echo 'password' | sudo passwd --stdin root
+        - remote: echo "NOTICE - updating ec2-user sudo config"
+        - remote: sudo chmod 600 /etc/sudoers && sudo sed -i'' "/ec2-user/d" /etc/sudoers && sudo chmod 400 /etc/sudoers
+
     provisioner:
       manifest: stig.pp
     verifier:
