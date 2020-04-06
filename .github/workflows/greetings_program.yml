@@ -64,8 +64,12 @@ jobs:
       - name: Ensure the scan meets our threshold
         run: inspec_tools compliance -j $RESULTS -f threshold.yml
 
-      - name: export our results to Heimdall
-        run: curl -F "file=@./$RESULTS" -F "email=lippold@gmail.com" -F "api_key=${{ secret.HEIMDALL_API_KEY}}" -F circle="rhel7-stig-baseline" http://heimdall-demo.mitre.org:3000/evaluation_upload_api
-
+      - name: Archive InSpec Test Results
+        uses: actions/upload-artifact@v1
+          with:
+            name: Inspec test results
+            path: results
+      # - name: export our results to Heimdall
+      #   run: curl -F "file=@./$RESULTS" -F "email=lippold@gmail.com" -F "api_key="${{ secret.HEIMDALL_API_KEY}}" -F circle="rhel7-stig-baseline" http://heimdall-demo.mitre.org:3000/evaluation_upload_api
       - name: Destroy our test instance
         run: CHEF_LICENSE=accept KITCHEN_YAML=./kitchen-ec2-test.yml kitchen destroy

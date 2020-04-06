@@ -56,7 +56,7 @@ verifier:
     - inputs.example.yml
   reporter:
     - cli
-    - json:%{platform}_%{suite}-<%= Time.now.iso8601 %>.json
+    - json:./results/%{platform}_%{suite}-<%= Time.now.iso8601 %>.json
 
 platforms:
   - name: rhel-7
