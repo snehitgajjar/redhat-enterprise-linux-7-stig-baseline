@@ -11,9 +11,9 @@ jobs:
         run: wget https://packages.chef.io/files/stable/chef-workstation/0.17.5/ubuntu/18.04/chef-workstation_0.17.5-1_amd64.deb
       - name: add needed packages
         run: |
-          apt-get update -y
-          apt-get install -y build-essential
-          apt-get install -y chef-workstation_*.deb
+          sudo apt-get update -y
+          sudo apt-get install -y build-essential
+          sudo apt-get install -y chef-workstation_*.deb
       - name: configure the chef env
         run: echo 'eval "$(chef shell-init bash)"' >> ~/.bash_profile
       - name: Source our new bash env
