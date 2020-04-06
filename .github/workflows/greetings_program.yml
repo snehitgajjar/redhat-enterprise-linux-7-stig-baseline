@@ -44,9 +44,11 @@ jobs:
         with:
           ruby-version: "2.6"
 
+      - name: Setup Chef Ruby Paths
+        run: chef shell-init bash
+
       - name: Bundle install
         run: |
-          eval "$(chef shell-init bash)"
           bundle config --global --jobs 8
           bundle install 
           gem install inspec_tools --no-document
