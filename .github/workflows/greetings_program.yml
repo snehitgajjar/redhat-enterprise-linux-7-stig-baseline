@@ -13,7 +13,7 @@ jobs:
         run: |
           sudo apt-get update -y
           sudo apt-get install -y build-essential
-          sudo apt install -y chef-workstation_*.deb
+          sudo dpkg -i chef-workstation_*.deb
       - name: configure the chef env
         run: echo 'eval "$(chef shell-init bash)"' >> ~/.bash_profile
       - name: Source our new bash env
