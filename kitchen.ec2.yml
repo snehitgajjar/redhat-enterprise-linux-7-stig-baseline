@@ -69,8 +69,6 @@ suites:
         - remote: sudo yum install -y bc bind-utils redhat-lsb-core vim
         - remote: echo "NOTICE - Updating the ec2-user to keep sudo working"
         - remote: sudo chage -d $(( $( date +%s ) / 86400 )) ec2-user
-        - remote: echo "NOTICE - Updating root passwd"
-        - remote: echo 'password' | sudo passwd --stdin root
         - remote: echo "NOTICE - updating ec2-user sudo config"
         - remote: sudo chmod 600 /etc/sudoers && sudo sed -i'' "/ec2-user/d" /etc/sudoers && sudo chmod 400 /etc/sudoers
 
