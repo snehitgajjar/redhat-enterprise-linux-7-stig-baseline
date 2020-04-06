@@ -61,17 +61,17 @@ jobs:
       - name: Run kitchen create
         run: CHEF_LICENSE=accept KITCHEN_YAML=./kitchen-ec2-test.yml kitchen verify || true
 
-      - name: Get the results of our scan
-        run: export RESULTS=$(ls results/*.json)
+      # - name: Get the results of our scan
+      #   run: export RESULTS=$(ls results/*.json)
 
       - name: Ensure the scan meets our threshold
-        run: inspec_tools compliance -j $RESULTS -f threshold.yml
+        run: inspec_tools compliance -j test-result.json -f threshold.yml
 
       - name: Archive InSpec Test Results
         uses: actions/upload-artifact@v1
         with:
           name: Inspec test results
-          path: results
+          path: test-result.json
       # - name: export our results to Heimdall
       #   run: curl -F "file=@./$RESULTS" -F "email=lippold@gmail.com" -F "api_key="${{ secret.HEIMDALL_API_KEY}}" -F circle="rhel7-stig-baseline" http://heimdall-demo.mitre.org:3000/evaluation_upload_api
       # - name: Destroy our test instance
