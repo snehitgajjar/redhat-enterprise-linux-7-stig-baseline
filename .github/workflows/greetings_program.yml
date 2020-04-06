@@ -50,8 +50,7 @@ jobs:
       - name: Bundle install
         run: |
           bundle config --global --jobs 8
-          bundle install 
-          gem install inspec_tools --no-document
+          bundle install --no-document
 
       - name: Get InSpec Version
         run: CHEF_LICENSE=accept inspec -v
@@ -75,5 +74,5 @@ jobs:
           path: results
       # - name: export our results to Heimdall
       #   run: curl -F "file=@./$RESULTS" -F "email=lippold@gmail.com" -F "api_key="${{ secret.HEIMDALL_API_KEY}}" -F circle="rhel7-stig-baseline" http://heimdall-demo.mitre.org:3000/evaluation_upload_api
-      - name: Destroy our test instance
-        run: CHEF_LICENSE=accept KITCHEN_YAML=./kitchen-ec2-test.yml kitchen destroy
+      # - name: Destroy our test instance
+      #   run: CHEF_LICENSE=accept KITCHEN_YAML=./kitchen-ec2-test.yml kitchen destroy
