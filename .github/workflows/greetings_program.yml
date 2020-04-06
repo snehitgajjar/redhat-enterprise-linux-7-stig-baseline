@@ -42,7 +42,7 @@ jobs:
       - name: Setup Ruby
         uses: actions/setup-ruby@v1
         with:
-          ruby-version: "2.6.0"
+          ruby-version: "2.6"
 
       - name: Setup Chef Ruby Paths
         run: chef shell-init bash
