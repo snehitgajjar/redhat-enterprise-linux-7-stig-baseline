@@ -61,9 +61,9 @@ jobs:
       - name: Run kitchen create
         run: CHEF_LICENSE=accept KITCHEN_YAML=./kitchen-ec2-test.yml kitchen create
 
-        - name: Run kitchen converge
+      - name: Run kitchen converge
         run: CHEF_LICENSE=accept KITCHEN_YAML=./kitchen-ec2-test.yml kitchen converge
-  
+
       - name: Run kitchen verify
         run: CHEF_LICENSE=accept KITCHEN_YAML=./kitchen-ec2-test.yml kitchen verify || true
 
