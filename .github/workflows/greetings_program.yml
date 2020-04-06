@@ -9,19 +9,15 @@ jobs:
     steps:
       - name: Get Chef Workstation
         run: wget https://packages.chef.io/files/stable/chefworkstation/0.14/ubuntu/18.04/chefworkstation_0.14.16-1_amd64.deb
-
       - name: add needed packages
         run: |
           apt-get update -y
           apt-get install -y build-essential
           apt-get install -y chef-workstation_*.deb
-
-     - name: configure the chef env
-       run: echo 'eval "$(chef shell-init bash)"' >> ~/.bash_profile
-
-     - name: Source our new bash env
-       run: source ~/.bash_profile
-
+      - name: configure the chef env
+        run: echo 'eval "$(chef shell-init bash)"' >> ~/.bash_profile
+      - name: Source our new bash env
+        run: source ~/.bash_profile
       - name: Configure AWS credentials
         env:
           AWS_SG_ID: ${{ secrets.AWS_SG_ID }}
@@ -32,51 +28,39 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-
       - name: Echo our env
         run: |
           echo $AWS_SSH_KEY_ID
           echo $AWS_REGION
           env
-
       - name: Setup our ssh-key
         run: |
           mkdir ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/${{ secrets.AWS_SSH_KEY_ID }}.pem
           chmod 400 ~/.ssh/${{ secrets.AWS_SSH_KEY_ID }}.pem
           ls -alh ~/.ssh/${{ secrets.AWS_SSH_KEY_ID }}.pem
-
       - name: Check out repository
         uses: actions/checkout@v2
-
       - name: Setup Ruby
         uses: actions/setup-ruby@v1
         with:
           ruby-version: "2.6"
-
       - name: Bundle install
         run: |
           bundle config --global jobs 8
           bundle install
-
       - name: Get InSpec Version
         run: CHEF_LICENSE=accept inspec -v
-
       - name: Check the profile
         run: CHEF_LICENSE=accept inspec check .
-
       - name: Run kitchen create
         run: CHEF_LICENSE=accept KITCHEN_YAML=./kitchen-ec2-test.yml kitchen create
-
       - name: Run kitchen converge
         run: CHEF_LICENSE=accept KITCHEN_YAML=./kitchen-ec2-test.yml kitchen converge
-
       - name: Run kitchen verify
         run: CHEF_LICENSE=accept KITCHEN_YAML=./kitchen-ec2-test.yml kitchen verify || true
-
       - name: Ensure the scan meets our threshold
         run: inspec_tools compliance -j test-result.json -f threshold.yml
-
       - name: Archive InSpec Test Results
         uses: actions/upload-artifact@v1
         with:
