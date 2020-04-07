@@ -15,14 +15,14 @@ use_ebs = ENV['USE_EBS']
 driver:
   name: ec2
   associate_public_ip: true
-  # ebs_optimized: true
+  instance_type: c5.xlarge
+  ebs_optimized: true
   block_device_mappings:
     - device_name: /dev/sda1
       ebs:
         delete_on_termination: true
         volume_size: 30
         volume_type: gp2
-  instance_type: t2.medium
   interface: public
   require_chef_for_busser: false
   privileged: true
