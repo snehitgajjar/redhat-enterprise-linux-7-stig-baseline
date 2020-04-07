@@ -111,6 +111,7 @@ effect.
     end
   else
     describe "The GNOME desktop is not installed" do
+      impact 0.0
       skip "The GNOME desktop is not installed, this control is Not Applicable."
     end
   end
