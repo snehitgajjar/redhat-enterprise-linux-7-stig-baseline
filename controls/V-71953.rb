@@ -57,6 +57,7 @@ Applicable.
     end
   else
     describe "The system does not have GDM installed" do
+      impact 0.0
       skip "The system does not have GDM installed, this requirement is Not Applicable."
     end
   end
