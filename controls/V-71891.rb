@@ -72,6 +72,7 @@ effect.
   end if package('gnome-desktop3').installed?
 
   describe "The system does not have GNOME installed" do
+    impact 0.0
     skip "The system does not have GNOME installed, this requirement is Not
     Applicable."
   end if !package('gnome-desktop3').installed?
