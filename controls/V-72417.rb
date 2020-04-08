@@ -1,6 +1,7 @@
 control "V-72417" do
   title "The Red Hat Enterprise Linux operating system must have the required
         packages for multifactor authentication installed."
+
   desc  "Using an authentication device, such as a CAC or token that is
         separate from the information system, ensures that even if the information
         system is compromised, that compromise will not affect credentials stored on
@@ -38,7 +39,6 @@ control "V-72417" do
         # yum list installed pam_pkcs11
         pam_pkcs11-0.6.2-14.el7.noarch.rpm
 
-
         If the \"esc\" and \"pam_pkcs11\" packages are not installed, this is a
         finding."
 
@@ -53,8 +53,7 @@ control "V-72417" do
 
   tag severity: nil
   tag gtitle: "SRG-OS-000375-GPOS-00160"
-  tag satisfies: ["SRG-OS-000375-GPOS-00160", "SRG-OS-000375-GPOS-00161",
-"SRG-OS-000375-GPOS-00162"]
+  tag satisfies: ["SRG-OS-000375-GPOS-00160", "SRG-OS-000375-GPOS-00161", "SRG-OS-000375-GPOS-00162"]
   tag gid: "V-72417"
   tag rid: "SV-87041r4_rule"
   tag stig_id: "RHEL-07-041001"
