@@ -15,7 +15,7 @@ use_ebs = ENV['USE_EBS']
 driver:
   name: ec2
   associate_public_ip: true
-  instance_type: c5.xlarge
+  instance_type: c5.large
   ebs_optimized: true
   block_device_mappings:
     - device_name: /dev/sda1
