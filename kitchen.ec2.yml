@@ -56,7 +56,7 @@ verifier:
     - inputs.example.yml
   reporter:
     - cli
-    - json:test-result.json
+    - json-automate:test-result.json
 
 platforms:
   - name: rhel-7
