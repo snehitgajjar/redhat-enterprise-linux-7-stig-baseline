@@ -66,7 +66,7 @@ suites:
     lifecycle:
       post_create:
         - remote: echo "NOTICE - Installing needed packages"
-        - remote: sudo yum install -y bc bind-utils redhat-lsb-core vim
+        - remote: sudo yum install -y bc bind-utils redhat-lsb-core vim curl wget gpg gcc gcc-c++ make
         - remote: echo "NOTICE - Updating the ec2-user to keep sudo working"
         - remote: sudo chage -d $(( $( date +%s ) / 86400 )) ec2-user
         - remote: echo "NOTICE - updating ec2-user sudo config"

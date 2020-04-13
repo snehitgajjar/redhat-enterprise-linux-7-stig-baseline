@@ -1,0 +1,19 @@
+{
+  "version": "1.2",
+  "plugins": {},
+  "reporter": {
+    "json-automate": {
+      "stdout": true,
+      "job_uuid": "test123",
+      "roles": ["stuff"],
+      "environment": "prod",
+      "node_name": "server5.local.org",
+      "passthrough": {
+        "ipv4": "192.168.0.12",
+        "ipv6": "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+        "data_center_id": "AABBAAB",
+        "application_id": "ACME-APP-1234"
+      }
+    }
+  }
+}
