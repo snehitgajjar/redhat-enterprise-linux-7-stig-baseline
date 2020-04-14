@@ -69,6 +69,7 @@ profiles in `spec/fixtures/inspec_profiles` during testing.
 3. If the tests are not found when running `kitchen verify`, open
    `.kitchen.yml` and consult `inspec_tests` under the `suites` section.
 
+
 4. You may also experience an error when running `kitchen converge` where a
    folder is unable to be created due to the length of the path. In this case,
    you may need to edit a registry key as explained
