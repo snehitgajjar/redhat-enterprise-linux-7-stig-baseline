@@ -275,11 +275,6 @@ inputs:
   type: Array
   value: []
 
-- name: is_bios
-  description: "Checks whether system is BIOS or UEFI"
-  type: Boolean
-  value: true
-
 # V-71961
 - name: grub_main_cfg
   description: Main grub boot config file

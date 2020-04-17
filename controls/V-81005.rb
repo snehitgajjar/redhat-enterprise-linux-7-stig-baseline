@@ -58,9 +58,7 @@ the \"### BEGIN /etc/grub.d/01_users ###\" section:
   tag cci: ["CCI-000213"]
   tag nist: ["AC-3", "Rev_4"]
 
-  is_bios = input('is_bios')
-
-  unless is_bios
+  unless !file('/sys/firmware/efi').exist?
     impact 0.0
     describe "System running UEFI" do
       skip "The System is running UEFI, this control is Not Applicable."
