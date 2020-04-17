@@ -281,6 +281,11 @@ inputs:
   type: String
   value: '/boot/grub2/grub.cfg'
 
+- name: grub_uefi_main_cfg
+  description: Main grub boot config file
+  type: String
+  value: '/boot/efi/EFI/redhat/grub.cfg'
+
 - name: grub_superuser
   description: superusers for grub boot
   type: String
@@ -290,6 +295,11 @@ inputs:
   description: Grub boot config files
   type: Array
   value: ['/boot/grub2/user.cfg']
+
+- name: grub_uefi_user_boot_files
+  description: Grub boot config files
+  type: Array
+  value: ['/boot/efi/EFI/redhat/user.cfg']
 
 # V-71963
 - name: efi_superusers

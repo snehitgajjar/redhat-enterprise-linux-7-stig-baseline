@@ -65,13 +65,13 @@ lines in the \"### BEGIN /etc/grub.d/01_users ###\" section:
     end
   else
     impact 0.7
-    input('grub_user_boot_files').each do |grub_user_file|
+    input('grub_uefi_user_boot_files').each do |grub_user_file|
       describe parse_config_file(grub_user_file) do
         its('GRUB2_PASSWORD') { should include "grub.pbkdf2.sha512"}
       end
     end
 
-    describe parse_config_file(input('grub_main_cfg')) do
+    describe parse_config_file(input('grub_uefi_main_cfg')) do
       its('set superusers') { should cmp '"root"' }  
     end
   end
