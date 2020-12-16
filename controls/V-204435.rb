@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71959" do
+control "V-204435" do
   title "The Red Hat Enterprise Linux operating system must not allow a
 non-certificate trusted host SSH logon to the system."
   desc  "Failure to restrict system access to authenticated users negatively
@@ -32,7 +32,7 @@ SSH logon to the system.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00229"
-  tag gid: "V-71959"
+  tag gid: "V-204435"
   tag rid: "SV-86583r3_rule"
   tag stig_id: "RHEL-07-010470"
   tag fix_id: "F-78311r3_fix"

@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72221" do
+control "V-204578" do
   title "The Red Hat Enterprise Linux operating system must use a FIPS 140-2
 approved cryptographic algorithm for SSH communications."
   desc  "Unapproved mechanisms that are used for authentication to the
@@ -56,7 +56,7 @@ third-party vendor).
   tag satisfies: ["SRG-OS-000033-GPOS-00014", "SRG-OS-000120-GPOS-00061",
 "SRG-OS-000125-GPOS-00065", "SRG-OS-000250-GPOS-00093",
 "SRG-OS-000393-GPOS-00173"]
-  tag gid: "V-72221"
+  tag gid: "V-204578"
   tag rid: "SV-86845r3_rule"
   tag stig_id: "RHEL-07-040110"
   tag fix_id: "F-78575r3_fix"

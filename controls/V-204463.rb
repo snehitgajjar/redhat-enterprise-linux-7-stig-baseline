@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72007" do
+control "V-204463" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that all files and directories have a valid owner."
   desc  "Unowned files and directories may be unintentionally inherited if a
@@ -28,7 +28,7 @@ system with the \"chown\" command:
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72007"
+  tag gid: "V-204463"
   tag rid: "SV-86631r3_rule"
   tag stig_id: "RHEL-07-020320"
   tag fix_id: "F-78359r1_fix"

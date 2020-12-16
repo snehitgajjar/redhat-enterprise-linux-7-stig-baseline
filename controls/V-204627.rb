@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72313" do
+control "V-204627" do
   title "SNMP community strings on the Red Hat Enterprise Linux operating
 system must be changed from the default."
   desc  "Whether active or not, default Simple Network Management Protocol
@@ -35,7 +35,7 @@ string value."
 
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72313"
+  tag gid: "V-204627"
   tag rid: "SV-86937r2_rule"
   tag stig_id: "RHEL-07-040800"
   tag fix_id: "F-78667r1_fix"

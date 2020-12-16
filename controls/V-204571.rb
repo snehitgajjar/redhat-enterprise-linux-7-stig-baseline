@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72203" do
+control "V-204571" do
   title "The Red Hat Enterprise Linux operating system must audit all uses of
 the rmdir syscall."
   desc  "If the system is not configured to audit certain activities and write
@@ -46,7 +46,7 @@ delete
   tag gtitle: "SRG-OS-000466-GPOS-00210"
   tag satisfies: ["SRG-OS-000466-GPOS-00210", "SRG-OS-000467-GPOS-00210",
 "SRG-OS-000468-GPOS-00212", "SRG-OS-000392-GPOS-00172"]
-  tag gid: "V-72203"
+  tag gid: "V-204571"
   tag rid: "SV-86827r5_rule"
   tag stig_id: "RHEL-07-030900"
   tag fix_id: "F-78557r9_fix"

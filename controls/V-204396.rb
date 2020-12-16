@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71891" do
+control "V-204396" do
   title "The Red Hat Enterprise Linux operating system must enable a user
 session lock until that user re-establishes access using established
 identification and authentication procedures."
@@ -61,7 +61,7 @@ effect.
   tag severity: nil
   tag gtitle: "SRG-OS-000028-GPOS-00009"
   tag satisfies: ["SRG-OS-000028-GPOS-00009", "SRG-OS-000030-GPOS-00011"]
-  tag gid: "V-71891"
+  tag gid: "V-204396"
   tag rid: "SV-86515r6_rule"
   tag stig_id: "RHEL-07-010060"
   tag fix_id: "F-78243r9_fix"

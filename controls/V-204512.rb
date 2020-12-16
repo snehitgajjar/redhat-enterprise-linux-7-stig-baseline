@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-73163" do
+control "V-204512" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that the audit system takes appropriate action when there is an error sending
 audit records to a remote system."
@@ -32,7 +32,7 @@ sending audit records to a remote system.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000342-GPOS-00133"
-  tag gid: "V-73163"
+  tag gid: "V-204512"
   tag rid: "SV-87815r3_rule"
   tag stig_id: "RHEL-07-030321"
   tag fix_id: "F-79609r2_fix"

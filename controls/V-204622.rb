@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72303" do
+control "V-204622" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that remote X connections for interactive users are encrypted."
   desc  "Open X displays allow an attacker to capture keystrokes and execute
@@ -34,7 +34,7 @@ provided by a third-party vendor):
   impact 0.7
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72303"
+  tag gid: "V-204622"
   tag rid: "SV-86927r4_rule"
   tag stig_id: "RHEL-07-040710"
   tag fix_id: "F-78657r6_fix"

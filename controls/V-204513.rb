@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72089" do
+control "V-204513" do
   title "The Red Hat Enterprise Linux operating system must initiate an action
 to notify the System Administrator (SA) and Information System Security Officer
 ISSO, at a minimum, when allocated audit record storage volume reaches 75% of
@@ -63,7 +63,7 @@ to 25 percent of the partition size.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000343-GPOS-00134"
-  tag gid: "V-72089"
+  tag gid: "V-204513"
   tag rid: "SV-86713r4_rule"
   tag stig_id: "RHEL-07-030330"
   tag fix_id: "F-78441r3_fix"

@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72305" do
+control "V-204623" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that if the Trivial File Transfer Protocol (TFTP) server is required, the TFTP
 daemon is configured to operate in secure mode."
@@ -34,7 +34,7 @@ line to \"/etc/xinetd.d/tftp\" (or modify the line to have the required value):
   "
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72305"
+  tag gid: "V-204623"
   tag rid: "SV-86929r3_rule"
   tag stig_id: "RHEL-07-040720"
   tag fix_id: "F-78659r1_fix"

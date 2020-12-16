@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-81017" do
+control "V-204506" do
   title "The Red Hat Enterprise Linux operating system must configure the
 au-remote plugin to off-load audit logs using the audisp-remote daemon."
   desc  "Information stored in one location is vulnerable to accidental or
@@ -51,7 +51,7 @@ following values:
   tag severity: nil
   tag gtitle: "SRG-OS-000342-GPOS-00133"
   tag satisfies: ["SRG-OS-000342-GPOS-00133", "SRG-OS-000479-GPOS-00224"]
-  tag gid: "V-81017"
+  tag gid: "V-204506"
   tag rid: "SV-95729r1_rule"
   tag stig_id: "RHEL-07-030201"
   tag fix_id: "F-87851r2_fix"

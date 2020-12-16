@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72059" do
+control "V-204493" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that a separate file system is used for user home directories (such as /home or
 an equivalent)."
@@ -43,7 +43,7 @@ system/partition."
   impact 0.3
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72059"
+  tag gid: "V-204493"
   tag rid: "SV-86683r2_rule"
   tag stig_id: "RHEL-07-021310"
   tag fix_id: "F-78411r1_fix"

@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-77821" do
+control "V-204450" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that the Datagram Congestion Control Protocol (DCCP) kernel module is disabled
 unless required."
@@ -56,7 +56,7 @@ kernel module.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000378-GPOS-00163"
-  tag gid: "V-77821"
+  tag gid: "V-204450"
   tag rid: "SV-92517r3_rule"
   tag stig_id: "RHEL-07-020101"
   tag fix_id: "F-84521r3_fix"

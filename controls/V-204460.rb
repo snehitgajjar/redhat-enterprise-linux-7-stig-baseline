@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72001" do
+control "V-204460" do
   title "The Red Hat Enterprise Linux operating system must not have
 unnecessary accounts."
   desc  "Accounts providing no operational purpose provide additional
@@ -45,7 +45,7 @@ allow for a normal user to perform administrative-level actions.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72001"
+  tag gid: "V-204460"
   tag rid: "SV-86625r2_rule"
   tag stig_id: "RHEL-07-020270"
   tag fix_id: "F-78353r1_fix"

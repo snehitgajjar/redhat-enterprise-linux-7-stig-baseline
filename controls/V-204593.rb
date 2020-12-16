@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72249" do
+control "V-204593" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that the SSH daemon does not allow authentication using known hosts
 authentication."
@@ -35,7 +35,7 @@ and set the value to \"yes\":
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72249"
+  tag gid: "V-204593"
   tag rid: "SV-86873r3_rule"
   tag stig_id: "RHEL-07-040380"
   tag fix_id: "F-78603r2_fix"

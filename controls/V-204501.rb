@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72075" do
+control "V-204501" do
   title "The Red Hat Enterprise Linux operating system must not allow removable
 media to be used as the boot loader unless approved."
   desc  "Malicious users with removable boot media can gain access to a system
@@ -42,7 +42,7 @@ media or document the configuration to boot from removable media with the ISSO."
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000364-GPOS-00151"
-  tag gid: "V-72075"
+  tag gid: "V-204501"
   tag rid: "SV-86699r2_rule"
   tag stig_id: "RHEL-07-021700"
   tag fix_id: "F-78427r1_fix"

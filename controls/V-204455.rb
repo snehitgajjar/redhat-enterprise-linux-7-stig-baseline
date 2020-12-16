@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71993" do
+control "V-204455" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that the x86 Ctrl-Alt-Delete key sequence is disabled on the command line."
   desc  "A locally logged-on user who presses Ctrl-Alt-Delete, when at the
@@ -35,7 +35,7 @@ command line with the following command:
   impact 0.7
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-71993"
+  tag gid: "V-204455"
   tag rid: "SV-86617r5_rule"
   tag stig_id: "RHEL-07-020230"
   tag fix_id: "F-78345r6_fix"

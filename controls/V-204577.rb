@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72219" do
+control "V-204577" do
   title "The Red Hat Enterprise Linux operating system must be configured to
 prohibit or restrict the use of functions, ports, protocols, and/or services,
 as defined in the Ports, Protocols, and Services Management Component Local
@@ -56,7 +56,7 @@ comply with the PPSM CLSA for the site or program and the PPSM CAL."
   tag severity: nil
   tag gtitle: "SRG-OS-000096-GPOS-00050"
   tag satisfies: ["SRG-OS-000096-GPOS-00050", "SRG-OS-000297-GPOS-00115"]
-  tag gid: "V-72219"
+  tag gid: "V-204577"
   tag rid: "SV-86843r2_rule"
   tag stig_id: "RHEL-07-040100"
   tag fix_id: "F-78573r1_fix"

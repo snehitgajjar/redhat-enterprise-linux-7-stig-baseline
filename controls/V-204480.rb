@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72041" do
+control "V-204480" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that file systems containing user home directories are mounted to prevent files
 with the setuid and setgid bit set from being executed."
@@ -40,7 +40,7 @@ file systems that contain user home directories."
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72041"
+  tag gid: "V-204480"
   tag rid: "SV-86665r4_rule"
   tag stig_id: "RHEL-07-021000"
   tag fix_id: "F-78393r2_fix"

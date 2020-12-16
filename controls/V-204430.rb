@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71949" do
+control "V-204430" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that users must re-authenticate for privilege escalation."
   desc  "Without re-authentication, users may access resources or perform tasks
@@ -44,7 +44,7 @@ following command:
   tag gtitle: "SRG-OS-000373-GPOS-00156"
   tag satisfies: ["SRG-OS-000373-GPOS-00156", "SRG-OS-000373-GPOS-00157",
 "SRG-OS-000373-GPOS-00158"]
-  tag gid: "V-71949"
+  tag gid: "V-204430"
   tag rid: "SV-86573r3_rule"
   tag stig_id: "RHEL-07-010350"
   tag fix_id: "F-78301r3_fix"

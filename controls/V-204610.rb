@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-92251" do
+control "V-204610" do
   title "The Red Hat Enterprise Linux operating system must use a reverse-path
 filter for IPv4 network traffic when possible on all interfaces."
   desc  "Enabling reverse path filtering drops packets with source addresses
@@ -39,7 +39,7 @@ directory (or modify the line to have the required value):
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-92251"
+  tag gid: "V-204610"
   tag rid: "SV-102353r1_rule"
   tag stig_id: "RHEL-07-040611"
   tag fix_id: "F-98473r1_fix"

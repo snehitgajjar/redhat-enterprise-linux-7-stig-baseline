@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72073" do
+control "V-204500" do
   title "The Red Hat Enterprise Linux operating system must use a file
 integrity tool that is configured to use FIPS 140-2 approved cryptographic
 hashes for validating file contents and directories."
@@ -58,7 +58,7 @@ uncommented file and directory selection lists.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72073"
+  tag gid: "V-204500"
   tag rid: "SV-86697r3_rule"
   tag stig_id: "RHEL-07-021620"
   tag fix_id: "F-78425r2_fix"

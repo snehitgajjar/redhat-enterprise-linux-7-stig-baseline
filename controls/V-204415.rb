@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71919" do
+control "V-204415" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that the PAM system service is configured to store only encrypted
 representations of passwords."
@@ -46,7 +46,7 @@ the configurations listed in this requirement.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000073-GPOS-00041"
-  tag gid: "V-71919"
+  tag gid: "V-204415"
   tag rid: "SV-86543r3_rule"
   tag stig_id: "RHEL-07-010200"
   tag fix_id: "F-78271r4_fix"

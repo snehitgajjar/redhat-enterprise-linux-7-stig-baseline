@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72021" do
+control "V-204470" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that all local interactive user home directories are group-owned by the home
 directory owners primary group."
@@ -41,7 +41,7 @@ of \"/home/smithj\", and has a primary group of users.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72021"
+  tag gid: "V-204470"
   tag rid: "SV-86645r5_rule"
   tag stig_id: "RHEL-07-020650"
   tag fix_id: "F-78373r2_fix"

@@ -1,4 +1,4 @@
-control "V-71941" do
+control "V-204426" do
   title "The Red Hat Enterprise Linux operating system must disable account
 identifiers (individuals, groups, roles, and devices) if the password expires."
   desc  "Inactive identifiers pose a risk to systems and applications because
@@ -35,7 +35,7 @@ have the required value):
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000118-GPOS-00060"
-  tag gid: "V-71941"
+  tag gid: "V-204426"
   tag rid: "SV-86565r2_rule"
   tag stig_id: "RHEL-07-010310"
   tag fix_id: "F-78293r1_fix"

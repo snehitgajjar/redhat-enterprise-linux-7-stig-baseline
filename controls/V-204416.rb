@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71921" do
+control "V-204416" do
   title "The Red Hat Enterprise Linux operating system must be configured to
 use the shadow file to store only encrypted representations of passwords."
   desc  "Passwords need to be protected at all times, and encryption is the
@@ -33,7 +33,7 @@ representations of passwords.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000073-GPOS-00041"
-  tag gid: "V-71921"
+  tag gid: "V-204416"
   tag rid: "SV-86545r2_rule"
   tag stig_id: "RHEL-07-010210"
   tag fix_id: "F-78273r1_fix"

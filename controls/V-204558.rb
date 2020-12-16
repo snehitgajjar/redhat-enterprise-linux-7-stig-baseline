@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72185" do
+control "V-204558" do
   title "The Red Hat Enterprise Linux operating system must audit all uses of
 the pam_timestamp_check command."
   desc  "Without generating audit records that are specific to the security and
@@ -36,7 +36,7 @@ auid!=4294967295 -k privileged-pam
   "
   tag severity: nil
   tag gtitle: "SRG-OS-000471-GPOS-00215"
-  tag gid: "V-72185"
+  tag gid: "V-204558"
   tag rid: "SV-86809r4_rule"
   tag stig_id: "RHEL-07-030810"
   tag fix_id: "F-78539r4_fix"

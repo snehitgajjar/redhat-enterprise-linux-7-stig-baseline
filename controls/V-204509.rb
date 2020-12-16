@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72083" do
+control "V-204509" do
   title "The Red Hat Enterprise Linux operating system must off-load audit
 records onto a different system or media from the system being audited."
   desc  "Information stored in one location is vulnerable to accidental or
@@ -39,7 +39,7 @@ IP address of the log aggregation server.
   tag severity: nil
   tag gtitle: "SRG-OS-000342-GPOS-00133"
   tag satisfies: ["SRG-OS-000342-GPOS-00133", "SRG-OS-000479-GPOS-00224"]
-  tag gid: "V-72083"
+  tag gid: "V-204509"
   tag rid: "SV-86707r2_rule"
   tag stig_id: "RHEL-07-030300"
   tag fix_id: "F-78435r1_fix"

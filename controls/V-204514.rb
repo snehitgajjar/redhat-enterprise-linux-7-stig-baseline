@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72091" do
+control "V-204514" do
   title "The Red Hat Enterprise Linux operating system must immediately notify
 the System Administrator (SA) and Information System Security Officer (ISSO)
 (at a minimum) via email when the threshold for the repository maximum audit
@@ -36,7 +36,7 @@ capacity is reached.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000343-GPOS-00134"
-  tag gid: "V-72091"
+  tag gid: "V-204514"
   tag rid: "SV-86715r2_rule"
   tag stig_id: "RHEL-07-030340"
   tag fix_id: "F-78443r1_fix"

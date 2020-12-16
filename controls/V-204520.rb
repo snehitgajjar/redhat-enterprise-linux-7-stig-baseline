@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72103" do
+control "V-204520" do
   title "The Red Hat Enterprise Linux operating system must audit all uses of
 the fchownat syscall."
   desc  "Without generating audit records that are specific to the security and
@@ -47,7 +47,7 @@ perm_mod
   tag gtitle: "SRG-OS-000064-GPOS-00033"
   tag satisfies: ["SRG-OS-000064-GPOS-00033", "SRG-OS-000392-GPOS-00172",
 "SRG-OS-000458-GPOS-00203", "SRG-OS-000474-GPOS-00219"]
-  tag gid: "V-72103"
+  tag gid: "V-204520"
   tag rid: "SV-86727r5_rule"
   tag stig_id: "RHEL-07-030400"
   tag fix_id: "F-78455r7_fix"

@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71967" do
+control "V-204442" do
   title "The Red Hat Enterprise Linux operating system must not have the
 rsh-server package installed."
   desc  "It is detrimental for operating systems to provide, or install by
@@ -38,7 +38,7 @@ removing the rsh-server package from the system with the following command:
   impact 0.7
   tag severity: nil
   tag gtitle: "SRG-OS-000095-GPOS-00049"
-  tag gid: "V-71967"
+  tag gid: "V-204442"
   tag rid: "SV-86591r2_rule"
   tag stig_id: "RHEL-07-020000"
   tag fix_id: "F-78319r1_fix"

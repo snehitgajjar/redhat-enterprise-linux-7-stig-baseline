@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-92255" do
+control "V-214800" do
   title "The Red Hat Enterprise Linux operating system must have a host-based
 intrusion detection tool installed."
   desc  "Adding host-based intrusion detection tools can provide the capability
@@ -57,7 +57,7 @@ with the Authorizing Official.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000196"
-  tag gid: "V-92255"
+  tag gid: "V-214800"
   tag rid: "SV-102357r1_rule"
   tag stig_id: "RHEL-07-020019"
   tag fix_id: "F-98477r1_fix"

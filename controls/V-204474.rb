@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72029" do
+control "V-204474" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that all local initialization files for interactive users are owned by the home
 directory user or root."
@@ -51,7 +51,7 @@ either the directory owner or root with the following command:
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72029"
+  tag gid: "V-204474"
   tag rid: "SV-86653r3_rule"
   tag stig_id: "RHEL-07-020690"
   tag fix_id: "F-78381r4_fix"

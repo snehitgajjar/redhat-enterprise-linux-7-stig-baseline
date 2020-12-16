@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72005" do
+control "V-204462" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that the root account must be the only account having unrestricted access to
 the system."
@@ -28,7 +28,7 @@ assign a UID of greater than \"1000\" that has not already been assigned.
   impact 0.7
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72005"
+  tag gid: "V-204462"
   tag rid: "SV-86629r2_rule"
   tag stig_id: "RHEL-07-020310"
   tag fix_id: "F-78357r1_fix"

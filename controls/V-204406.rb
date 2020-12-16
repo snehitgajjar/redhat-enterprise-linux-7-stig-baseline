@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-73159" do
+control "V-204406" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that when passwords are changed or new passwords are established, pwquality
 must be used."
@@ -39,7 +39,7 @@ have the required value):
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000069-GPOS-00037"
-  tag gid: "V-73159"
+  tag gid: "V-204406"
   tag rid: "SV-87811r4_rule"
   tag stig_id: "RHEL-07-010119"
   tag fix_id: "F-79605r5_fix"

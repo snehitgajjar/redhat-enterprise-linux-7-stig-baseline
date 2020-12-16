@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-73161" do
+control "V-204483" do
   title "The Red Hat Enterprise Linux operating system must prevent binary
 files from being executed on file systems that are being imported via Network
 File System (NFS)."
@@ -37,7 +37,7 @@ file systems that are being imported via NFS."
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-73161"
+  tag gid: "V-204483"
   tag rid: "SV-87813r2_rule"
   tag stig_id: "RHEL-07-021021"
   tag fix_id: "F-79607r2_fix"

@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71909" do
+control "V-204410" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that when passwords are changed or new passwords are established, the new
 password must contain at least one special character."
@@ -42,7 +42,7 @@ line to have the required value):
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000266-GPOS-00101"
-  tag gid: "V-71909"
+  tag gid: "V-204410"
   tag rid: "SV-86533r2_rule"
   tag stig_id: "RHEL-07-010150"
   tag fix_id: "F-78261r2_fix"

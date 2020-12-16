@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71997" do
+control "V-204458" do
   title "The Red Hat Enterprise Linux operating system must be a vendor
 supported release."
   desc  "An operating system release is considered \"supported\" if the vendor
@@ -36,7 +36,7 @@ system software."
   impact 0.7
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-71997"
+  tag gid: "V-204458"
   tag rid: "SV-86621r5_rule"
   tag stig_id: "RHEL-07-020250"
   tag fix_id: "F-78349r1_fix"

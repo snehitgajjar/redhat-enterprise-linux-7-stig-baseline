@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71917" do
+control "V-204414" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that when passwords are changed the number of repeating characters of the same
 character class must not be more than four characters."
@@ -40,7 +40,7 @@ the line to have the required value):
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000072-GPOS-00040"
-  tag gid: "V-71917"
+  tag gid: "V-204414"
   tag rid: "SV-86541r2_rule"
   tag stig_id: "RHEL-07-010190"
   tag fix_id: "F-78269r1_fix"

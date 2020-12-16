@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71931" do
+control "V-204421" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that existing passwords are restricted to a 60-day maximum lifetime."
   desc  "Any password, no matter how complex, can eventually be cracked.
@@ -27,7 +27,7 @@ lifetime restriction.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000076-GPOS-00044"
-  tag gid: "V-71931"
+  tag gid: "V-204421"
   tag rid: "SV-86555r3_rule"
   tag stig_id: "RHEL-07-010260"
   tag fix_id: "F-78283r1_fix"

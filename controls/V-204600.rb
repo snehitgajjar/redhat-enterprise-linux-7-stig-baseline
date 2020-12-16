@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72263" do
+control "V-204600" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that the SSH daemon performs strict mode checking of home directory
 configuration files."
@@ -34,7 +34,7 @@ of SSH that is provided by a third-party vendor) and set the value to \"yes\":
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72263"
+  tag gid: "V-204600"
   tag rid: "SV-86887r3_rule"
   tag stig_id: "RHEL-07-040450"
   tag fix_id: "F-78617r4_fix"

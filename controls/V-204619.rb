@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72297" do
+control "V-204619" do
   title "The Red Hat Enterprise Linux operating system must be configured to
 prevent unrestricted mail relaying."
   desc  "If unrestricted mail relaying is permitted, unauthorized senders could
@@ -34,7 +34,7 @@ restrict client connections to the local network with the following command:
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72297"
+  tag gid: "V-204619"
   tag rid: "SV-86921r3_rule"
   tag stig_id: "RHEL-07-040680"
   tag fix_id: "F-78651r2_fix"

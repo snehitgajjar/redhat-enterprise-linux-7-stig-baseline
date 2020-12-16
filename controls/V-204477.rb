@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72035" do
+control "V-204477" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that all local interactive user initialization files executable search paths
 contain only paths that resolve to the users home directory."
@@ -43,7 +43,7 @@ directory owned by the application, it must be documented with the ISSO.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72035"
+  tag gid: "V-204477"
   tag rid: "SV-86659r4_rule"
   tag stig_id: "RHEL-07-020720"
   tag fix_id: "F-78387r4_fix"

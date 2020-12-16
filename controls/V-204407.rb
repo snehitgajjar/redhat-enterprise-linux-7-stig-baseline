@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71903" do
+control "V-204407" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that when passwords are changed or new passwords are established, the new
 password must contain at least one upper-case character."
@@ -40,7 +40,7 @@ line to have the required value):
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000069-GPOS-00037"
-  tag gid: "V-71903"
+  tag gid: "V-204407"
   tag rid: "SV-86527r3_rule"
   tag stig_id: "RHEL-07-010120"
   tag fix_id: "F-78255r1_fix"

@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72157" do
+control "V-204546" do
   title "The Red Hat Enterprise Linux operating system must audit all uses of
 the userhelper command."
   desc  "Reconstruction of harmful events or forensic analysis is not possible
@@ -42,7 +42,7 @@ auid!=4294967295 -k privileged-passwd
   tag gtitle: "SRG-OS-000042-GPOS-00020"
   tag satisfies: ["SRG-OS-000042-GPOS-00020", "SRG-OS-000392-GPOS-00172",
 "SRG-OS-000471-GPOS-00215"]
-  tag gid: "V-72157"
+  tag gid: "V-204546"
   tag rid: "SV-86781r5_rule"
   tag stig_id: "RHEL-07-030670"
   tag fix_id: "F-78509r5_fix"

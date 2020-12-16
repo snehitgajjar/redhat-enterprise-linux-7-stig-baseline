@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72077" do
+control "V-204502" do
   title "The Red Hat Enterprise Linux operating system must not have the
 telnet-server package installed."
   desc  "It is detrimental for operating systems to provide, or install by
@@ -47,7 +47,7 @@ removing the telnet-server package from the system with the following command:
   impact 0.7
   tag severity: nil
   tag gtitle: "SRG-OS-000095-GPOS-00049"
-  tag gid: "V-72077"
+  tag gid: "V-204502"
   tag rid: "SV-86701r2_rule"
   tag stig_id: "RHEL-07-021710"
   tag fix_id: "F-78429r1_fix"

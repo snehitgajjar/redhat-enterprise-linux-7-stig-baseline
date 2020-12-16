@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72177" do
+control "V-204555" do
   title "The Red Hat Enterprise Linux operating system must audit all uses of
 the postqueue command."
   desc  "Reconstruction of harmful events or forensic analysis is not possible
@@ -41,7 +41,7 @@ auid!=4294967295 -k privileged-postfix
   tag severity: nil
   tag gtitle: "SRG-OS-000042-GPOS-00020"
   tag satisfies: ["SRG-OS-000042-GPOS-00020", "SRG-OS-000392-GPOS-00172"]
-  tag gid: "V-72177"
+  tag gid: "V-204555"
   tag rid: "SV-86801r3_rule"
   tag stig_id: "RHEL-07-030770"
   tag fix_id: "F-78531r5_fix"

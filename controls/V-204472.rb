@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72025" do
+control "V-204472" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that all files and directories contained in local interactive user home
 directories are group-owned by a group of which the home directory owner is a
@@ -46,7 +46,7 @@ local interactive user's files and directories, use the following command:
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72025"
+  tag gid: "V-204472"
   tag rid: "SV-86649r2_rule"
   tag stig_id: "RHEL-07-020670"
   tag fix_id: "F-78377r2_fix"

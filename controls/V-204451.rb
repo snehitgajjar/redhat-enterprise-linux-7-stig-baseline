@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71985" do
+control "V-204451" do
   title "The Red Hat Enterprise Linux operating system must disable the file
 system automounter unless required."
   desc  "Automatically mounting file systems permits easy introduction of
@@ -38,7 +38,7 @@ documented with the ISSO.
   tag gtitle: "SRG-OS-000114-GPOS-00059"
   tag satisfies: ["SRG-OS-000114-GPOS-00059", "SRG-OS-000378-GPOS-00163",
 "SRG-OS-000480-GPOS-00227"]
-  tag gid: "V-71985"
+  tag gid: "V-204451"
   tag rid: "SV-86609r2_rule"
   tag stig_id: "RHEL-07-020110"
   tag fix_id: "F-78337r2_fix"

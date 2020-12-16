@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72039" do
+control "V-204479" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that all system device files are correctly labeled to prevent unauthorized
 modification."
@@ -50,7 +50,7 @@ command:
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72039"
+  tag gid: "V-204479"
   tag rid: "SV-86663r2_rule"
   tag stig_id: "RHEL-07-020900"
   tag fix_id: "F-78391r1_fix"

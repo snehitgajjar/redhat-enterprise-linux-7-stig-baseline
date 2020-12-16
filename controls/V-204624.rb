@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72307" do
+control "V-204624" do
   title "The Red Hat Enterprise Linux operating system must not have an X
 Windows display manager installed unless approved."
   desc  "Internet services that are not required for system or application
@@ -29,7 +29,7 @@ the related packages with the following commands:
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72307"
+  tag gid: "V-204624"
   tag rid: "SV-86931r4_rule"
   tag stig_id: "RHEL-07-040730"
   tag fix_id: "F-78661r2_fix"

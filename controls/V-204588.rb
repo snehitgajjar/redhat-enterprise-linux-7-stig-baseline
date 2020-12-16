@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72239" do
+control "V-204588" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that the SSH daemon does not allow authentication using RSA rhosts
 authentication."
@@ -40,7 +40,7 @@ and set the value to \"no\":
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72239"
+  tag gid: "V-204588"
   tag rid: "SV-86863r4_rule"
   tag stig_id: "RHEL-07-040330"
   tag fix_id: "F-78593r4_fix"

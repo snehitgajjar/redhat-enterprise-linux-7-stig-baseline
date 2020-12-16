@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72017" do
+control "V-204468" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that all local interactive user home directories have mode 0750 or less
 permissive."
@@ -35,7 +35,7 @@ command:
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72017"
+  tag gid: "V-204468"
   tag rid: "SV-86641r3_rule"
   tag stig_id: "RHEL-07-020630"
   tag fix_id: "F-78369r2_fix"

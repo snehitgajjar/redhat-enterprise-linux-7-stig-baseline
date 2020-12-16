@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71995" do
+control "V-204457" do
   title "The Red Hat Enterprise Linux operating system must define default
 permissions for all authenticated users in such a way that the user can only
 read and modify their own files."
@@ -35,7 +35,7 @@ file to \"077\":
   "
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00228"
-  tag gid: "V-71995"
+  tag gid: "V-204457"
   tag rid: "SV-86619r2_rule"
   tag stig_id: "RHEL-07-020240"
   tag fix_id: "F-78347r1_fix"

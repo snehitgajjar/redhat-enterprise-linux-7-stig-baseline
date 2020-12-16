@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72279" do
+control "V-204607" do
   title "The Red Hat Enterprise Linux operating system must not contain
 shosts.equiv files."
   desc  "The shosts.equiv files are used to configure host-based authentication
@@ -26,7 +26,7 @@ command:
   impact 0.7
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72279"
+  tag gid: "V-204607"
   tag rid: "SV-86903r2_rule"
   tag stig_id: "RHEL-07-040550"
   tag fix_id: "F-78633r1_fix"

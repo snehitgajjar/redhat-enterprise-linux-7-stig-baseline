@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72045" do
+control "V-204482" do
   title "The Red Hat Enterprise Linux operating system must prevent files with
 the setuid and setgid bit set from being executed on file systems that are
 being imported via Network File System (NFS)."
@@ -33,7 +33,7 @@ file systems that are being imported via NFS."
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72045"
+  tag gid: "V-204482"
   tag rid: "SV-86669r2_rule"
   tag stig_id: "RHEL-07-021020"
   tag fix_id: "F-78397r2_fix"

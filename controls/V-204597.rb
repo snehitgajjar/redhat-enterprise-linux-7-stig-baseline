@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72257" do
+control "V-204597" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that the SSH private host key files have mode 0640 or less permissive."
   desc  "If an unauthorized user obtains the private SSH host key file, the
@@ -29,7 +29,7 @@ list their modes:
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72257"
+  tag gid: "V-204597"
   tag rid: "SV-86881r3_rule"
   tag stig_id: "RHEL-07-040420"
   tag fix_id: "F-78611r5_fix"

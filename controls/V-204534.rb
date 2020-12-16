@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72131" do
+control "V-204534" do
   title "The Red Hat Enterprise Linux operating system must audit all uses of
 the truncate syscall."
   desc  "Without generating audit records that are specific to the security and
@@ -68,7 +68,7 @@ auid!=4294967295 -k access
   tag gtitle: "SRG-OS-000064-GPOS-00033"
   tag satisfies: ["SRG-OS-000064-GPOS-00033", "SRG-OS-000458-GPOS-00203",
 "SRG-OS-000461-GPOS-00205", "SRG-OS-000392-GPOS-00172"]
-  tag gid: "V-72131"
+  tag gid: "V-204534"
   tag rid: "SV-86755r5_rule"
   tag stig_id: "RHEL-07-030540"
   tag fix_id: "F-78483r7_fix"

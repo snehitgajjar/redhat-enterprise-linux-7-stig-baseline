@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72233" do
+control "V-204585" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that all networked systems have SSH installed."
   desc  "Without protection of the transmitted information, confidentiality and
@@ -42,7 +42,7 @@ have to be employed, and vice versa.
   tag gtitle: "SRG-OS-000423-GPOS-00187"
   tag satisfies: ["SRG-OS-000423-GPOS-00187", "SRG-OS-000424-GPOS-00188",
 "SRG-OS-000425-GPOS-00189", "SRG-OS-000426-GPOS-00190"]
-  tag gid: "V-72233"
+  tag gid: "V-204585"
   tag rid: "SV-86857r3_rule"
   tag stig_id: "RHEL-07-040300"
   tag fix_id: "F-78587r3_fix"

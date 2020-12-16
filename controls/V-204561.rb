@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-79001" do
+control "V-204561" do
   title "The Red Hat Enterprise Linux operating system must audit all uses of
 the finit_module syscall."
   desc  "Without generating audit records that are specific to the security and
@@ -45,7 +45,7 @@ successful/unsuccessful attempts to use the \"finit_module\" syscall occur.
   tag severity: nil
   tag gtitle: "SRG-OS-000471-GPOS-00216"
   tag satisfies: ["SRG-OS-000471-GPOS-00216", "SRG-OS-000477-GPOS-00222"]
-  tag gid: "V-79001"
+  tag gid: "V-204561"
   tag rid: "SV-93707r3_rule"
   tag stig_id: "RHEL-07-030821"
   tag fix_id: "F-85751r3_fix"

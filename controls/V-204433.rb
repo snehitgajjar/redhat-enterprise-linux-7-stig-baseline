@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71955" do
+control "V-204433" do
   title "The Red Hat Enterprise Linux operating system must not allow an
 unrestricted logon to the system."
   desc  "Failure to restrict system access to authenticated users negatively
@@ -36,7 +36,7 @@ section of the \"/etc/gdm/custom.conf\" file to \"false\":
   "
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00229"
-  tag gid: "V-71955"
+  tag gid: "V-204433"
   tag rid: "SV-86579r3_rule"
   tag stig_id: "RHEL-07-010450"
   tag fix_id: "F-78307r2_fix"

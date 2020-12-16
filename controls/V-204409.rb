@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71907" do
+control "V-204409" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that when passwords are changed or new passwords are assigned, the new password
 must contain at least one numeric character."
@@ -39,7 +39,7 @@ to have the required value):
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000071-GPOS-00039"
-  tag gid: "V-71907"
+  tag gid: "V-204409"
   tag rid: "SV-86531r3_rule"
   tag stig_id: "RHEL-07-010140"
   tag fix_id: "F-78259r1_fix"

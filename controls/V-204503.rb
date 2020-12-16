@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72079" do
+control "V-204503" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that auditing is configured to produce records containing information to
 establish what type of events occurred, where the events occurred, the source
@@ -47,7 +47,7 @@ information to establish when (date and time) the events occurred.
   tag satisfies: ["SRG-OS-000038-GPOS-00016", "SRG-OS-000039-GPOS-00017",
 "SRG-OS-000042-GPOS-00021", "SRG-OS-000254-GPOS-00095",
 "SRG-OS-000255-GPOS-00096"]
-  tag gid: "V-72079"
+  tag gid: "V-204503"
   tag rid: "SV-86703r3_rule"
   tag stig_id: "RHEL-07-030000"
   tag fix_id: "F-78431r2_fix"

@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-81007" do
+control "V-204440" do
   title "Red Hat Enterprise Linux operating systems version 7.2 or newer using
 Unified Extensible Firmware Interface (UEFI) must require authentication upon
 booting into single-user and maintenance modes."
@@ -52,7 +52,7 @@ lines in the \"### BEGIN /etc/grub.d/01_users ###\" section:
   impact 0.7
   tag severity: nil
   tag gtitle: "SRG-OS-000080-GPOS-00048"
-  tag gid: "V-81007"
+  tag gid: "V-204440"
   tag rid: "SV-95719r1_rule"
   tag stig_id: "RHEL-07-010491"
   tag fix_id: "F-87841r2_fix"

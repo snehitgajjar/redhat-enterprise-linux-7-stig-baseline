@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72009" do
+control "V-204464" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that all files and directories have a valid group owner."
   desc  "Files without a valid group owner may be unintentionally inherited if
@@ -28,7 +28,7 @@ with the \"chgrp\" command:
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72009"
+  tag gid: "V-204464"
   tag rid: "SV-86633r3_rule"
   tag stig_id: "RHEL-07-020330"
   tag fix_id: "F-78361r1_fix"

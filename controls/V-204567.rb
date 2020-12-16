@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-73171" do
+control "V-204567" do
   title "The Red Hat Enterprise Linux operating system must generate audit
 records for all account creations, modifications, disabling, and termination
 events that affect /etc/shadow."
@@ -41,7 +41,7 @@ creations, modifications, disabling, and termination events that affect
   "
   tag severity: nil
   tag gtitle: "SRG-OS-000004-GPOS-00004"
-  tag gid: "V-73171"
+  tag gid: "V-204567"
   tag rid: "SV-87823r4_rule"
   tag stig_id: "RHEL-07-030873"
   tag fix_id: "F-79617r4_fix"

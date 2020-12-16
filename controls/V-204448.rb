@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71979" do
+control "V-204448" do
   title "The Red Hat Enterprise Linux operating system must prevent the
 installation of software, patches, service packs, device drivers, or operating
 system components of local packages without verification they have been
@@ -50,7 +50,7 @@ prior to install by setting the following option in the \"/etc/yum.conf\" file:
   impact 0.7
   tag severity: nil
   tag gtitle: "SRG-OS-000366-GPOS-00153"
-  tag gid: "V-71979"
+  tag gid: "V-204448"
   tag rid: "SV-86603r2_rule"
   tag stig_id: "RHEL-07-020060"
   tag fix_id: "F-78331r1_fix"

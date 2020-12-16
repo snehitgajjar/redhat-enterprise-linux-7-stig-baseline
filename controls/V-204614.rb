@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72289" do
+control "V-204614" do
   title "The Red Hat Enterprise Linux operating system must prevent Internet
 Protocol version 4 (IPv4) Internet Control Message Protocol (ICMP) redirect
 messages from being accepted."
@@ -40,7 +40,7 @@ following line to \"/etc/sysctl.conf\" or a configuration file in the
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72289"
+  tag gid: "V-204614"
   tag rid: "SV-86913r3_rule"
   tag stig_id: "RHEL-07-040640"
   tag fix_id: "F-78643r3_fix"

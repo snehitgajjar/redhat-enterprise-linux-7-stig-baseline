@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72235" do
+control "V-204586" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that all networked systems use SSH for confidentiality and integrity of
 transmitted and received information as well as information during preparation
@@ -50,7 +50,7 @@ following command:
   tag gtitle: "SRG-OS-000423-GPOS-00187"
   tag satisfies: ["SRG-OS-000423-GPOS-00187", "SRG-OS-000423-GPOS-00188",
 "SRG-OS-000423-GPOS-00189", "SRG-OS-000423-GPOS-00190"]
-  tag gid: "V-72235"
+  tag gid: "V-204586"
   tag rid: "SV-86859r3_rule"
   tag stig_id: "RHEL-07-040310"
   tag fix_id: "F-78589r2_fix"

@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71855" do
+control "V-214799" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that the cryptographic hash of system files and commands matches vendor values."
   desc  "Without cryptographic integrity protections, system command and files
@@ -44,7 +44,7 @@ command:
   impact 0.7
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-71855"
+  tag gid: "V-214799"
   tag rid: "SV-86479r4_rule"
   tag stig_id: "RHEL-07-010020"
   tag fix_id: "F-78207r1_fix"

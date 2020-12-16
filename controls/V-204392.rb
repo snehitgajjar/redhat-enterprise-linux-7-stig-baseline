@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71849" do
+control "V-204392" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that the file permissions, ownership, and group membership of system files and
 commands match the vendor values."
@@ -58,7 +58,7 @@ following command:
   tag severity: nil
   tag gtitle: "SRG-OS-000257-GPOS-00098"
   tag satisfies: ["SRG-OS-000257-GPOS-00098", "SRG-OS-000278-GPOS-00108"]
-  tag gid: "V-71849"
+  tag gid: "V-204392"
   tag rid: "SV-86473r4_rule"
   tag stig_id: "RHEL-07-010010"
   tag fix_id: "F-78201r4_fix"

@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72209" do
+control "V-204574" do
   title "The Red Hat Enterprise Linux operating system must send rsyslog output
 to a log aggregation server."
   desc  "Sending rsyslog output to another system ensures that the logs cannot
@@ -36,7 +36,7 @@ aggregation system:
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72209"
+  tag gid: "V-204574"
   tag rid: "SV-86833r2_rule"
   tag stig_id: "RHEL-07-031000"
   tag fix_id: "F-78563r2_fix"

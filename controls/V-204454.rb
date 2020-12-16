@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71991" do
+control "V-204454" do
   title "The Red Hat Enterprise Linux operating system must enable the SELinux
 targeted policy."
   desc  "Without verification of the security functions, security functions may
@@ -71,7 +71,7 @@ functions.
   impact 0.7
   tag severity: nil
   tag gtitle: "SRG-OS-000445-GPOS-00199"
-  tag gid: "V-71991"
+  tag gid: "V-204454"
   tag rid: "SV-86615r5_rule"
   tag stig_id: "RHEL-07-020220"
   tag fix_id: "F-78343r2_fix"

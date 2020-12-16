@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71989" do
+control "V-204453" do
   title "The Red Hat Enterprise Linux operating system must enable SELinux."
   desc  "Without verification of the security functions, security functions may
 not operate correctly and the failure may go unnoticed. Security function is
@@ -44,7 +44,7 @@ functions.
   impact 0.7
   tag severity: nil
   tag gtitle: "SRG-OS-000445-GPOS-00199"
-  tag gid: "V-71989"
+  tag gid: "V-204453"
   tag rid: "SV-86613r3_rule"
   tag stig_id: "RHEL-07-020210"
   tag fix_id: "F-78341r2_fix"

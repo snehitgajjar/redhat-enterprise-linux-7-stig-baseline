@@ -1,5 +1,5 @@
 
-control 'V-72433' do
+control 'V-204633' do
   title "The Red Hat Enterprise Linux operating system must implement
 certificate status checking for PKI authentication."
   desc  "Using an authentication device, such as a CAC or token that is
@@ -58,7 +58,7 @@ authentication.
   tag gtitle: "SRG-OS-000375-GPOS-00160"
   tag satisfies: ["SRG-OS-000375-GPOS-00160", "SRG-OS-000375-GPOS-00161",
 "SRG-OS-000375-GPOS-00162"]
-  tag gid: "V-72433"
+  tag gid: "V-204633"
   tag rid: "SV-87057r5_rule"
   tag stig_id: "RHEL-07-041003"
   tag fix_id: "F-78785r3_fix"

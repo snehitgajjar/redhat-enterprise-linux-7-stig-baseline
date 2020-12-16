@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72135" do
+control "V-204536" do
   title "The Red Hat Enterprise Linux operating system must audit all uses of
 the semanage command."
   desc  "Without generating audit records that are specific to the security and
@@ -42,7 +42,7 @@ successful/unsuccessful attempts to use the \"semanage\" command occur.
   tag gtitle: "SRG-OS-000392-GPOS-00172"
   tag satisfies: ["SRG-OS-000392-GPOS-00172", "SRG-OS-000463-GPOS-00207",
 "SRG-OS-000465-GPOS-00209"]
-  tag gid: "V-72135"
+  tag gid: "V-204536"
   tag rid: "SV-86759r4_rule"
   tag stig_id: "RHEL-07-030560"
   tag fix_id: "F-78487r5_fix"

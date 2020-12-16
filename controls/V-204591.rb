@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72245" do
+control "V-204591" do
   title "The Red Hat Enterprise Linux operating system must display the date
 and time of the last successful account logon upon an SSH logon."
   desc  "Providing users with feedback on when account accesses via SSH last
@@ -38,7 +38,7 @@ effect.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72245"
+  tag gid: "V-204591"
   tag rid: "SV-86869r3_rule"
   tag stig_id: "RHEL-07-040360"
   tag fix_id: "F-78599r3_fix"

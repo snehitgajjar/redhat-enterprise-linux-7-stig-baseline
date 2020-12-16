@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72261" do
+control "V-204599" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that the SSH daemon does not permit Kerberos authentication unless needed."
   desc  "Kerberos authentication for SSH is often implemented using Generic
@@ -40,7 +40,7 @@ the location of the configuration file, with the ISSO.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000364-GPOS-00151"
-  tag gid: "V-72261"
+  tag gid: "V-204599"
   tag rid: "SV-86885r3_rule"
   tag stig_id: "RHEL-07-040440"
   tag fix_id: "F-78615r2_fix"

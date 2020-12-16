@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72269" do
+control "V-204603" do
   title "The Red Hat Enterprise Linux operating system must, for networked
 systems, synchronize clocks with a server that is synchronized to one of the
 redundant United States Naval Observatory (USNO) time servers, a time server
@@ -91,7 +91,7 @@ restarted:
   tag severity: nil
   tag gtitle: "SRG-OS-000355-GPOS-00143"
   tag satisfies: ["SRG-OS-000355-GPOS-00143", "SRG-OS-000356-GPOS-00144"]
-  tag gid: "V-72269"
+  tag gid: "V-204603"
   tag rid: "SV-86893r5_rule"
   tag stig_id: "RHEL-07-040500"
   tag fix_id: "F-78623r5_fix"

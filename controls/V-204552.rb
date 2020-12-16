@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72171" do
+control "V-204552" do
   title "The Red Hat Enterprise Linux operating system must audit all uses of
 the mount command and syscall."
   desc  "Reconstruction of harmful events or forensic analysis is not possible
@@ -55,7 +55,7 @@ privileged-mount
   tag severity: nil
   tag gtitle: "SRG-OS-000042-GPOS-00020"
   tag satisfies: ["SRG-OS-000042-GPOS-00020", "SRG-OS-000392-GPOS-00172"]
-  tag gid: "V-72171"
+  tag gid: "V-204552"
   tag rid: "SV-86795r7_rule"
   tag stig_id: "RHEL-07-030740"
   tag fix_id: "F-78525r9_fix"

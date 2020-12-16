@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72117" do
+control "V-204527" do
   title "The Red Hat Enterprise Linux operating system must audit all uses of
 the removexattr syscall."
   desc  "Without generating audit records that are specific to the security and
@@ -50,7 +50,7 @@ successful/unsuccessful attempts to use the \"removexattr\" syscall occur.
   tag gtitle: "SRG-OS-000458-GPOS-00203"
   tag satisfies: ["SRG-OS-000458-GPOS-00203", "SRG-OS-000392-GPOS-00172",
 "SRG-OS-000064-GPOS-00033"]
-  tag gid: "V-72117"
+  tag gid: "V-204527"
   tag rid: "SV-86741r5_rule"
   tag stig_id: "RHEL-07-030470"
   tag fix_id: "F-78469r7_fix"

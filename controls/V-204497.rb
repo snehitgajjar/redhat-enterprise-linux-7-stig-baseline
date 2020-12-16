@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72067" do
+control "V-204497" do
   title "The Red Hat Enterprise Linux operating system must implement NIST
 FIPS-validated cryptography for the following: to provision digital signatures,
 to generate cryptographic hashes, and to protect data requiring data-at-rest
@@ -121,7 +121,7 @@ line:
   tag satisfies: ["SRG-OS-000033-GPOS-00014", "SRG-OS-000185-GPOS-00079",
 "SRG-OS-000396-GPOS-00176", "SRG-OS-000405-GPOS-00184",
 "SRG-OS-000478-GPOS-00223"]
-  tag gid: "V-72067"
+  tag gid: "V-204497"
   tag rid: "SV-86691r4_rule"
   tag stig_id: "RHEL-07-021350"
   tag fix_id: "F-78419r3_fix"

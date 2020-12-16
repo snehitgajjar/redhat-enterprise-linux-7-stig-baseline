@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72311" do
+control "V-204626" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that the Network File System (NFS) is configured to use RPCSEC_GSS."
   desc  "When an NFS server is configured to use RPCSEC_SYS, a selected userid
@@ -32,7 +32,7 @@ setting.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72311"
+  tag gid: "V-204626"
   tag rid: "SV-86935r4_rule"
   tag stig_id: "RHEL-07-040750"
   tag fix_id: "F-78665r2_fix"

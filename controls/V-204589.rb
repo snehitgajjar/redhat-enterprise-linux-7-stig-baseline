@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72241" do
+control "V-204589" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that all network connections associated with SSH traffic terminate after a
 period of inactivity."
@@ -49,7 +49,7 @@ third-party vendor):
   tag severity: nil
   tag gtitle: "SRG-OS-000163-GPOS-00072"
   tag satisfies: ["SRG-OS-000163-GPOS-00072", "SRG-OS-000279-GPOS-00109"]
-  tag gid: "V-72241"
+  tag gid: "V-204589"
   tag rid: "SV-86865r4_rule"
   tag stig_id: "RHEL-07-040340"
   tag fix_id: "F-78595r4_fix"

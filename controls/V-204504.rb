@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72081" do
+control "V-204504" do
   title "The Red Hat Enterprise Linux operating system must shut down upon
 audit processing failure, unless availability is an overriding concern. If
 availability is a concern, the system must alert the designated staff (System
@@ -79,7 +79,7 @@ staff.
   tag severity: nil
   tag gtitle: "SRG-OS-000046-GPOS-00022"
   tag satisfies: ["SRG-OS-000046-GPOS-00022", "SRG-OS-000047-GPOS-00023"]
-  tag gid: "V-72081"
+  tag gid: "V-204504"
   tag rid: "SV-86705r4_rule"
   tag stig_id: "RHEL-07-030010"
   tag fix_id: "F-78433r2_fix"

@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-81005" do
+control "V-204438" do
   title "Red Hat Enterprise Linux operating systems version 7.2 or newer with a
 Basic Input/Output System (BIOS) must require authentication upon booting into
 single-user and maintenance modes."
@@ -52,7 +52,7 @@ the \"### BEGIN /etc/grub.d/01_users ###\" section:
   impact 0.7
   tag severity: nil
   tag gtitle: "SRG-OS-000080-GPOS-00048"
-  tag gid: "V-81005"
+  tag gid: "V-204438"
   tag rid: "SV-95717r1_rule"
   tag stig_id: "RHEL-07-010482"
   tag fix_id: "F-87839r2_fix"

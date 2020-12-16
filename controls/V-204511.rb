@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72087" do
+control "V-204511" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that the audit system takes appropriate action when the audit storage volume is
 full."
@@ -32,7 +32,7 @@ records are written to becomes full.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000342-GPOS-00133"
-  tag gid: "V-72087"
+  tag gid: "V-204511"
   tag rid: "SV-86711r3_rule"
   tag stig_id: "RHEL-07-030320"
   tag fix_id: "F-78439r4_fix"

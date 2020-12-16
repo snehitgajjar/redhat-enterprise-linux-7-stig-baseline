@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72191" do
+control "V-204563" do
   title "The Red Hat Enterprise Linux operating system must audit all uses of
 the kmod command."
   desc  "Without generating audit records that are specific to the security and
@@ -39,7 +39,7 @@ successful/unsuccessful attempts to use the \"kmod\" command occur.
   tag severity: nil
   tag gtitle: "SRG-OS-000471-GPOS-00216"
   tag satisfies: ["SRG-OS-000471-GPOS-00216", "SRG-OS-000477-GPOS-00222"]
-  tag gid: "V-72191"
+  tag gid: "V-204563"
   tag rid: "SV-86815r5_rule"
   tag stig_id: "RHEL-07-030840"
   tag fix_id: "F-78545r10_fix"

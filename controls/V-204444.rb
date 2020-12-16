@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71971" do
+control "V-204444" do
   title "The Red Hat Enterprise Linux operating system must prevent
 non-privileged users from executing privileged functions to include disabling,
 circumventing, or altering implemented security safeguards/countermeasures."
@@ -74,7 +74,7 @@ implemented security safeguards/countermeasures.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000324-GPOS-00125"
-  tag gid: "V-71971"
+  tag gid: "V-204444"
   tag rid: "SV-86595r2_rule"
   tag stig_id: "RHEL-07-020020"
   tag fix_id: "F-78323r1_fix"

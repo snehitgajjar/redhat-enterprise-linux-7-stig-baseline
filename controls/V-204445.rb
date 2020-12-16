@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71973" do
+control "V-204445" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that a file integrity tool verifies the baseline operating system configuration
 at least weekly."
@@ -64,7 +64,7 @@ check run\" root@sysname.mil
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000363-GPOS-00150"
-  tag gid: "V-71973"
+  tag gid: "V-204445"
   tag rid: "SV-86597r2_rule"
   tag stig_id: "RHEL-07-020030"
   tag fix_id: "F-78325r2_fix"

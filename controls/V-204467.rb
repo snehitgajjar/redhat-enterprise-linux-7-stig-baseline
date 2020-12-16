@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72015" do
+control "V-204467" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that all local interactive user home directories are defined in the /etc/passwd
 file."
@@ -49,7 +49,7 @@ user home directory assigned in \"/etc/ passwd\":
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72015"
+  tag gid: "V-204467"
   tag rid: "SV-86639r2_rule"
   tag stig_id: "RHEL-07-020620"
   tag fix_id: "F-78367r2_fix"

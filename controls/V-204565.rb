@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-73165" do
+control "V-204565" do
   title "The Red Hat Enterprise Linux operating system must generate audit
 records for all account creations, modifications, disabling, and termination
 events that affect /etc/group."
@@ -40,7 +40,7 @@ creations, modifications, disabling, and termination events that affect
   "
   tag severity: nil
   tag gtitle: "SRG-OS-000004-GPOS-00004"
-  tag gid: "V-73165"
+  tag gid: "V-204565"
   tag rid: "SV-87817r3_rule"
   tag stig_id: "RHEL-07-030871"
   tag fix_id: "F-79611r3_fix"

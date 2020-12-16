@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-78995" do
+control "V-214937" do
   title "The Red Hat Enterprise Linux operating system must prevent a user from
 overriding the screensaver lock-enabled setting for the graphical user
 interface."
@@ -66,7 +66,7 @@ file should be created under the appropriate subdirectory.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000029-GPOS-00010"
-  tag gid: "V-78995"
+  tag gid: "V-214937"
   tag rid: "SV-93701r3_rule"
   tag stig_id: "RHEL-07-010062"
   tag fix_id: "F-85745r1_fix"

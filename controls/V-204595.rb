@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72253" do
+control "V-204595" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that the SSH daemon is configured to only use Message Authentication Codes
 (MACs) employing FIPS 140-2 approved cryptographic hash algorithms."
@@ -37,7 +37,7 @@ location if using a version of SSH that is provided by a third-party vendor):
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000250-GPOS-00093"
-  tag gid: "V-72253"
+  tag gid: "V-204595"
   tag rid: "SV-86877r3_rule"
   tag stig_id: "RHEL-07-040400"
   tag fix_id: "F-78607r2_fix"

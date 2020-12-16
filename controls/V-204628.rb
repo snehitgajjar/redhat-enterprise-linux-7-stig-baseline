@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72315" do
+control "V-204628" do
   title "The Red Hat Enterprise Linux operating system access control program
 must be configured to grant or deny system access to specific hosts and
 services."
@@ -71,7 +71,7 @@ specific hosts.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72315"
+  tag gid: "V-204628"
   tag rid: "SV-86939r3_rule"
   tag stig_id: "RHEL-07-040810"
   tag fix_id: "F-78669r3_fix"

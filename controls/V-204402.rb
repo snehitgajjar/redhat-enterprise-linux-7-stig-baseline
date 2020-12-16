@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71899" do
+control "V-204402" do
   title "The Red Hat Enterprise Linux operating system must initiate a session
 lock for the screensaver after a period of inactivity for graphical user
 interfaces."
@@ -56,7 +56,7 @@ effect.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000029-GPOS-00010"
-  tag gid: "V-71899"
+  tag gid: "V-204402"
   tag rid: "SV-86523r5_rule"
   tag stig_id: "RHEL-07-010100"
   tag fix_id: "F-78251r2_fix"

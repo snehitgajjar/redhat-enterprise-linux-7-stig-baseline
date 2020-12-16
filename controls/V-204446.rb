@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71975" do
+control "V-204446" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that designated personnel are notified if baseline configurations are changed
 in an unauthorized manner."
@@ -75,7 +75,7 @@ check run\" root@sysname.mil
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000363-GPOS-00150"
-  tag gid: "V-71975"
+  tag gid: "V-204446"
   tag rid: "SV-86599r2_rule"
   tag stig_id: "RHEL-07-020040"
   tag fix_id: "F-78327r3_fix"

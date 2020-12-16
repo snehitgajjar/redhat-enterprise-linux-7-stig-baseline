@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71969" do
+control "V-204443" do
   title "The Red Hat Enterprise Linux operating system must not have the ypserv
 package installed."
   desc  "Removing the \"ypserv\" package decreases the risk of the accidental
@@ -26,7 +26,7 @@ removing the \"ypserv\" package from the system with the following command:
   impact 0.7
   tag severity: nil
   tag gtitle: "SRG-OS-000095-GPOS-00049"
-  tag gid: "V-71969"
+  tag gid: "V-204443"
   tag rid: "SV-86593r2_rule"
   tag stig_id: "RHEL-07-020010"
   tag fix_id: "F-78321r1_fix"

@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72187" do
+control "V-204560" do
   title "The Red Hat Enterprise Linux operating system must audit all uses of
 the init_module syscall."
   desc  "Without generating audit records that are specific to the security and
@@ -45,7 +45,7 @@ successful/unsuccessful attempts to use the \"init_module\" syscall occur.
   tag severity: nil
   tag gtitle: "SRG-OS-000471-GPOS-00216"
   tag satisfies: ["SRG-OS-000471-GPOS-00216", "SRG-OS-000477-GPOS-00222"]
-  tag gid: "V-72187"
+  tag gid: "V-204560"
   tag rid: "SV-86811r5_rule"
   tag stig_id: "RHEL-07-030820"
   tag fix_id: "F-78541r7_fix"

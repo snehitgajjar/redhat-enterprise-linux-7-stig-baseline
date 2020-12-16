@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71925" do
+control "V-204418" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that passwords for new users are restricted to a 24 hours/1 day minimum
 lifetime."
@@ -34,7 +34,7 @@ the required value):
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000075-GPOS-00043"
-  tag gid: "V-71925"
+  tag gid: "V-204418"
   tag rid: "SV-86549r2_rule"
   tag stig_id: "RHEL-07-010230"
   tag fix_id: "F-78277r1_fix"

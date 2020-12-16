@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71901" do
+control "V-204404" do
   title "The Red Hat Enterprise Linux operating system must initiate a session
 lock for graphical user interfaces when the screensaver is activated."
   desc  "A session time-out lock is a temporary action taken when a user stops
@@ -56,7 +56,7 @@ effect.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000029-GPOS-00010"
-  tag gid: "V-71901"
+  tag gid: "V-204404"
   tag rid: "SV-86525r3_rule"
   tag stig_id: "RHEL-07-010110"
   tag fix_id: "F-78253r2_fix"

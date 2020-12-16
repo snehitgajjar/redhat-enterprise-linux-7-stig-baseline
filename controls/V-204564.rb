@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72197" do
+control "V-204564" do
   title "The Red Hat Enterprise Linux operating system must generate audit
 records for all account creations, modifications, disabling, and termination
 events that affect /etc/passwd."
@@ -45,7 +45,7 @@ creations, modifications, disabling, and termination events that affect
   tag satisfies: ["SRG-OS-000004-GPOS-00004", "SRG-OS-000239-GPOS-00089",
 "SRG-OS-000240-GPOS-00090", "SRG-OS-000241-GPOS-00091",
 "SRG-OS-000303-GPOS-00120", "SRG-OS-000476-GPOS-00221"]
-  tag gid: "V-72197"
+  tag gid: "V-204564"
   tag rid: "SV-86821r5_rule"
   tag stig_id: "RHEL-07-030870"
   tag fix_id: "F-78551r4_fix"

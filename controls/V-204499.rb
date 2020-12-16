@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72071" do
+control "V-204499" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that the file integrity tool is configured to verify extended attributes."
   desc  "Extended attributes in file systems are used to contain arbitrary data
@@ -50,7 +50,7 @@ uncommented file and directory selection lists.
   impact 0.3
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72071"
+  tag gid: "V-204499"
   tag rid: "SV-86695r3_rule"
   tag stig_id: "RHEL-07-021610"
   tag fix_id: "F-78423r2_fix"

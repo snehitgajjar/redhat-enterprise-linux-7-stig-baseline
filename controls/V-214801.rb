@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72213" do
+control "V-214801" do
   title "The Red Hat Enterprise Linux operating system must use a virus scan
 program."
   desc  "Virus scanning software can be used to protect a system from
@@ -26,7 +26,7 @@ finding.
   impact 0.7
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72213"
+  tag gid: "V-214801"
   tag rid: "SV-86837r3_rule"
   tag stig_id: "RHEL-07-032000"
   tag fix_id: "F-78567r2_fix"

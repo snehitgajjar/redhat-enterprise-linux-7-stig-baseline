@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72049" do
+control "V-204488" do
   title "The Red Hat Enterprise Linux operating system must set the umask value
 to 077 for all local interactive user accounts."
   desc  "The umask controls the default access mode assigned to newly created
@@ -41,7 +41,7 @@ environment variables.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72049"
+  tag gid: "V-204488"
   tag rid: "SV-86673r2_rule"
   tag stig_id: "RHEL-07-021040"
   tag fix_id: "F-78401r3_fix"

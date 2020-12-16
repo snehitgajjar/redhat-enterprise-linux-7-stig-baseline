@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71915" do
+control "V-204413" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that when passwords are changed the number of repeating consecutive characters
 must not be more than three characters."
@@ -39,7 +39,7 @@ the line to have the required value):
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000072-GPOS-00040"
-  tag gid: "V-71915"
+  tag gid: "V-204413"
   tag rid: "SV-86539r3_rule"
   tag stig_id: "RHEL-07-010180"
   tag fix_id: "F-78267r2_fix"

@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72175" do
+control "V-204554" do
   title "The Red Hat Enterprise Linux operating system must audit all uses of
 the postdrop command."
   desc  "Reconstruction of harmful events or forensic analysis is not possible
@@ -41,7 +41,7 @@ successful/unsuccessful attempts to use the \"postdrop\" command occur.
   tag severity: nil
   tag gtitle: "SRG-OS-000042-GPOS-00020"
   tag satisfies: ["SRG-OS-000042-GPOS-00020", "SRG-OS-000392-GPOS-00172"]
-  tag gid: "V-72175"
+  tag gid: "V-204554"
   tag rid: "SV-86799r4_rule"
   tag stig_id: "RHEL-07-030760"
   tag fix_id: "F-78529r5_fix"

@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72281" do
+control "V-204608" do
   title "For Red Hat Enterprise Linux operating systems using DNS resolution,
 at least two name servers must be configured."
   desc  "To provide availability for name resolution services, multiple
@@ -61,7 +61,7 @@ configuration must be documented with the Information System Security Officer
   impact 0.3
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72281"
+  tag gid: "V-204608"
   tag rid: "SV-86905r2_rule"
   tag stig_id: "RHEL-07-040600"
   tag fix_id: "F-78635r1_fix"

@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71953" do
+control "V-204432" do
   title "The Red Hat Enterprise Linux operating system must not allow an
 unattended or automatic logon to the system via a graphical user interface."
   desc  "Failure to restrict system access to authenticated users negatively
@@ -37,7 +37,7 @@ Applicable.
   impact 0.7
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00229"
-  tag gid: "V-71953"
+  tag gid: "V-204432"
   tag rid: "SV-86577r2_rule"
   tag stig_id: "RHEL-07-010440"
   tag fix_id: "F-78305r1_fix"

@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71963" do
+control "V-204439" do
   title "Red Hat Enterprise Linux operating systems prior to version 7.2 using
 Unified Extensible Firmware Interface (UEFI) must require authentication upon
 booting into single-user and maintenance modes."
@@ -57,7 +57,7 @@ commands:
   impact 0.7
   tag severity: nil
   tag gtitle: "SRG-OS-000080-GPOS-00048"
-  tag gid: "V-71963"
+  tag gid: "V-204439"
   tag rid: "SV-86587r4_rule"
   tag stig_id: "RHEL-07-010490"
   tag fix_id: "F-78315r3_fix"

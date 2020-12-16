@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72223" do
+control "V-204579" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that all network connections associated with a communication session are
 terminated at the end of the session or after 10 minutes of inactivity from the
@@ -55,7 +55,7 @@ period of inactivity.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000163-GPOS-00072"
-  tag gid: "V-72223"
+  tag gid: "V-204579"
   tag rid: "SV-86847r4_rule"
   tag stig_id: "RHEL-07-040160"
   tag fix_id: "F-78577r5_fix"

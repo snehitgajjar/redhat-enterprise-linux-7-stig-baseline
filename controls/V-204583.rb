@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72231" do
+control "V-204583" do
   title "The Red Hat Enterprise Linux operating system must implement
 cryptography to protect the integrity of Lightweight Directory Access Protocol
 (LDAP) communications."
@@ -61,7 +61,7 @@ integrity of LDAP remote access sessions.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000250-GPOS-00093"
-  tag gid: "V-72231"
+  tag gid: "V-204583"
   tag rid: "SV-86855r4_rule"
   tag stig_id: "RHEL-07-040200"
   tag fix_id: "F-78585r3_fix"

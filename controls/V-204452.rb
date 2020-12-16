@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71987" do
+control "V-204452" do
   title "The Red Hat Enterprise Linux operating system must remove all software
 components after updated versions have been installed."
   desc  "Previous versions of software components that are not removed from the
@@ -32,7 +32,7 @@ updated versions have been installed.
   impact 0.3
   tag severity: nil
   tag gtitle: "SRG-OS-000437-GPOS-00194"
-  tag gid: "V-71987"
+  tag gid: "V-204452"
   tag rid: "SV-86611r2_rule"
   tag stig_id: "RHEL-07-020200"
   tag fix_id: "F-78339r1_fix"

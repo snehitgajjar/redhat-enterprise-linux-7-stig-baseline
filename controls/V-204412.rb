@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71913" do
+control "V-204412" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that when passwords are changed a minimum of four character classes must be
 changed."
@@ -38,7 +38,7 @@ the line to have the required value):
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000072-GPOS-00040"
-  tag gid: "V-71913"
+  tag gid: "V-204412"
   tag rid: "SV-86537r2_rule"
   tag stig_id: "RHEL-07-010170"
   tag fix_id: "F-78265r1_fix"

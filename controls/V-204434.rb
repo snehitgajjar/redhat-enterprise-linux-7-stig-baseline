@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71957" do
+control "V-204434" do
   title "The Red Hat Enterprise Linux operating system must not allow users to
 override SSH environment variables."
   desc  "Failure to restrict system access to authenticated users negatively
@@ -32,7 +32,7 @@ variables to the SSH daemon.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00229"
-  tag gid: "V-71957"
+  tag gid: "V-204434"
   tag rid: "SV-86581r3_rule"
   tag stig_id: "RHEL-07-010460"
   tag fix_id: "F-78309r2_fix"

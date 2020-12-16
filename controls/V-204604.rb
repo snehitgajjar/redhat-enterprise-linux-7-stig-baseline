@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72273" do
+control "V-204604" do
   title "The Red Hat Enterprise Linux operating system must enable an
 application firewall, if available."
   desc  "Firewalls protect computers from network attacks by blocking or
@@ -58,7 +58,7 @@ following command:
   tag gtitle: "SRG-OS-000480-GPOS-00227"
   tag satisfies: ["SRG-OS-000480-GPOS-00227", "SRG-OS-000480-GPOS-00231",
 "SRG-OS-000480-GPOS-00232"]
-  tag gid: "V-72273"
+  tag gid: "V-204604"
   tag rid: "SV-86897r2_rule"
   tag stig_id: "RHEL-07-040520"
   tag fix_id: "F-78627r1_fix"

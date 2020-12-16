@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72163" do
+control "V-204549" do
   title "The Red Hat Enterprise Linux operating system must audit all uses of
 the sudoers file and all files in the /etc/sudoers.d/ directory."
   desc  "Reconstruction of harmful events or forensic analysis is not possible
@@ -51,7 +51,7 @@ in the \"/etc/sudoers.d/\" directory.
   tag satisfies: ["SRG-OS-000037-GPOS-00015", "SRG-OS-000042-GPOS-00020",
 "SRG-OS-000392-GPOS-00172", "SRG-OS-000462-GPOS-00206",
 "SRG-OS-000471-GPOS-00215"]
-  tag gid: "V-72163"
+  tag gid: "V-204549"
   tag rid: "SV-86787r5_rule"
   tag stig_id: "RHEL-07-030700"
   tag fix_id: "F-78517r6_fix"

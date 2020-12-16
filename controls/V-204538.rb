@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72139" do
+control "V-204538" do
   title "The Red Hat Enterprise Linux operating system must audit all uses of
 the chcon command."
   desc  "Without generating audit records that are specific to the security and
@@ -42,7 +42,7 @@ privileged-priv_change
   tag gtitle: "SRG-OS-000392-GPOS-00172"
   tag satisfies: ["SRG-OS-000392-GPOS-00172", "SRG-OS-000463-GPOS-00207",
 "SRG-OS-000465-GPOS-00209"]
-  tag gid: "V-72139"
+  tag gid: "V-204538"
   tag rid: "SV-86763r4_rule"
   tag stig_id: "RHEL-07-030580"
   tag fix_id: "F-78491r6_fix"

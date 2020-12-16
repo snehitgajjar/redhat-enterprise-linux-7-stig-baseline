@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72211" do
+control "V-204575" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that the rsyslog daemon does not accept log messages from other servers unless
 the server is being used for log aggregation."
@@ -39,7 +39,7 @@ document the system as being used for log aggregation."
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72211"
+  tag gid: "V-204575"
   tag rid: "SV-86835r2_rule"
   tag stig_id: "RHEL-07-031010"
   tag fix_id: "F-78565r2_fix"

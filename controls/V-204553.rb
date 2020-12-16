@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72173" do
+control "V-204553" do
   title "The Red Hat Enterprise Linux operating system must audit all uses of
 the umount command."
   desc  "Reconstruction of harmful events or forensic analysis is not possible
@@ -42,7 +42,7 @@ privileged-mount
   tag severity: nil
   tag gtitle: "SRG-OS-000042-GPOS-00020"
   tag satisfies: ["SRG-OS-000042-GPOS-00020", "SRG-OS-000392-GPOS-00172"]
-  tag gid: "V-72173"
+  tag gid: "V-204553"
   tag rid: "SV-86797r5_rule"
   tag stig_id: "RHEL-07-030750"
   tag fix_id: "F-78527r5_fix"

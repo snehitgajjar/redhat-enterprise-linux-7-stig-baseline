@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71977" do
+control "V-204447" do
   title "The Red Hat Enterprise Linux operating system must prevent the
 installation of software, patches, service packs, device drivers, or operating
 system components from a repository without verification they have been
@@ -51,7 +51,7 @@ repository prior to install by setting the following option in the
   impact 0.7
   tag severity: nil
   tag gtitle: "SRG-OS-000366-GPOS-00153"
-  tag gid: "V-71977"
+  tag gid: "V-204447"
   tag rid: "SV-86601r2_rule"
   tag stig_id: "RHEL-07-020050"
   tag fix_id: "F-78329r1_fix"

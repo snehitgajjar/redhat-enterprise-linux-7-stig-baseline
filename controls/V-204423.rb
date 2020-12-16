@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71935" do
+control "V-204423" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that passwords are a minimum of 15 characters in length."
   desc  "The shorter the password, the lower the number of possible
@@ -39,7 +39,7 @@ line to have the required value):
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000078-GPOS-00046"
-  tag gid: "V-71935"
+  tag gid: "V-204423"
   tag rid: "SV-86559r2_rule"
   tag stig_id: "RHEL-07-010280"
   tag fix_id: "F-78287r1_fix"

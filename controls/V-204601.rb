@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72265" do
+control "V-204601" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that the SSH daemon uses privilege separation."
   desc  "SSH daemon privilege separation causes the SSH process to drop root
@@ -32,7 +32,7 @@ vendor) and set the value to \"sandbox\" or \"yes\":
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72265"
+  tag gid: "V-204601"
   tag rid: "SV-86889r3_rule"
   tag stig_id: "RHEL-07-040460"
   tag fix_id: "F-78619r2_fix"

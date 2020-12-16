@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-81003" do
+control "V-204405" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that /etc/pam.d/passwd implements /etc/pam.d/system-auth when changing
 passwords."
@@ -28,7 +28,7 @@ the required value):
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000069-GPOS-00037"
-  tag gid: "V-81003"
+  tag gid: "V-204405"
   tag rid: "SV-95715r1_rule"
   tag stig_id: "RHEL-07-010118"
   tag fix_id: "F-87837r1_fix"

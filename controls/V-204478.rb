@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72037" do
+control "V-204478" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that local initialization files do not execute world-writable programs."
   if input('disable_slow_controls')
@@ -41,7 +41,7 @@ the following command:
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72037"
+  tag gid: "V-204478"
   tag rid: "SV-86661r2_rule"
   tag stig_id: "RHEL-07-020730"
   tag fix_id: "F-78389r2_fix"

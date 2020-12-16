@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72427" do
+control "V-204632" do
   title "The Red Hat Enterprise Linux operating system must implement
   multifactor authentication for access to privileged accounts via pluggable
   authentication modules (PAM)."
@@ -56,7 +56,7 @@ control "V-72427" do
   tag gtitle: "SRG-OS-000375-GPOS-00160"
   tag satisfies: ["SRG-OS-000375-GPOS-00160", "SRG-OS-000375-GPOS-00161",
 "SRG-OS-000375-GPOS-00162"]
-  tag gid: "V-72427"
+  tag gid: "V-204632"
   tag rid: "SV-87051r4_rule"
   tag stig_id: "RHEL-07-041002"
   tag fix_id: "F-78779r3_fix"

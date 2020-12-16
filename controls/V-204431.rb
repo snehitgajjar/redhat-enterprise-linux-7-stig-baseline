@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71951" do
+control "V-204431" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that the delay between logon prompts following a failed console logon attempt
 is at least four seconds."
@@ -44,7 +44,7 @@ between logon prompts following a failed console logon attempt.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00226"
-  tag gid: "V-71951"
+  tag gid: "V-204431"
   tag rid: "SV-86575r2_rule"
   tag stig_id: "RHEL-07-010430"
   tag fix_id: "F-78303r1_fix"

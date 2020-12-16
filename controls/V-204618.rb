@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72295" do
+control "V-204618" do
   title "Network interfaces configured on the Red Hat Enterprise Linux
 operating system must not be in promiscuous mode."
   desc  "Network interfaces in promiscuous mode allow for the capture of all
@@ -34,7 +34,7 @@ by the ISSO and documented.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72295"
+  tag gid: "V-204618"
   tag rid: "SV-86919r2_rule"
   tag stig_id: "RHEL-07-040670"
   tag fix_id: "F-78649r1_fix"

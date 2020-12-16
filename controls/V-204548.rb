@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72161" do
+control "V-204548" do
   title "The Red Hat Enterprise Linux operating system must audit all uses of
 the sudo command."
   desc  "Reconstruction of harmful events or forensic analysis is not possible
@@ -43,7 +43,7 @@ privileged-priv_change
   tag satisfies: ["SRG-OS-000037-GPOS-00015", "SRG-OS-000042-GPOS-00020",
 "SRG-OS-000392-GPOS-00172", "SRG-OS-000462-GPOS-00206",
 "SRG-OS-000471-GPOS-00215"]
-  tag gid: "V-72161"
+  tag gid: "V-204548"
   tag rid: "SV-86785r4_rule"
   tag stig_id: "RHEL-07-030690"
   tag fix_id: "F-78513r5_fix"

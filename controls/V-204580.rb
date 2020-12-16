@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72225" do
+control "V-204580" do
   title "The Red Hat Enterprise Linux operating system must display the
 Standard Mandatory DoD Notice and Consent Banner immediately prior to, or as
 part of, remote access logon prompts."
@@ -144,7 +144,7 @@ Agreement for details.\"
   tag gtitle: "SRG-OS-000023-GPOS-00006"
   tag satisfies: ["SRG-OS-000023-GPOS-00006", "SRG-OS-000024-GPOS-00007",
 "SRG-OS-000228-GPOS-00088"]
-  tag gid: "V-72225"
+  tag gid: "V-204580"
   tag rid: "SV-86849r4_rule"
   tag stig_id: "RHEL-07-040170"
   tag fix_id: "F-78579r4_fix"

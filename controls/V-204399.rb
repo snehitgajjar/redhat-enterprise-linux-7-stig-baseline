@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-73155" do
+control "V-204399" do
   title "The Red Hat Enterprise Linux operating system must prevent a user from
   overriding the screensaver lock-delay setting for the graphical user interface."
   desc  "A session time-out lock is a temporary action taken when a user stops
@@ -61,7 +61,7 @@ control "V-73155" do
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000029-GPOS-00010"
-  tag gid: "V-73155"
+  tag gid: "V-204399"
   tag rid: "SV-87807r4_rule"
   tag stig_id: "RHEL-07-010081"
   tag fix_id: "F-79601r2_fix"

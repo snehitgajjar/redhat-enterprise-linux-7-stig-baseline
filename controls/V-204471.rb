@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72023" do
+control "V-204471" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that all files and directories contained in local interactive user home
 directories are owned by the owner of the home directory."
@@ -38,7 +38,7 @@ directories, use the following command:
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72023"
+  tag gid: "V-204471"
   tag rid: "SV-86647r2_rule"
   tag stig_id: "RHEL-07-020660"
   tag fix_id: "F-78375r2_fix"

@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72217" do
+control "V-204576" do
   title "The Red Hat Enterprise Linux operating system must limit the number of
 concurrent sessions to 10 for all accounts and/or account types."
   desc  "Operating system management includes the ability to control the number
@@ -40,7 +40,7 @@ to \"10\" for all accounts and/or account types.
   impact 0.3
   tag severity: nil
   tag gtitle: "SRG-OS-000027-GPOS-00008"
-  tag gid: "V-72217"
+  tag gid: "V-204576"
   tag rid: "SV-86841r3_rule"
   tag stig_id: "RHEL-07-040000"
   tag fix_id: "F-78571r2_fix"

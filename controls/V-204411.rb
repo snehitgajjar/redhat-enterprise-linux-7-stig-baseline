@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71911" do
+control "V-204411" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that when passwords are changed a minimum of eight of the total number of
 characters must be changed."
@@ -39,7 +39,7 @@ line to have the required value):
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000072-GPOS-00040"
-  tag gid: "V-71911"
+  tag gid: "V-204411"
   tag rid: "SV-86535r2_rule"
   tag stig_id: "RHEL-07-010160"
   tag fix_id: "F-78263r1_fix"

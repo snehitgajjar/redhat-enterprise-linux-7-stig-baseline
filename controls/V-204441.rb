@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71965" do
+control "V-204441" do
   title "The Red Hat Enterprise Linux operating system must uniquely identify
 and must authenticate organizational users (or processes acting on behalf of
 organizational users) using multifactor authentication."
@@ -67,7 +67,7 @@ module if required.
 "SRG-OS-000107-GPOS-00054", "SRG-OS-000109-GPOS-00056",
 "SRG-OS-000108-GPOS-00055", "SRG-OS-000108-GPOS-00057",
 "SRG-OS-000108-GPOS-00058"]
-  tag gid: "V-71965"
+  tag gid: "V-204441"
   tag rid: "SV-86589r2_rule"
   tag stig_id: "RHEL-07-010500"
   tag fix_id: "F-78317r3_fix"

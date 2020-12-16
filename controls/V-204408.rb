@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71905" do
+control "V-204408" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that when passwords are changed or new passwords are established, the new
 password must contain at least one lower-case character."
@@ -39,7 +39,7 @@ creating or changing a password.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000070-GPOS-00038"
-  tag gid: "V-71905"
+  tag gid: "V-204408"
   tag rid: "SV-86529r5_rule"
   tag stig_id: "RHEL-07-010130"
   tag fix_id: "F-78257r6_fix"

@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71923" do
+control "V-204417" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that user and group account administration utilities are configured to store
 only encrypted representations of passwords."
@@ -36,7 +36,7 @@ section:
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000073-GPOS-00041"
-  tag gid: "V-71923"
+  tag gid: "V-204417"
   tag rid: "SV-86547r3_rule"
   tag stig_id: "RHEL-07-010220"
   tag fix_id: "F-78275r1_fix"

@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72251" do
+control "V-204594" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that the SSH daemon is configured to only use the SSHv2 protocol."
   desc  "SSHv1 is an insecure implementation of the SSH protocol and has many
@@ -42,7 +42,7 @@ vendor). The \"Protocol\" line must be as follows:
   tag severity: nil
   tag gtitle: "SRG-OS-000074-GPOS-00042"
   tag satisfies: ["SRG-OS-000074-GPOS-00042", "SRG-OS-000480-GPOS-00227"]
-  tag gid: "V-72251"
+  tag gid: "V-204594"
   tag rid: "SV-86875r4_rule"
   tag stig_id: "RHEL-07-040390"
   tag fix_id: "F-78605r2_fix"

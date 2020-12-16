@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72003" do
+control "V-204461" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that all Group Identifiers (GIDs) referenced in the /etc/passwd file are
 defined in the /etc/group file."
@@ -26,7 +26,7 @@ referenced in the \"/etc/passwd\" file to a group that exists in
   impact 0.3
   tag severity: nil
   tag gtitle: "SRG-OS-000104-GPOS-00051"
-  tag gid: "V-72003"
+  tag gid: "V-204461"
   tag rid: "SV-86627r2_rule"
   tag stig_id: "RHEL-07-020300"
   tag fix_id: "F-78355r1_fix"

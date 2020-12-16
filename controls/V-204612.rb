@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72285" do
+control "V-204612" do
   title "The Red Hat Enterprise Linux operating system must not forward
 Internet Protocol version 4 (IPv4) source-routed packets by default."
   desc  "Source-routed packets allow the source of the packet to suggest that
@@ -41,7 +41,7 @@ directory (or modify the line to have the required value):
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72285"
+  tag gid: "V-204612"
   tag rid: "SV-86909r2_rule"
   tag stig_id: "RHEL-07-040620"
   tag fix_id: "F-78639r2_fix"

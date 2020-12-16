@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72047" do
+control "V-204487" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that all world-writable directories are group-owned by root, sys, bin, or an
 application group."
@@ -40,7 +40,7 @@ following command:
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72047"
+  tag gid: "V-204487"
   tag rid: "SV-86671r4_rule"
   tag stig_id: "RHEL-07-021030"
   tag fix_id: "F-78399r1_fix"

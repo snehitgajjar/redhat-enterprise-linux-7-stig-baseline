@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72033" do
+control "V-204476" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that all local initialization files have mode 0740 or less permissive."
   desc  "Local initialization files are used to configure the user's shell
@@ -36,7 +36,7 @@ of \"/home/smithj\".
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72033"
+  tag gid: "V-204476"
   tag rid: "SV-86657r3_rule"
   tag stig_id: "RHEL-07-020710"
   tag fix_id: "F-78385r4_fix"

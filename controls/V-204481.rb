@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72043" do
+control "V-204481" do
   title "The Red Hat Enterprise Linux operating system must prevent files with
 the setuid and setgid bit set from being executed on file systems that are used
 with removable media."
@@ -29,7 +29,7 @@ file systems that are associated with removable media."
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72043"
+  tag gid: "V-204481"
   tag rid: "SV-86667r2_rule"
   tag stig_id: "RHEL-07-021010"
   tag fix_id: "F-78395r1_fix"

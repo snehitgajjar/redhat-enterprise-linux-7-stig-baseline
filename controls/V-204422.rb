@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71933" do
+control "V-204422" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that passwords are prohibited from reuse for a minimum of five generations."
   desc  "Password complexity, or strength, is a measure of the effectiveness of
@@ -40,7 +40,7 @@ the configurations listed in this requirement.
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000077-GPOS-00045"
-  tag gid: "V-71933"
+  tag gid: "V-204422"
   tag rid: "SV-86557r3_rule"
   tag stig_id: "RHEL-07-010270"
   tag fix_id: "F-78285r3_fix"

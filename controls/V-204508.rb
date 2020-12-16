@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-81021" do
+control "V-204508" do
   title "The Red Hat Enterprise Linux operating system must label all
 off-loaded audit logs before sending them to the central log server."
   desc  "Information stored in one location is vulnerable to accidental or
@@ -39,7 +39,7 @@ or the line is commented out, this is a finding.
   tag severity: nil
   tag gtitle: "SRG-OS-000342-GPOS-00133"
   tag satisfies: ["SRG-OS-000342-GPOS-00133", "SRG-OS-000479-GPOS-00224"]
-  tag gid: "V-81021"
+  tag gid: "V-204508"
   tag rid: "SV-95733r1_rule"
   tag stig_id: "RHEL-07-030211"
   tag fix_id: "F-87855r2_fix"

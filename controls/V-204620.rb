@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72299" do
+control "V-204620" do
   title "The Red Hat Enterprise Linux operating system must not have a File
 Transfer Protocol (FTP) server package installed unless needed."
   desc  "The FTP service provides an unencrypted remote access that does not
@@ -30,7 +30,7 @@ or remove it from the system with the following command:
   impact 0.7
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72299"
+  tag gid: "V-204620"
   tag rid: "SV-86923r3_rule"
   tag stig_id: "RHEL-07-040690"
   tag fix_id: "F-78653r3_fix"

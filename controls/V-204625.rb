@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72309" do
+control "V-204625" do
   title "The Red Hat Enterprise Linux operating system must not be performing
 packet forwarding unless the system is a router."
   desc  "Routing protocol daemons are typically used on routers to exchange
@@ -42,7 +42,7 @@ directory (or modify the line to have the required value):
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72309"
+  tag gid: "V-204625"
   tag rid: "SV-86933r2_rule"
   tag stig_id: "RHEL-07-040740"
   tag fix_id: "F-78663r2_fix"

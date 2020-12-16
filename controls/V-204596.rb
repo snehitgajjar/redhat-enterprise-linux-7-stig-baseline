@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72255" do
+control "V-204596" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that the SSH public host key files have mode 0644 or less permissive."
   desc  "If a public host key file is modified by an unauthorized user, the SSH
@@ -33,7 +33,7 @@ with the following command:
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72255"
+  tag gid: "V-204596"
   tag rid: "SV-86879r2_rule"
   tag stig_id: "RHEL-07-040410"
   tag fix_id: "F-78609r1_fix"

@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-71999" do
+control "V-204459" do
     title "The Red Hat Enterprise Linux operating system security patches and
         updates must be installed and up to date."
     desc "Timely patching is critical for maintaining the operational
@@ -51,7 +51,7 @@ available from Red Hat within 30 days or sooner as local policy dictates."
   impact 0.5
   tag severity: 'medium'
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-71999"
+  tag gid: "V-204459"
   tag rid: "SV-86623r4_rule"
   tag stig_id: "RHEL-07-020260"
   tag fix_id: "F-78351r1_fix"

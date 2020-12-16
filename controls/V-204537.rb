@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72137" do
+control "V-204537" do
   title "The Red Hat Enterprise Linux operating system must audit all uses of
 the setsebool command."
   desc  "Without generating audit records that are specific to the security and
@@ -42,7 +42,7 @@ auid!=4294967295 -k privileged-priv_change
   tag gtitle: "SRG-OS-000392-GPOS-00172"
   tag satisfies: ["SRG-OS-000392-GPOS-00172", "SRG-OS-000463-GPOS-00207",
 "SRG-OS-000465-GPOS-00209"]
-  tag gid: "V-72137"
+  tag gid: "V-204537"
   tag rid: "SV-86761r4_rule"
   tag stig_id: "RHEL-07-030570"
   tag fix_id: "F-78489r6_fix"

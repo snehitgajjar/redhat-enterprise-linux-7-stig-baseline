@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72013" do
+control "V-204466" do
   title "The Red Hat Enterprise Linux operating system must be configured so
 that all local interactive user accounts, upon creation, are assigned a home
 directory."
@@ -29,7 +29,7 @@ interactive users by setting the \"CREATE_HOME\" parameter in
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72013"
+  tag gid: "V-204466"
   tag rid: "SV-86637r2_rule"
   tag stig_id: "RHEL-07-020610"
   tag fix_id: "F-78365r1_fix"

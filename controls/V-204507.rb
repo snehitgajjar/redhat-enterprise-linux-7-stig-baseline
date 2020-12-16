@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-81019" do
+control "V-204507" do
   title "The Red Hat Enterprise Linux operating system must take appropriate
 action when the audisp-remote buffer is full."
   desc  "Information stored in one location is vulnerable to accidental or
@@ -39,7 +39,7 @@ the internal queue is full:
   tag severity: nil
   tag gtitle: "SRG-OS-000342-GPOS-00133"
   tag satisfies: ["SRG-OS-000342-GPOS-00133", "SRG-OS-000479-GPOS-00224"]
-  tag gid: "V-81019"
+  tag gid: "V-204507"
   tag rid: "SV-95731r1_rule"
   tag stig_id: "RHEL-07-030210"
   tag fix_id: "F-87853r3_fix"

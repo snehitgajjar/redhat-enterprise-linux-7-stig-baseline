@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72063" do
+control "V-204495" do
   title "The Red Hat Enterprise Linux operating system must use a separate file
 system for the system audit data path."
   desc  "The use of separate file systems for different paths can protect the
@@ -25,7 +25,7 @@ system, this is a finding.
   impact 0.3
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72063"
+  tag gid: "V-204495"
   tag rid: "SV-86687r6_rule"
   tag stig_id: "RHEL-07-021330"
   tag fix_id: "F-78415r1_fix"

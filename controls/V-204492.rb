@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-control "V-72057" do
+control "V-204492" do
   title "The Red Hat Enterprise Linux operating system must disable Kernel core
 dumps unless needed."
   desc  "Kernel core dumps may contain the full contents of system memory at
@@ -36,7 +36,7 @@ the following command:
   impact 0.5
   tag severity: nil
   tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-72057"
+  tag gid: "V-204492"
   tag rid: "SV-86681r2_rule"
   tag stig_id: "RHEL-07-021300"
   tag fix_id: "F-78409r1_fix"
