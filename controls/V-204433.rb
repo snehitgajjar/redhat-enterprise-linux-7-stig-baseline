@@ -1,9 +1,6 @@
-# -*- encoding : utf-8 -*-
 control "V-204433" do
-  title "The Red Hat Enterprise Linux operating system must not allow an
-unrestricted logon to the system."
-  desc  "Failure to restrict system access to authenticated users negatively
-impacts operating system security."
+  title 'The Red Hat Enterprise Linux operating system must not allow an unrestricted logon to the system.'
+  desc 'Failure to restrict system access to authenticated users negatively impacts operating system security.'
   desc  "rationale", ""
   desc  "check", "
     Verify the operating system does not allow an unrestricted logon to the
@@ -21,7 +18,7 @@ Applicable.
     If the value of \"TimedLoginEnable\" is not set to \"false\", this is a
 finding.
   "
-  desc  "fix", "
+  desc "fix", "
     Configure the operating system to not allow an unrestricted account to log
 on to the system via a graphical user interface.
 
@@ -34,20 +31,20 @@ section of the \"/etc/gdm/custom.conf\" file to \"false\":
     [daemon]
     TimedLoginEnable=false
   "
-  tag severity: nil
-  tag gtitle: "SRG-OS-000480-GPOS-00229"
-  tag gid: "V-204433"
-  tag rid: "SV-86579r3_rule"
-  tag stig_id: "RHEL-07-010450"
-  tag fix_id: "F-78307r2_fix"
-  tag cci: ["CCI-000366"]
+  tag 'severity': 'high'
+  tag 'gtitle': 'SRG-OS-000480-GPOS-00229'
+  tag 'gid': 'V-204433'
+  tag 'rid': 'SV-204433r505924_rule'
+  tag 'stig_id': 'RHEL-07-010450'
+  tag 'fix_id': 'F-4557r88492_fix'
+  tag 'cci': ["CCI-000366"]
   tag nist: ["CM-6 b"]
 
   custom_conf = '/etc/gdm/custom.conf'
 
   if package('gdm').installed?
     impact 0.7
-    if ((f = file(custom_conf)).exist?)
+    if (f = file(custom_conf)).exist?
       describe ini(custom_conf) do
         its('daemon.TimedLoginEnable') { cmp false }
       end
@@ -63,4 +60,3 @@ section of the \"/etc/gdm/custom.conf\" file to \"false\":
     end
   end
 end
-

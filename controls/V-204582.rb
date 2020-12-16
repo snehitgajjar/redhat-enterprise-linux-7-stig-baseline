@@ -1,16 +1,10 @@
-# -*- encoding : utf-8 -*-
 control "V-204582" do
-  title "The Red Hat Enterprise Linux operating system must implement
-cryptography to protect the integrity of Lightweight Directory Access Protocol
-(LDAP) communications."
-  desc  "Without cryptographic integrity protections, information can be
-altered by unauthorized users without detection.
-
-    Cryptographic mechanisms used for protecting the integrity of information
-include, for example, signed hash functions using asymmetric cryptography
-enabling distribution of the public key to verify the hash information while
-maintaining the confidentiality of the key used to generate the hash.
-  "
+  title 'The Red Hat Enterprise Linux operating system must implement cryptography to protect the integrity of
+    Lightweight Directory Access Protocol (LDAP) communications.'
+  desc 'Without cryptographic integrity protections, information can be altered by unauthorized users without detection.
+    Cryptographic mechanisms used for protecting the integrity of information include, for example, signed hash functions
+    using asymmetric cryptography enabling distribution of the public key to verify the hash information while maintaining
+    the confidentiality of the key used to generate the hash.'
   desc  "rationale", ""
   desc  "check", "
     If LDAP is not being utilized, this requirement is Not Applicable.
@@ -48,7 +42,7 @@ exist, this is a finding.
     If the \"ldap_tls_reqcert\" setting is not set to \"demand\" or \"hard\",
 this is a finding.
   "
-  desc  "fix", "
+  desc "fix", "
     Configure the operating system to implement cryptography to protect the
 integrity of LDAP remote access sessions.
 
@@ -57,13 +51,13 @@ integrity of LDAP remote access sessions.
     ldap_tls_reqcert = demand
   "
   impact 0.5
-  tag severity: nil
-  tag gtitle: "SRG-OS-000250-GPOS-00093"
-  tag gid: "V-204582"
-  tag rid: "SV-86853r4_rule"
-  tag stig_id: "RHEL-07-040190"
-  tag fix_id: "F-78583r4_fix"
-  tag cci: ["CCI-001453"]
+  tag 'severity': 'medium'
+  tag 'gtitle': 'SRG-OS-000250-GPOS-00093'
+  tag 'gid': 'V-204582'
+  tag 'rid': 'SV-204582r505924_rule'
+  tag 'stig_id': 'RHEL-07-040190'
+  tag 'fix_id': 'F-4706r88939_fix'
+  tag 'cci': ["CCI-001453"]
   tag nist: ["AC-17 (2)"]
 
   sssd_id_ldap_enabled = (package('sssd').installed? and
@@ -72,9 +66,9 @@ integrity of LDAP remote access sessions.
   sssd_ldap_enabled = (package('sssd').installed? and
     !command('grep "^\s*[a-z]*_provider\s*=\s*ldap" /etc/sssd/sssd.conf').stdout.strip.empty?)
 
-  pam_ldap_enabled = (!command('grep "^[^#]*pam_ldap\.so" /etc/pam.d/*').stdout.strip.empty?)
+  pam_ldap_enabled = !command('grep "^[^#]*pam_ldap\.so" /etc/pam.d/*').stdout.strip.empty?
 
-  if !(sssd_id_ldap_enabled or sssd_ldap_enabled or pam_ldap_enabled)
+  unless sssd_id_ldap_enabled || sssd_ldap_enabled || pam_ldap_enabled
     impact 0.0
     describe "LDAP not enabled" do
       skip "LDAP not enabled using any known mechanisms, this control is Not Applicable."
@@ -96,32 +90,35 @@ integrity of LDAP remote access sessions.
 
   if sssd_ldap_enabled
     ldap_tls_cacertdir = command('grep -i ldap_tls_cacertdir /etc/sssd/sssd.conf').
-      stdout.strip.scan(%r{^ldap_tls_cacertdir\s*=\s*(.*)}).last
+                         stdout.strip.scan(%r{^ldap_tls_cacertdir\s*=\s*(.*)}).last
 
     describe "ldap_tls_cacertdir" do
       subject { ldap_tls_cacertdir }
       it { should_not eq nil }
     end
 
-    describe file(ldap_tls_cacertdir.last) do
-      it { should exist }
-      it { should be_directory }
-    end if !ldap_tls_cacertdir.nil?
+    unless ldap_tls_cacertdir.nil?
+      describe file(ldap_tls_cacertdir.last) do
+        it { should exist }
+        it { should be_directory }
+      end
+    end
   end
 
   if pam_ldap_enabled
     tls_cacertdir = command('grep -i tls_cacertdir /etc/pam_ldap.conf').
-      stdout.strip.scan(%r{^tls_cacertdir\s+(.*)}).last
+                    stdout.strip.scan(%r{^tls_cacertdir\s+(.*)}).last
 
     describe "tls_cacertdir" do
       subject { tls_cacertdir }
       it { should_not eq nil }
     end
 
-    describe file(tls_cacertdir.last) do
-      it { should exist }
-      it { should be_directory }
-    end if !tls_cacertdir.nil?
+    unless tls_cacertdir.nil?
+      describe file(tls_cacertdir.last) do
+        it { should exist }
+        it { should be_directory }
+      end
+    end
   end
 end
-

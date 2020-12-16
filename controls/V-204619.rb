@@ -1,10 +1,7 @@
-# -*- encoding : utf-8 -*-
 control "V-204619" do
-  title "The Red Hat Enterprise Linux operating system must be configured to
-prevent unrestricted mail relaying."
-  desc  "If unrestricted mail relaying is permitted, unauthorized senders could
-use this host as a mail relay for the purpose of sending spam or other
-unauthorized activity."
+  title 'The Red Hat Enterprise Linux operating system must be configured to prevent unrestricted mail relaying.'
+  desc 'If unrestricted mail relaying is permitted, unauthorized senders could use this host as a mail relay for the
+    purpose of sending spam or other unauthorized activity.'
   desc  "rationale", ""
   desc  "check", "
     Verify the system is configured to prevent unrestricted mail relaying.
@@ -32,33 +29,36 @@ restrict client connections to the local network with the following command:
     # postconf -e 'smtpd_client_restrictions = permit_mynetworks,reject'
   "
   impact 0.5
-  tag severity: nil
-  tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-204619"
-  tag rid: "SV-86921r3_rule"
-  tag stig_id: "RHEL-07-040680"
-  tag fix_id: "F-78651r2_fix"
-  tag cci: ["CCI-000366"]
+  tag 'severity': 'medium'
+  tag 'gtitle': 'SRG-OS-000480-GPOS-00227'
+  tag 'gid': 'V-204619'
+  tag 'rid': 'SV-204619r505924_rule'
+  tag 'stig_id': 'RHEL-07-040680'
+  tag 'fix_id': 'F-4743r89050_fix'
+  tag 'cci': ["CCI-000366"]
   tag nist: ["CM-6 b"]
 
   # Only permit_mynetworks and reject should be allowed
-  describe.one do
-    describe command('postconf -n smtpd_client_restrictions') do
-      its('stdout.strip') { should match %r{^smtpd_client_restrictions\s+=\s+permit_mynetworks,\s*reject\s*$} }
+  if package('postfix').installed?
+    describe.one do
+      describe command('postconf -n smtpd_client_restrictions') do
+        its('stdout.strip') { should match %r{^smtpd_client_restrictions\s+=\s+permit_mynetworks,\s*reject\s*$} }
+      end
+      describe command('postconf -n smtpd_client_restrictions') do
+        its('stdout.strip') { should match %r{^smtpd_client_restrictions\s+=\s+permit_mynetworks\s*$} }
+      end
+      describe command('postconf -n smtpd_client_restrictions') do
+        its('stdout.strip') { should match %r{^smtpd_client_restrictions\s+=\s+reject\s*$} }
+      end
+      describe command('postconf -n smtpd_client_restrictions') do
+        its('stdout.strip') { should match %r{^smtpd_client_restrictions\s+=\s+reject,\s*permit_mynetworks\s*$} }
+      end
     end
-    describe command('postconf -n smtpd_client_restrictions') do
-      its('stdout.strip') { should match %r{^smtpd_client_restrictions\s+=\s+permit_mynetworks\s*$} }
-    end
-    describe command('postconf -n smtpd_client_restrictions') do
-      its('stdout.strip') { should match %r{^smtpd_client_restrictions\s+=\s+reject\s*$} }
-    end
-    describe command('postconf -n smtpd_client_restrictions') do
-      its('stdout.strip') { should match %r{^smtpd_client_restrictions\s+=\s+reject,\s*permit_mynetworks\s*$} }
-    end
-  end if package('postfix').installed?
+  end
 
-  describe "The `postfix` package is not installed" do
-    skip "The `postfix` package is not installed, this control is Not Applicable"
-  end if !package('postfix').installed?
+  unless package('postfix').installed?
+    describe "The `postfix` package is not installed" do
+      skip "The `postfix` package is not installed, this control is Not Applicable"
+    end
+  end
 end
-

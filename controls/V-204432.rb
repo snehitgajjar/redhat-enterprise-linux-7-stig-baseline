@@ -1,9 +1,7 @@
-# -*- encoding : utf-8 -*-
 control "V-204432" do
-  title "The Red Hat Enterprise Linux operating system must not allow an
-unattended or automatic logon to the system via a graphical user interface."
-  desc  "Failure to restrict system access to authenticated users negatively
-impacts operating system security."
+  title 'The Red Hat Enterprise Linux operating system must not allow an unattended or automatic logon to the system via
+    a graphical user interface.'
+  desc 'Failure to restrict system access to authenticated users negatively impacts operating system security.'
   desc  "rationale", ""
   desc  "check", "
     Verify the operating system does not allow an unattended or automatic logon
@@ -21,7 +19,7 @@ Applicable.
     If the value of \"AutomaticLoginEnable\" is not set to \"false\", this is a
 finding.
   "
-  desc  "fix", "
+  desc "fix", "
     Configure the operating system to not allow an unattended or automatic
 logon to the system via a graphical user interface.
 
@@ -35,19 +33,19 @@ Applicable.
     AutomaticLoginEnable=false
   "
   impact 0.7
-  tag severity: nil
-  tag gtitle: "SRG-OS-000480-GPOS-00229"
-  tag gid: "V-204432"
-  tag rid: "SV-86577r2_rule"
-  tag stig_id: "RHEL-07-010440"
-  tag fix_id: "F-78305r1_fix"
-  tag cci: ["CCI-000366"]
+  tag 'severity': 'high'
+  tag 'gtitle': 'SRG-OS-000480-GPOS-00229'
+  tag 'gid': 'V-204432'
+  tag 'rid': 'SV-204432r505924_rule'
+  tag 'stig_id': 'RHEL-07-010440'
+  tag 'fix_id': 'F-4556r88489_fix'
+  tag 'cci': ["CCI-000366"]
   tag nist: ["CM-6 b"]
 
   custom_conf = '/etc/gdm/custom.conf'
 
   if package('gdm').installed?
-    if ((f = file(custom_conf)).exist?)
+    if (f = file(custom_conf)).exist?
       describe ini(custom_conf) do
         its('daemon.AutomaticLoginEnable') { cmp false }
       end
@@ -63,4 +61,3 @@ Applicable.
     end
   end
 end
-

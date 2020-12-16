@@ -1,13 +1,12 @@
-# -*- encoding : utf-8 -*-
 control "V-204467" do
-  title "The Red Hat Enterprise Linux operating system must be configured so
-that all local interactive user home directories are defined in the /etc/passwd
-file."
-  desc  "If a local interactive user has a home directory defined that does not
-exist, the user may be given access to the / directory as the current working
-directory upon logon. This could create a Denial of Service because the user
-would not be able to access their logon configuration files, and it may give
-them visibility to system files they normally would not be able to access."
+  title 'The Red Hat Enterprise Linux operating system must be configured so that all local interactive users have a
+    home directory assigned and defined in the /etc/passwd file.'
+  desc 'If local interactive users are not assigned a valid home directory, there is no place for the storage and
+    control of files they should own.
+    In addition, if a local interactive user has a home directory defined that does not exist, the user may be given access
+    to the / directory as the current working directory upon logon. This could create a Denial of Service because the user
+    would not be able to access their logon configuration files, and it may give them visibility to system files they
+    normally would not be able to access.'
   desc  "rationale", ""
   desc  "check", "
     Verify the assigned home directory of all local interactive users on the
@@ -32,7 +31,7 @@ containing system logon information.
     If any home directories referenced in \"/etc/passwd\" are returned as not
 defined, this is a finding.
   "
-  desc  "fix", "
+  desc "fix", "
     Create home directories to all local interactive users that currently do
 not have a home directory assigned. Use the following commands to create the
 user home directory assigned in \"/etc/ passwd\":
@@ -47,13 +46,13 @@ user home directory assigned in \"/etc/ passwd\":
     # chmod 0750 /home/smithj
   "
   impact 0.5
-  tag severity: nil
-  tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-204467"
-  tag rid: "SV-86639r2_rule"
-  tag stig_id: "RHEL-07-020620"
-  tag fix_id: "F-78367r2_fix"
-  tag cci: ["CCI-000366"]
+  tag 'severity': 'medium'
+  tag 'gtitle': 'SRG-OS-000480-GPOS-00227'
+  tag 'gid': 'V-204467'
+  tag 'rid': 'SV-204467r505924_rule'
+  tag 'stig_id': 'RHEL-07-020620'
+  tag 'fix_id': 'F-4591r462550_fix'
+  tag 'cci': ["CCI-000366"]
   tag nist: ["CM-6 b"]
 
   exempt_home_users = input('exempt_home_users')
@@ -64,11 +63,11 @@ user home directory assigned in \"/etc/ passwd\":
   uid_min = login_defs.read_params['UID_MIN'].to_i
   uid_min = 1000 if uid_min.nil?
 
-  users.where{ !shell.match(ignore_shells) && (uid >= uid_min || uid == 0)}.entries.each do |user_info|
-    next if exempt_home_users.include?("#{user_info.username}")
+  users.where { !shell.match(ignore_shells) && (uid >= uid_min || uid == 0)}.entries.each do |user_info|
+    next if exempt_home_users.include?(user_info.username.to_s)
+
     describe directory(user_info.home) do
       it { should exist }
     end
   end
 end
-

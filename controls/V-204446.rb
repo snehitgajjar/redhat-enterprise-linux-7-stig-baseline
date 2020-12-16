@@ -1,20 +1,13 @@
-# -*- encoding : utf-8 -*-
 control "V-204446" do
-  title "The Red Hat Enterprise Linux operating system must be configured so
-that designated personnel are notified if baseline configurations are changed
-in an unauthorized manner."
-  desc  "Unauthorized changes to the baseline configuration could make the
-system vulnerable to various attacks or allow unauthorized access to the
-operating system. Changes to operating system configurations can have
-unintended side effects, some of which may be relevant to security.
-
-    Detecting such changes and providing an automated response can help avoid
-unintended, negative consequences that could ultimately affect the security
-state of the operating system. The operating system's Information Management
-Officer (IMO)/Information System Security Officer (ISSO) and System
-Administrators (SAs) must be notified via email and/or monitoring system trap
-when there is an unauthorized modification of a configuration item.
-  "
+  title 'The Red Hat Enterprise Linux operating system must be configured so that designated personnel are notified if
+    baseline configurations are changed in an unauthorized manner.'
+  desc "Unauthorized changes to the baseline configuration could make the system vulnerable to various attacks or allow
+    unauthorized access to the operating system. Changes to operating system configurations can have unintended side
+    effects, some of which may be relevant to security.
+    Detecting such changes and providing an automated response can help avoid unintended, negative consequences that could
+    ultimately affect the security state of the operating system. The operating system's Information Management Officer
+    (IMO)/Information System Security Officer (ISSO) and System Administrators (SAs) must be notified via email and/or
+    monitoring system trap when there is an unauthorized modification of a configuration item."
   desc  "rationale", ""
   desc  "check", "
     Verify the operating system notifies designated personnel if baseline
@@ -59,7 +52,7 @@ check run\" root@sysname.mil
     If the file integrity application does not notify designated personnel of
 changes, this is a finding.
   "
-  desc  "fix", "
+  desc "fix", "
     Configure the operating system to notify designated personnel if baseline
 configurations are changed in an unauthorized manner. The AIDE tool can be
 configured to email designated personnel with the use of the cron system.
@@ -73,13 +66,13 @@ and to send email at the completion of the analysis.
 check run\" root@sysname.mil
   "
   impact 0.5
-  tag severity: nil
-  tag gtitle: "SRG-OS-000363-GPOS-00150"
-  tag gid: "V-204446"
-  tag rid: "SV-86599r2_rule"
-  tag stig_id: "RHEL-07-020040"
-  tag fix_id: "F-78327r3_fix"
-  tag cci: ["CCI-001744"]
+  tag 'severity': 'medium'
+  tag 'gtitle': 'SRG-OS-000363-GPOS-00150'
+  tag 'gid': 'V-204446'
+  tag 'rid': 'SV-204446r505924_rule'
+  tag 'stig_id': 'RHEL-07-020040'
+  tag 'fix_id': 'F-4570r499379_fix'
+  tag 'cci': ["CCI-001744"]
   tag nist: ["CM-3 (5)"]
 
   file_integrity_tool = input('file_integrity_tool')
@@ -104,4 +97,3 @@ check run\" root@sysname.mil
     end
   end
 end
-

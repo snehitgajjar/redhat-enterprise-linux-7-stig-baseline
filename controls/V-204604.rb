@@ -1,13 +1,7 @@
-# -*- encoding : utf-8 -*-
 control "V-204604" do
-  title "The Red Hat Enterprise Linux operating system must enable an
-application firewall, if available."
-  desc  "Firewalls protect computers from network attacks by blocking or
-limiting access to open network ports. Application firewalls limit which
-applications are allowed to communicate over the network.
-
-
-  "
+  title 'The Red Hat Enterprise Linux operating system must enable an application firewall, if available.'
+  desc 'Firewalls protect computers from network attacks by blocking or limiting access to open network ports.
+    Application firewalls limit which applications are allowed to communicate over the network.'
   desc  "rationale", ""
   desc  "check", "
     Verify the operating system enabled an application firewall.
@@ -41,7 +35,7 @@ is a finding.
 
     If \"firewalld\" does not show a state of \"running\", this is a finding.
   "
-  desc  "fix", "
+  desc "fix", "
     Ensure the operating system's application firewall is enabled.
 
     Install the \"firewalld\" package, if it is not on the system, with the
@@ -54,15 +48,14 @@ following command:
     # systemctl start firewalld
   "
   impact 0.5
-  tag severity: nil
-  tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag satisfies: ["SRG-OS-000480-GPOS-00227", "SRG-OS-000480-GPOS-00231",
-"SRG-OS-000480-GPOS-00232"]
-  tag gid: "V-204604"
-  tag rid: "SV-86897r2_rule"
-  tag stig_id: "RHEL-07-040520"
-  tag fix_id: "F-78627r1_fix"
-  tag cci: ["CCI-000366"]
+  tag 'severity': 'medium'
+  tag 'gtitle': 'SRG-OS-000480-GPOS-00227'
+  tag 'satisfies': %w(SRG-OS-000480-GPOS-00227 SRG-OS-000480-GPOS-00231 SRG-OS-000480-GPOS-00232)
+  tag 'gid': 'V-204604'
+  tag 'rid': 'SV-204604r505924_rule'
+  tag 'stig_id': 'RHEL-07-040520'
+  tag 'fix_id': 'F-4728r89005_fix'
+  tag 'cci': ["CCI-000366"]
   tag nist: ["CM-6 b"]
 
   describe.one do
@@ -77,9 +70,8 @@ following command:
     describe systemd_service('firewalld.service') do
       it { should be_running }
     end
-	describe systemd_service('iptables.service') do
+    describe systemd_service('iptables.service') do
       it { should be_running }
     end
   end
 end
-

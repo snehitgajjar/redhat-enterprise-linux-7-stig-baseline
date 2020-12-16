@@ -1,13 +1,9 @@
-# -*- encoding : utf-8 -*-
 control "V-204516" do
-  title "The Red Hat Enterprise Linux operating system must audit all
-executions of privileged functions."
-  desc  "Misuse of privileged functions, either intentionally or
-unintentionally by authorized users, or by unauthorized external entities that
-have compromised information system accounts, is a serious and ongoing concern
-and can have significant adverse impacts on organizations. Auditing the use of
-privileged functions is one way to detect such misuse and identify the risk
-from insider threats and the advanced persistent threat."
+  title 'The Red Hat Enterprise Linux operating system must audit all executions of privileged functions.'
+  desc 'Misuse of privileged functions, either intentionally or unintentionally by authorized users, or by unauthorized
+    external entities that have compromised information system accounts, is a serious and ongoing concern and can have
+    significant adverse impacts on organizations. Auditing the use of privileged functions is one way to detect such misuse
+    and identify the risk from insider threats and the advanced persistent threat.'
   desc  "rationale", ""
   desc  "check", "
     Verify the operating system audits the execution of privileged functions
@@ -27,7 +23,7 @@ defined, this is a finding.
     If both the \"b32\" and \"b64\" audit rules for \"SGID\" files are not
 defined, this is a finding.
   "
-  desc  "fix", "
+  desc "fix", "
     Configure the operating system to audit the execution of privileged
 functions.
 
@@ -41,13 +37,13 @@ functions.
     The audit daemon must be restarted for the changes to take effect.
   "
   impact 0.5
-  tag severity: nil
-  tag gtitle: "SRG-OS-000327-GPOS-00127"
-  tag gid: "V-204516"
-  tag rid: "SV-86719r7_rule"
-  tag stig_id: "RHEL-07-030360"
-  tag fix_id: "F-78447r9_fix"
-  tag cci: ["CCI-002234"]
+  tag 'severity': 'medium'
+  tag 'gtitle': 'SRG-OS-000327-GPOS-00127'
+  tag 'gid': 'V-204516'
+  tag 'rid': 'SV-204516r505924_rule'
+  tag 'stig_id': 'RHEL-07-030360'
+  tag 'fix_id': 'F-4640r88741_fix'
+  tag 'cci': ["CCI-002234"]
   tag nist: ["AC-6 (9)"]
 
   # All execve calls should use 'always,exit'
@@ -58,14 +54,13 @@ functions.
 
   # Work with the SUID rules
   describe auditd.syscall('execve').where { fields.include?('euid=0') } do
-    its ('arch.uniq') { should include 'b32' }
-    its ('arch.uniq') { should include 'b64' }
+    its('arch.uniq') { should include 'b32' }
+    its('arch.uniq') { should include 'b64' }
   end
 
   # Work with the SGID rules
   describe auditd.syscall('execve').where { fields.include?('egid=0') } do
-    its ('arch.uniq') { should include 'b32' }
-    its ('arch.uniq') { should include 'b64' }
+    its('arch.uniq') { should include 'b32' }
+    its('arch.uniq') { should include 'b64' }
   end
 end
-

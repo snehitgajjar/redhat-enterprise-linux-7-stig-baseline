@@ -1,9 +1,7 @@
-# -*- encoding : utf-8 -*-
 control "V-204622" do
-  title "The Red Hat Enterprise Linux operating system must be configured so
-that remote X connections for interactive users are encrypted."
-  desc  "Open X displays allow an attacker to capture keystrokes and execute
-commands remotely."
+  title 'The Red Hat Enterprise Linux operating system must be configured so that remote X connections for interactive
+    users are encrypted.'
+  desc 'Open X displays allow an attacker to capture keystrokes and execute commands remotely.'
   desc  "rationale", ""
   desc  "check", "
     Verify remote X connections for interactive users are encrypted.
@@ -17,7 +15,7 @@ commands remotely."
     If the \"X11Forwarding\" keyword is set to \"no\" or is missing, this is a
 finding.
   "
-  desc  "fix", "
+  desc "fix", "
     Configure SSH to encrypt connections for interactive users.
 
     Edit the \"/etc/ssh/sshd_config\" file to uncomment or add the line for the
@@ -32,17 +30,16 @@ provided by a third-party vendor):
     # systemctl restart sshd
   "
   impact 0.7
-  tag severity: nil
-  tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-204622"
-  tag rid: "SV-86927r4_rule"
-  tag stig_id: "RHEL-07-040710"
-  tag fix_id: "F-78657r6_fix"
-  tag cci: ["CCI-000366"]
+  tag 'severity': 'high'
+  tag 'gtitle': 'SRG-OS-000480-GPOS-00227'
+  tag 'gid': 'V-204622'
+  tag 'rid': 'SV-204622r505924_rule'
+  tag 'stig_id': 'RHEL-07-040710'
+  tag 'fix_id': 'F-4746r89059_fix'
+  tag 'cci': ["CCI-000366"]
   tag nist: ["CM-6 b"]
 
   describe sshd_config do
     its('X11Forwarding') { should cmp 'yes' }
   end
 end
-

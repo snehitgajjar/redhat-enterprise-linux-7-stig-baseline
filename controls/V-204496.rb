@@ -1,9 +1,7 @@
-# -*- encoding : utf-8 -*-
 control "V-204496" do
-  title "The Red Hat Enterprise Linux operating system must use a separate file
-system for /tmp (or equivalent)."
-  desc  "The use of separate file systems for different paths can protect the
-system from failures resulting from a file system becoming full or failing."
+  title 'The Red Hat Enterprise Linux operating system must use a separate file system for /tmp (or equivalent).'
+  desc 'The use of separate file systems for different paths can protect the system from failures resulting from a file
+    system becoming full or failing.'
   desc  "rationale", ""
   desc  "check", "
     Verify that a separate file system/partition has been created for \"/tmp\".
@@ -24,7 +22,7 @@ rw,relatime,discard,data=ordered,nosuid,noexec, 0 0
     If \"tmp.mount\" service is not enabled and the \"/tmp\" directory is not
 defined in the fstab with a device and mount point, this is a finding.
   "
-  desc  "fix", "
+  desc "fix", "
     Start the \"tmp.mount\" service with the following command:
 
     # systemctl enable tmp.mount
@@ -35,13 +33,13 @@ defined in the fstab with a device and mount point, this is a finding.
 in the fstab with a device and mount point.
   "
   impact 0.3
-  tag severity: nil
-  tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-204496"
-  tag rid: "SV-86689r3_rule"
-  tag stig_id: "RHEL-07-021340"
-  tag fix_id: "F-78417r2_fix"
-  tag cci: ["CCI-000366"]
+  tag 'severity': 'low'
+  tag 'gtitle': 'SRG-OS-000480-GPOS-00227'
+  tag 'gid': 'V-204496'
+  tag 'rid': 'SV-204496r505924_rule'
+  tag 'stig_id': 'RHEL-07-021340'
+  tag 'fix_id': 'F-4620r499391_fix'
+  tag 'cci': ["CCI-000366"]
   tag nist: ["CM-6 b"]
 
   describe.one do
@@ -56,4 +54,3 @@ in the fstab with a device and mount point.
     end
   end
 end
-

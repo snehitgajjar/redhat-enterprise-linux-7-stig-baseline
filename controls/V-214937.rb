@@ -1,21 +1,12 @@
-# -*- encoding : utf-8 -*-
 control "V-214937" do
-  title "The Red Hat Enterprise Linux operating system must prevent a user from
-overriding the screensaver lock-enabled setting for the graphical user
-interface."
-  desc  "A session lock is a temporary action taken when a user stops work and
-moves away from the immediate physical vicinity of the information system but
-does not want to log out because of the temporary nature of the absence.
-
-    The session lock is implemented at the point where session activity can be
-determined.
-
-    The ability to enable/disable a session lock is given to the user by
-default. Disabling the user’s ability to disengage the graphical user interface
-session lock provides the assurance that all sessions will lock after the
-specified period of time.
-
-  "
+  title 'The Red Hat Enterprise Linux operating system must prevent a user from overriding the screensaver lock-enabled
+    setting for the graphical user interface.'
+  desc 'A session lock is a temporary action taken when a user stops work and moves away from the immediate physical
+    vicinity of the information system but does not want to log out because of the temporary nature of the absence.
+    The session lock is implemented at the point where session activity can be determined.
+    The ability to enable/disable a session lock is given to the user by default. Disabling the user’s ability to disengage
+    the graphical user interface session lock provides the assurance that all sessions will lock after the specified period
+    of time.'
   desc  "rationale", ""
   desc  "check", "
     Verify the operating system prevents a user from overriding the screensaver
@@ -44,7 +35,7 @@ other than \"local\" is being used.
     If the command does not return a result, this is a finding.
 
   "
-  desc  "fix", "
+  desc "fix", "
     Configure the operating system to prevent a user from overriding a
 screensaver lock after a 15-minute period of inactivity for graphical user
 interfaces.
@@ -64,13 +55,13 @@ file should be created under the appropriate subdirectory.
 
   "
   impact 0.5
-  tag severity: nil
-  tag gtitle: "SRG-OS-000029-GPOS-00010"
-  tag gid: "V-214937"
-  tag rid: "SV-93701r3_rule"
-  tag stig_id: "RHEL-07-010062"
-  tag fix_id: "F-85745r1_fix"
-  tag cci: ["CCI-000057"]
+  tag 'severity': 'medium'
+  tag 'gtitle': 'SRG-OS-000029-GPOS-00010'
+  tag 'gid': 'V-214937'
+  tag 'rid': 'SV-214937r505924_rule'
+  tag 'stig_id': 'RHEL-07-010062'
+  tag 'fix_id': 'F-16135r193201_fix'
+  tag 'cci': ["CCI-000057"]
   tag nist: ["AC-11 a"]
 
   if package('gnome-desktop3').installed?
@@ -82,6 +73,5 @@ file should be created under the appropriate subdirectory.
     describe "The GNOME desktop is not installed" do
       skip "The GNOME desktop is not installed, this control is Not Applicable."
     end
-  end  
+  end
 end
-

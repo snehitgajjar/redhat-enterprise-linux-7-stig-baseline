@@ -1,11 +1,11 @@
-# -*- encoding : utf-8 -*-
 control "V-204500" do
-  title "The Red Hat Enterprise Linux operating system must use a file
-integrity tool that is configured to use FIPS 140-2 approved cryptographic
-hashes for validating file contents and directories."
-  desc  "File integrity tools use cryptographic hashes for verifying file
-contents and directories have not been altered. These hashes must be FIPS 140-2
-approved cryptographic hashes."
+  title 'The Red Hat Enterprise Linux operating system must use a file integrity tool that is configured to use FIPS
+    140-2 approved cryptographic hashes for validating file contents and directories.'
+  desc 'File integrity tools use cryptographic hashes for verifying file contents and directories have not been altered.
+    These hashes must be FIPS 140-2 approved cryptographic hashes.
+    Red Hat Enterprise Linux operating system installation media ships with an optional file integrity tool called Advanced
+    Intrusion Detection Environment (AIDE). AIDE is highly configurable at install time. This requirement assumes the
+    "aide.conf" file is under the "/etc" directory.'
   desc  "rationale", ""
   desc  "check", "
     Verify the file integrity tool is configured to use FIPS 140-2 approved
@@ -48,7 +48,7 @@ in the \"/etc/aide.conf\" file, or another file integrity tool is not using
 FIPS 140-2 approved cryptographic hashes for validating file contents and
 directories, this is a finding.
   "
-  desc  "fix", "
+  desc "fix", "
     Configure the file integrity tool to use FIPS 140-2 cryptographic hashes
 for validating file and directory contents.
 
@@ -56,13 +56,13 @@ for validating file and directory contents.
 uncommented file and directory selection lists.
   "
   impact 0.5
-  tag severity: nil
-  tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-204500"
-  tag rid: "SV-86697r3_rule"
-  tag stig_id: "RHEL-07-021620"
-  tag fix_id: "F-78425r2_fix"
-  tag cci: ["CCI-000366"]
+  tag 'severity': 'medium'
+  tag 'gtitle': 'SRG-OS-000480-GPOS-00227'
+  tag 'gid': 'V-204500'
+  tag 'rid': 'SV-204500r505924_rule'
+  tag 'stig_id': 'RHEL-07-021620'
+  tag 'fix_id': 'F-4624r462556_fix'
+  tag 'cci': ["CCI-000366"]
   tag nist: ["CM-6 b"]
 
   describe package("aide") do
@@ -78,4 +78,3 @@ uncommented file and directory selection lists.
     it { should be_empty }
   end
 end
-

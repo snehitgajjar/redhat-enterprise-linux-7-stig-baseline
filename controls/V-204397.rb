@@ -1,20 +1,11 @@
-# -*- encoding : utf-8 -*-
 control "V-204397" do
-  title "The Red Hat Enterprise Linux operating system must uniquely identify
-and must authenticate users using multifactor authentication via a graphical
-user logon."
-  desc  "To assure accountability and prevent unauthenticated access, users
-must be identified and authenticated to prevent potential misuse and compromise
-of the system.
-
-    Multifactor solutions that require devices separate from information
-systems gaining access include, for example, hardware tokens providing
-time-based or challenge-response authenticators and smart cards such as the
-U.S. Government Personal Identity Verification card and the DoD Common Access
-Card.
-
-
-  "
+  title 'The Red Hat Enterprise Linux operating system must uniquely identify and must authenticate users using
+    multifactor authentication via a graphical user logon.'
+  desc 'To assure accountability and prevent unauthenticated access, users must be identified and authenticated to
+    prevent potential misuse and compromise of the system.
+    Multifactor solutions that require devices separate from information systems gaining access include, for example,
+    hardware tokens providing time-based or challenge-response authenticators and smart cards such as the U.S. Government
+    Personal Identity Verification card and the DoD Common Access Card.'
   desc  "rationale", ""
   desc  "check", "
     Verify the operating system uniquely identifies and authenticates users
@@ -41,7 +32,7 @@ than local is being used.
     If \"enable-smartcard-authentication\" is set to \"false\" or the keyword
 is missing, this is a finding.
   "
-  desc  "fix", "
+  desc "fix", "
     Configure the operating system to uniquely identify and authenticate users
 using multifactor authentication via a graphical user logon.
 
@@ -63,14 +54,14 @@ should be created under the appropriate subdirectory.
     Update the system databases:
     # dconf update
   "
-  tag severity: nil
-  tag gtitle: "SRG-OS-000375-GPOS-00160"
-  tag satisfies: ["SRG-OS-000375-GPOS-00161", "SRG-OS-000375-GPOS-00162"]
-  tag gid: "V-204397"
-  tag rid: "SV-92515r2_rule"
-  tag stig_id: "RHEL-07-010061"
-  tag fix_id: "F-84519r4_fix"
-  tag cci: ["CCI-001948", "CCI-001953", "CCI-001954"]
+  tag 'severity': 'medium'
+  tag 'gtitle': 'SRG-OS-000375-GPOS-00160'
+  tag 'satisfies': %w(SRG-OS-000375-GPOS-00161 SRG-OS-000375-GPOS-00162)
+  tag 'gid': 'V-204397'
+  tag 'rid': 'SV-204397r505924_rule'
+  tag 'stig_id': 'RHEL-07-010061'
+  tag 'fix_id': 'F-4521r88384_fix'
+  tag 'cci': %w(CCI-001948 CCI-001953 CCI-001954)
   tag nist: ["IA-2 (11)", "IA-2 (12)", "IA-2 (12)"]
 
   multifactor_enabled = input('multifactor_enabled')
@@ -89,22 +80,21 @@ should be created under the appropriate subdirectory.
     end
   else
     impact 0.0
-    if !package('gnome-desktop3').installed?
+    unless package('gnome-desktop3').installed?
       describe "The GNOME desktop is not installed" do
         skip "The GNOME desktop is not installed, this control is Not Applicable."
       end
     end
 
-    if !package('pcsc-lite').installed?
+    unless package('pcsc-lite').installed?
       describe "The pcsc-lite package is not installed" do
         skip "The pcsc-lite package is not installed, this control is Not Applicable."
       end
     end
-    if !package('esc').installed?
+    unless package('esc').installed?
       describe "The esc package is not installed" do
         skip "The esc package is not installed, this control is Not Applicable."
       end
     end
   end
 end
-

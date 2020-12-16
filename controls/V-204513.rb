@@ -1,12 +1,9 @@
-# -*- encoding : utf-8 -*-
 control "V-204513" do
-  title "The Red Hat Enterprise Linux operating system must initiate an action
-to notify the System Administrator (SA) and Information System Security Officer
-ISSO, at a minimum, when allocated audit record storage volume reaches 75% of
-the repository maximum audit record storage capacity."
-  desc  "If security personnel are not notified immediately when storage volume
-reaches 75 percent utilization, they are unable to plan for audit record
-storage capacity expansion."
+  title 'The Red Hat Enterprise Linux operating system must initiate an action to notify the System Administrator (SA)
+    and Information System Security Officer ISSO, at a minimum, when allocated audit record storage volume reaches 75% of
+    the repository maximum audit record storage capacity.'
+  desc 'If security personnel are not notified immediately when storage volume reaches 75 percent utilization, they are
+    unable to plan for audit record storage capacity expansion.'
   desc  "rationale", ""
   desc  "check", "
     Verify the operating system initiates an action to notify the SA and ISSO
@@ -42,7 +39,7 @@ percent of the repository maximum audit record storage capacity is reached:
     If the value of the \"space_left\" keyword is not set to 25 percent of the
 total partition size, this is a finding.
   "
-  desc  "fix", "
+  desc "fix", "
     Configure the operating system to initiate an action to notify the SA and
 ISSO (at a minimum) when allocated audit record storage volume reaches 75
 percent of the repository maximum audit record storage capacity.
@@ -61,16 +58,16 @@ the example being \"/var/log/audit/\"):
 to 25 percent of the partition size.
   "
   impact 0.5
-  tag severity: nil
-  tag gtitle: "SRG-OS-000343-GPOS-00134"
-  tag gid: "V-204513"
-  tag rid: "SV-86713r4_rule"
-  tag stig_id: "RHEL-07-030330"
-  tag fix_id: "F-78441r3_fix"
-  tag cci: ["CCI-001855"]
+  tag 'severity': 'medium'
+  tag 'gtitle': 'SRG-OS-000343-GPOS-00134'
+  tag 'gid': 'V-204513'
+  tag 'rid': 'SV-204513r505924_rule'
+  tag 'stig_id': 'RHEL-07-030330'
+  tag 'fix_id': 'F-4637r88732_fix'
+  tag 'cci': ["CCI-001855"]
   tag nist: ["AU-5 (1)"]
 
-  if((f = file(audit_log_dir = command("dirname #{auditd_conf.log_file}").stdout.strip)).directory?)
+  if (f = file(audit_log_dir = command("dirname #{auditd_conf.log_file}").stdout.strip)).directory?
     # Fetch partition sizes in 1K blocks for consistency
     partition_info = command("df -B 1K #{audit_log_dir}").stdout.split("\n")
     partition_sz_arr = partition_info.last.gsub(/\s+/m, ' ').strip.split(" ")
@@ -86,8 +83,7 @@ to 25 percent of the partition size.
     end
   else
     describe f.directory? do
-     it { should be true }
+      it { should be true }
     end
   end
 end
-

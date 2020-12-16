@@ -1,26 +1,14 @@
-# -*- encoding : utf-8 -*-
 control "V-204603" do
-  title "The Red Hat Enterprise Linux operating system must, for networked
-systems, synchronize clocks with a server that is synchronized to one of the
-redundant United States Naval Observatory (USNO) time servers, a time server
-designated for the appropriate DoD network (NIPRNet/SIPRNet), and/or the Global
-Positioning System (GPS)."
-  desc  "Inaccurate time stamps make it more difficult to correlate events and
-can lead to an inaccurate analysis. Determining the correct time a particular
-event occurred on a system is critical when conducting forensic analysis and
-investigating system events. Sources outside the configured acceptable
-allowance (drift) may be inaccurate.
-
-    Synchronizing internal information system clocks provides uniformity of
-time stamps for information systems with multiple system clocks and systems
-connected over a network.
-
-    Organizations should consider endpoints that may not have regular access to
-the authoritative time server (e.g., mobile, teleworking, and tactical
-endpoints).
-
-
-  "
+  title 'The Red Hat Enterprise Linux operating system must, for networked systems, synchronize clocks with a server
+    that is synchronized to one of the redundant United States Naval Observatory (USNO) time servers, a time server
+    designated for the appropriate DoD network (NIPRNet/SIPRNet), and/or the Global Positioning System (GPS).'
+  desc 'Inaccurate time stamps make it more difficult to correlate events and can lead to an inaccurate analysis.
+    Determining the correct time a particular event occurred on a system is critical when conducting forensic analysis and
+    investigating system events. Sources outside the configured acceptable allowance (drift) may be inaccurate.
+    Synchronizing internal information system clocks provides uniformity of time stamps for information systems with
+    multiple system clocks and systems connected over a network.
+    Organizations should consider endpoints that may not have regular access to the authoritative time server (e.g., mobile,
+    teleworking, and tactical endpoints).'
   desc  "rationale", ""
   desc  "check", "
     Check to see if NTP is running in continuous mode:
@@ -63,7 +51,7 @@ for the \"maxpoll\" option setting:
 
     If the option is not set or the line is commented out, this is a finding.
   "
-  desc  "fix", "
+  desc "fix", "
     Edit the \"/etc/ntp.conf\" or \"/etc/chrony.conf\" file and add or update
 an entry to define \"maxpoll\" to \"10\" as follows:
 
@@ -88,14 +76,14 @@ restarted:
     # systemctl start chronyd.service
   "
   impact 0.5
-  tag severity: nil
-  tag gtitle: "SRG-OS-000355-GPOS-00143"
-  tag satisfies: ["SRG-OS-000355-GPOS-00143", "SRG-OS-000356-GPOS-00144"]
-  tag gid: "V-204603"
-  tag rid: "SV-86893r5_rule"
-  tag stig_id: "RHEL-07-040500"
-  tag fix_id: "F-78623r5_fix"
-  tag cci: ["CCI-001891", "CCI-002046"]
+  tag 'severity': 'medium'
+  tag 'gtitle': 'SRG-OS-000355-GPOS-00143'
+  tag 'satisfies': %w(SRG-OS-000355-GPOS-00143 SRG-OS-000356-GPOS-00144)
+  tag 'gid': 'V-204603'
+  tag 'rid': 'SV-204603r505924_rule'
+  tag 'stig_id': 'RHEL-07-040500'
+  tag 'fix_id': 'F-4727r89002_fix'
+  tag 'cci': %w(CCI-002046 CCI-001891)
   tag nist: ["AU-8 (1) (a)", "AU-8 (1) (b)"]
 
   # Either ntpd or chronyd should be running
@@ -112,7 +100,7 @@ restarted:
   if service('ntpd').installed?
     time_service = service('ntpd')
     time_sources = ntp_conf('/etc/ntp.conf').server
-    max_poll_values = time_sources.map { |val| val.match?(/.*maxpoll.*/) ? val.gsub(/.*maxpoll\s+(\d+)(\s+.*|$)/,'\1').to_i : 99 }
+    max_poll_values = time_sources.map { |val| val.match?(/.*maxpoll.*/) ? val.gsub(/.*maxpoll\s+(\d+)(\s+.*|$)/, '\1').to_i : 99 }
     ntpdate_crons = command('grep -l "ntpd -q" /etc/cron.daily/*').stdout.strip.lines
 
     describe "ntpd time sources list" do
@@ -137,13 +125,13 @@ restarted:
   if service('chronyd').installed?
     time_service = service('chronyd')
     time_sources = ntp_conf('/etc/chrony.conf').server
-    max_poll_values = time_sources.map { |val| val.match?(/.*maxpoll.*/) ? val.gsub(/.*maxpoll\s+(\d+)(\s+.*|$)/,'\1').to_i : 99 }
+    max_poll_values = time_sources.map { |val| val.match?(/.*maxpoll.*/) ? val.gsub(/.*maxpoll\s+(\d+)(\s+.*|$)/, '\1').to_i : 99 }
 
     describe "chronyd time sources list" do
       subject { time_sources }
       it { should_not be_empty }
     end
-      
+
     # All time sources must contain valid maxpoll entries
     describe "chronyd maxpoll values (99=maxpoll absent)" do
       subject { max_poll_values }

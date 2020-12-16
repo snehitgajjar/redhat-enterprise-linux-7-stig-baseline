@@ -1,13 +1,9 @@
-# -*- encoding : utf-8 -*-
 control "V-214800" do
-  title "The Red Hat Enterprise Linux operating system must have a host-based
-intrusion detection tool installed."
-  desc  "Adding host-based intrusion detection tools can provide the capability
-to automatically take actions in response to malicious behavior, which can
-provide additional agility in reacting to network threats. These tools also
-often include a reporting capability to provide network awareness of the
-system, which may not otherwise exist in an organization's systems management
-regime."
+  title 'The Red Hat Enterprise Linux operating system must have a host-based intrusion detection tool installed.'
+  desc "Adding host-based intrusion detection tools can provide the capability to automatically take actions in response
+    to malicious behavior, which can provide additional agility in reacting to network threats. These tools also often
+    include a reporting capability to provide network awareness of the system, which may not otherwise exist in an
+    organization's systems management regime."
   desc  "rationale", ""
   desc  "check", "
     Ask the SA or ISSO if a host-based intrusion detection application is
@@ -46,7 +42,7 @@ finding.
     If no host-based intrusion detection system is installed and running on the
 system, this is a finding.
   "
-  desc  "fix", "
+  desc "fix", "
     Install and enable the latest McAfee HIPS package, available from
 USCYBERCOM.
 
@@ -55,18 +51,18 @@ enable a supported intrusion detection system application and document its use
 with the Authorizing Official.
   "
   impact 0.5
-  tag severity: nil
-  tag gtitle: "SRG-OS-000196"
-  tag gid: "V-214800"
-  tag rid: "SV-102357r1_rule"
-  tag stig_id: "RHEL-07-020019"
-  tag fix_id: "F-98477r1_fix"
-  tag cci: ["CCI-001263"]
+  tag 'severity': 'medium'
+  tag 'gtitle': 'SRG-OS-000480-GPOS-00227'
+  tag 'gid': 'V-214800'
+  tag 'rid': 'SV-214800r505924_rule'
+  tag 'stig_id': 'RHEL-07-020019'
+  tag 'fix_id': 'F-15998r462532_fix'
+  tag 'cci': ["CCI-001263"]
   tag nist: ["SI-4 (5)"]
 
   custom_hips = input('custom_hips')
 
-  if ! custom_hips
+  if !custom_hips
     describe package('MFEhiplsm') do
       it { should be_installed }
     end
@@ -91,4 +87,3 @@ with the Authorizing Official.
     end
   end
 end
-

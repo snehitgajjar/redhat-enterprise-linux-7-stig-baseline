@@ -1,17 +1,12 @@
-# -*- encoding : utf-8 -*-
 control "V-204563" do
-  title "The Red Hat Enterprise Linux operating system must audit all uses of
-the kmod command."
-  desc  "Without generating audit records that are specific to the security and
-mission needs of the organization, it would be difficult to establish,
-correlate, and investigate the events relating to an incident or identify those
-responsible for one.
-
-    Audit records can be generated from various components within the
-information system (e.g., module or policy filter).
-
-
-  "
+  title 'The Red Hat Enterprise Linux operating system must audit all uses of the kmod command.'
+  desc 'Without generating audit records that are specific to the security and mission needs of the organization, it
+    would be difficult to establish, correlate, and investigate the events relating to an incident or identify those
+    responsible for one.
+    Audit records can be generated from various components within the information system (e.g., module or policy filter).
+    When a user logs on, the auid is set to the uid of the account that is being authenticated. Daemons are not user
+    sessions and have the loginuid set to -1. The auid representation is an unsigned 32-bit integer, which equals
+    4294967295. The audit system interprets -1, 4294967295, and "unset" in the same way.'
   desc  "rationale", ""
   desc  "check", "
     Verify the operating system generates audit records when
@@ -26,7 +21,7 @@ command:
 
     If the command does not return any output, this is a finding.
   "
-  desc  "fix", "
+  desc "fix", "
     Configure the operating system to generate audit records when
 successful/unsuccessful attempts to use the \"kmod\" command occur.
 
@@ -36,14 +31,14 @@ successful/unsuccessful attempts to use the \"kmod\" command occur.
 
     The audit daemon must be restarted for the changes to take effect.
   "
-  tag severity: nil
-  tag gtitle: "SRG-OS-000471-GPOS-00216"
-  tag satisfies: ["SRG-OS-000471-GPOS-00216", "SRG-OS-000477-GPOS-00222"]
-  tag gid: "V-204563"
-  tag rid: "SV-86815r5_rule"
-  tag stig_id: "RHEL-07-030840"
-  tag fix_id: "F-78545r10_fix"
-  tag cci: ["CCI-000172"]
+  tag 'severity': 'medium'
+  tag 'gtitle': 'SRG-OS-000471-GPOS-00216'
+  tag 'satisfies': %w(SRG-OS-000471-GPOS-00216 SRG-OS-000477-GPOS-00222)
+  tag 'gid': 'V-204563'
+  tag 'rid': 'SV-204563r505924_rule'
+  tag 'stig_id': 'RHEL-07-030840'
+  tag 'fix_id': 'F-4687r462673_fix'
+  tag 'cci': ["CCI-000172"]
   tag nist: ["AU-12 c"]
 
   audit_file = '/usr/bin/kmod'
@@ -54,22 +49,27 @@ successful/unsuccessful attempts to use the \"kmod\" command occur.
     impact 0.0
   end
 
-  describe auditd.file(audit_file) do
-    its('permissions') { should_not cmp [] }
-    its('action') { should_not include 'never' }
-  end if file(audit_file).exist?
+  if file(audit_file).exist?
+    describe auditd.file(audit_file) do
+      its('permissions') { should_not cmp [] }
+      its('action') { should_not include 'never' }
+    end
+  end
 
   # Resource creates data structure including all usages of file
   perms = auditd.file(audit_file).permissions
 
-  perms.each do |perm|
-    describe perm do
-      it { should include 'x' }
+  if file(audit_file).exist?
+    perms.each do |perm|
+      describe perm do
+        it { should include 'x' }
+      end
     end
-  end if file(audit_file).exist?
+  end
 
-  describe "The #{audit_file} file does not exist" do
-    skip "The #{audit_file} file does not exist, this requirement is Not Applicable."
-  end if !file(audit_file).exist?
+  unless file(audit_file).exist?
+    describe "The #{audit_file} file does not exist" do
+      skip "The #{audit_file} file does not exist, this requirement is Not Applicable."
+    end
+  end
 end
-

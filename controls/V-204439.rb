@@ -1,13 +1,10 @@
-# -*- encoding : utf-8 -*-
 control "V-204439" do
-  title "Red Hat Enterprise Linux operating systems prior to version 7.2 using
-Unified Extensible Firmware Interface (UEFI) must require authentication upon
-booting into single-user and maintenance modes."
-  desc  "If the system does not require valid root authentication before it
-boots into single-user or maintenance mode, anyone who invokes single-user or
-maintenance mode is granted privileged access to all files on the system. GRUB
-2 is the default boot loader for RHEL 7 and is designed to require a password
-to boot into single-user mode or make modifications to the boot menu."
+  title 'Red Hat Enterprise Linux operating systems prior to version 7.2 using Unified Extensible Firmware Interface
+    (UEFI) must require authentication upon booting into single-user and maintenance modes.'
+  desc 'If the system does not require valid root authentication before it boots into single-user or maintenance mode,
+    anyone who invokes single-user or maintenance mode is granted privileged access to all files on the system. GRUB 2 is
+    the default boot loader for RHEL 7 and is designed to require a password to boot into single-user mode or make
+    modifications to the boot menu.'
   desc  "rationale", ""
   desc  "check", "
     For systems that use BIOS, this is Not Applicable.
@@ -25,7 +22,7 @@ a finding.
 
     If the \"superusers-account\" is not set to \"root\", this is a finding.
   "
-  desc  "fix", "
+  desc "fix", "
     Configure the system to encrypt the boot password for root.
 
     Generate an encrypted grub2 password for root with the following command:
@@ -55,27 +52,22 @@ commands:
     # mv /tmp/grub2.cfg /boot/efi/EFI/redhat/grub.cfg
   "
   impact 0.7
-  tag severity: nil
-  tag gtitle: "SRG-OS-000080-GPOS-00048"
-  tag gid: "V-204439"
-  tag rid: "SV-86587r4_rule"
-  tag stig_id: "RHEL-07-010490"
-  tag fix_id: "F-78315r3_fix"
-  tag cci: ["CCI-000213"]
+  tag 'severity': 'high'
+  tag 'gtitle': 'SRG-OS-000080-GPOS-00048'
+  tag 'gid': 'V-204439'
+  tag 'rid': 'SV-204439r505924_rule'
+  tag 'stig_id': 'RHEL-07-010490'
+  tag 'fix_id': 'F-4563r88510_fix'
+  tag 'cci': ["CCI-000213"]
   tag nist: ["AC-3"]
 
-  os_minor_version = os().release.split('.')[1].to_i
+  os_minor_version = os.release.split('.')[1].to_i
 
   efi_superusers = os_minor_version < 2 ? input('efi_superusers') : ['root']
-  efi_superusers.push('root') if !efi_superusers.include?('root')
-  efi_main_cfg = "/boot/efi/EFI/#{os().name}/grub.cfg"
+  efi_superusers.push('root') unless efi_superusers.include?('root')
+  efi_main_cfg = "/boot/efi/EFI/#{os.name}/grub.cfg"
 
-  unless file('/sys/firmware/efi').exist?
-    impact 0.0
-    describe "System running BIOS" do
-      skip "The System is running BIOS, this control is Not Applicable."
-    end
-  else
+  if file('/sys/firmware/efi').exist?
     if os[:release] < "7.2"
       impact 0.0
       describe "System running version of RHEL prior to 7.2" do
@@ -85,10 +77,14 @@ commands:
       impact 0.7
       efi_superusers.each do |user|
         describe file(efi_main_cfg) do
-            its('content') { should match %r{^\s*password_pbkdf2\s+#{user} } }
+          its('content') { should match %r{^\s*password_pbkdf2\s+#{user} } }
         end
       end
     end
+  else
+    impact 0.0
+    describe "System running BIOS" do
+      skip "The System is running BIOS, this control is Not Applicable."
+    end
   end
 end
-

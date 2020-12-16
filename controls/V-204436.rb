@@ -1,13 +1,10 @@
-# -*- encoding : utf-8 -*-
 control "V-204436" do
-  title "Red Hat Enterprise Linux operating systems prior to version 7.2 with a
-Basic Input/Output System (BIOS) must require authentication upon booting into
-single-user and maintenance modes."
-  desc  "If the system does not require valid root authentication before it
-boots into single-user or maintenance mode, anyone who invokes single-user or
-maintenance mode is granted privileged access to all files on the system. GRUB
-2 is the default boot loader for RHEL 7 and is designed to require a password
-to boot into single-user mode or make modifications to the boot menu."
+  title 'Red Hat Enterprise Linux operating systems prior to version 7.2 with a Basic Input/Output System (BIOS) must
+    require authentication upon booting into single-user and maintenance modes.'
+  desc 'If the system does not require valid root authentication before it boots into single-user or maintenance mode,
+    anyone who invokes single-user or maintenance mode is granted privileged access to all files on the system. GRUB 2 is
+    the default boot loader for RHEL 7 and is designed to require a password to boot into single-user mode or make
+    modifications to the boot menu.'
   desc  "rationale", ""
   desc  "check", "
     For systems that use UEFI, this is Not Applicable.
@@ -25,7 +22,7 @@ a finding.
 
     If the \"superusers-account\" is not set to \"root\", this is a finding.
   "
-  desc  "fix", "
+  desc "fix", "
     Configure the system to encrypt the boot password for root.
 
     Generate an encrypted grub2 password for root with the following command:
@@ -55,13 +52,13 @@ commands:
     # mv /tmp/grub2.cfg /boot/grub2/grub.cfg
   "
   impact 0.7
-  tag severity: nil
-  tag gtitle: "SRG-OS-000080-GPOS-00048"
-  tag gid: "V-204436"
-  tag rid: "SV-86585r6_rule"
-  tag stig_id: "RHEL-07-010480"
-  tag fix_id: "F-78313r3_fix"
-  tag cci: ["CCI-000213"]
+  tag 'severity': 'high'
+  tag 'gtitle': 'SRG-OS-000080-GPOS-00048'
+  tag 'gid': 'V-204436'
+  tag 'rid': 'SV-204436r505924_rule'
+  tag 'stig_id': 'RHEL-07-010480'
+  tag 'fix_id': 'F-4560r88501_fix'
+  tag 'cci': ["CCI-000213"]
   tag nist: ["AC-3"]
 
   grub_superuser = input('grub_superuser')
@@ -122,8 +119,8 @@ commands:
           present_user_boot_files.each do |user_boot_file|
             env_vars.each do |env_var|
               describe "#{user_boot_file} should set #{env_var} to a pbkdf2 value" do
-                  subject { file(user_boot_file) }
-                  its('content') { should match %r{^#{env_var}=grub.pbkdf2}i }
+                subject { file(user_boot_file) }
+                its('content') { should match %r{^#{env_var}=grub.pbkdf2}i }
               end
             end
           end
@@ -139,5 +136,3 @@ commands:
     end
   end
 end
-
-

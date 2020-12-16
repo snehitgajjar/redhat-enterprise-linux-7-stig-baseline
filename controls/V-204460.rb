@@ -1,11 +1,8 @@
-# -*- encoding : utf-8 -*-
 control "V-204460" do
-  title "The Red Hat Enterprise Linux operating system must not have
-unnecessary accounts."
-  desc  "Accounts providing no operational purpose provide additional
-opportunities for system compromise. Unnecessary accounts include user accounts
-for individuals not requiring access to the system and application accounts for
-applications not installed on the system."
+  title 'The Red Hat Enterprise Linux operating system must not have unnecessary accounts.'
+  desc 'Accounts providing no operational purpose provide additional opportunities for system compromise. Unnecessary
+    accounts include user accounts for individuals not requiring access to the system and application accounts for
+    applications not installed on the system.'
   desc  "rationale", ""
   desc  "check", "
     Verify all accounts on the system are assigned to an active system,
@@ -33,7 +30,7 @@ they do not support authorized system functions.
 accounts that do not support an authorized system function are present, this is
 a finding.
   "
-  desc  "fix", "
+  desc "fix", "
     Configure the system so all accounts on the system are assigned to an
 active system, application, or user account.
 
@@ -43,13 +40,13 @@ allow for a normal user to perform administrative-level actions.
     Document all authorized accounts on the system.
   "
   impact 0.5
-  tag severity: nil
-  tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-204460"
-  tag rid: "SV-86625r2_rule"
-  tag stig_id: "RHEL-07-020270"
-  tag fix_id: "F-78353r1_fix"
-  tag cci: ["CCI-000366"]
+  tag 'severity': 'medium'
+  tag 'gtitle': 'SRG-OS-000480-GPOS-00227'
+  tag 'gid': 'V-204460'
+  tag 'rid': 'SV-204460r505924_rule'
+  tag 'stig_id': 'RHEL-07-020270'
+  tag 'fix_id': 'F-4584r88573_fix'
+  tag 'cci': ["CCI-000366"]
   tag nist: ["CM-6 b"]
 
   known_system_accounts = input('known_system_accounts')
@@ -59,9 +56,8 @@ allow for a normal user to perform administrative-level actions.
   passwd.users.each do |user|
     describe user do
       it "is listed in allowed users." do
-        expect(subject).to(be_in allowed_accounts)
+        expect(subject).to(be_in(allowed_accounts))
       end
     end
   end
 end
-

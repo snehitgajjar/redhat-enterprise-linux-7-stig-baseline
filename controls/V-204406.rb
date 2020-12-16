@@ -1,13 +1,10 @@
-# -*- encoding : utf-8 -*-
 control "V-204406" do
-  title "The Red Hat Enterprise Linux operating system must be configured so
-that when passwords are changed or new passwords are established, pwquality
-must be used."
-  desc  "Use of a complex password helps to increase the time and resources
-required to compromise the password. Password complexity, or strength, is a
-measure of the effectiveness of a password in resisting attempts at guessing
-and brute-force attacks. \"pwquality\" enforces complex password construction
-configuration and has the ability to limit brute-force attacks on the system."
+  title 'The Red Hat Enterprise Linux operating system must be configured so that when passwords are changed or new
+    passwords are established, pwquality must be used.'
+  desc 'Use of a complex password helps to increase the time and resources required to compromise the password. Password
+    complexity, or strength, is a measure of the effectiveness of a password in resisting attempts at guessing and
+    brute-force attacks. "pwquality" enforces complex password construction configuration and has the ability to limit
+    brute-force attacks on the system.'
   desc  "rationale", ""
   desc  "check", "
     Verify the operating system uses \"pwquality\" to enforce the password
@@ -25,7 +22,7 @@ complexity rules.
     If the value of \"retry\" is set to \"0\" or greater than \"3\", this is a
 finding.
   "
-  desc  "fix", "
+  desc "fix", "
     Configure the operating system to use \"pwquality\" to enforce password
 complexity rules.
 
@@ -37,13 +34,13 @@ have the required value):
     Note: The value of \"retry\" should be between \"1\" and \"3\".
   "
   impact 0.5
-  tag severity: nil
-  tag gtitle: "SRG-OS-000069-GPOS-00037"
-  tag gid: "V-204406"
-  tag rid: "SV-87811r4_rule"
-  tag stig_id: "RHEL-07-010119"
-  tag fix_id: "F-79605r5_fix"
-  tag cci: ["CCI-000192"]
+  tag 'severity': 'medium'
+  tag 'gtitle': 'SRG-OS-000069-GPOS-00037'
+  tag 'gid': 'V-204406'
+  tag 'rid': 'SV-204406r505924_rule'
+  tag 'stig_id': 'RHEL-07-010119'
+  tag 'fix_id': 'F-4530r88411_fix'
+  tag 'cci': ["CCI-000192"]
   tag nist: ["IA-5 (1) (a)"]
 
   max_retry = input('max_retry')
@@ -54,4 +51,3 @@ have the required value):
     its('lines') { should match_pam_rule('password (required|requisite) pam_pwquality.so').all_with_integer_arg('retry', '<=', max_retry) }
   end
 end
-

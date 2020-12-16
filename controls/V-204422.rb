@@ -1,12 +1,10 @@
-# -*- encoding : utf-8 -*-
 control "V-204422" do
-  title "The Red Hat Enterprise Linux operating system must be configured so
-that passwords are prohibited from reuse for a minimum of five generations."
-  desc  "Password complexity, or strength, is a measure of the effectiveness of
-a password in resisting attempts at guessing and brute-force attacks. If the
-information system or application allows the user to consecutively reuse their
-password when that password has exceeded its defined lifetime, the end result
-is a password that is not changed per policy requirements."
+  title 'The Red Hat Enterprise Linux operating system must be configured so that passwords are prohibited from reuse
+    for a minimum of five generations.'
+  desc 'Password complexity, or strength, is a measure of the effectiveness of a password in resisting attempts at
+    guessing and brute-force attacks. If the information system or application allows the user to consecutively reuse their
+    password when that password has exceeded its defined lifetime, the end result is a password that is not changed per
+    policy requirements.'
   desc  "rationale", ""
   desc  "check", "
     Verify the operating system prohibits password reuse for a minimum of five
@@ -24,7 +22,7 @@ command:
 \"remember\" module argument set, is commented out, or the value of the
 \"remember\" module argument is set to less than \"5\", this is a finding.
   "
-  desc  "fix", "
+  desc "fix", "
     Configure the operating system to prohibit password reuse for a minimum of
 five generations.
 
@@ -38,13 +36,13 @@ five generations.
 the configurations listed in this requirement.
   "
   impact 0.5
-  tag severity: nil
-  tag gtitle: "SRG-OS-000077-GPOS-00045"
-  tag gid: "V-204422"
-  tag rid: "SV-86557r3_rule"
-  tag stig_id: "RHEL-07-010270"
-  tag fix_id: "F-78285r3_fix"
-  tag cci: ["CCI-000200"]
+  tag 'severity': 'medium'
+  tag 'gtitle': 'SRG-OS-000077-GPOS-00045'
+  tag 'gid': 'V-204422'
+  tag 'rid': 'SV-204422r505924_rule'
+  tag 'stig_id': 'RHEL-07-010270'
+  tag 'fix_id': 'F-4546r88459_fix'
+  tag 'cci': ["CCI-000200"]
   tag nist: ["IA-5 (1) (e)"]
 
   min_reuse_generations = input('min_reuse_generations')
@@ -53,4 +51,3 @@ the configurations listed in this requirement.
     its('lines') { should match_pam_rule('password (required|requisite|sufficient) pam_(unix|pwhistory).so').any_with_integer_arg('remember', '>=', min_reuse_generations) }
   end
 end
-

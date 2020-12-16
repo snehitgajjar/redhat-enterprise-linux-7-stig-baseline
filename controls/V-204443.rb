@@ -1,9 +1,7 @@
-# -*- encoding : utf-8 -*-
 control "V-204443" do
-  title "The Red Hat Enterprise Linux operating system must not have the ypserv
-package installed."
-  desc  "Removing the \"ypserv\" package decreases the risk of the accidental
-(or intentional) activation of NIS or NIS+ services."
+  title 'The Red Hat Enterprise Linux operating system must not have the ypserv package installed.'
+  desc 'Removing the "ypserv" package decreases the risk of the accidental (or intentional) activation of NIS or NIS+
+    services.'
   desc  "rationale", ""
   desc  "check", "
     The NIS service provides an unencrypted authentication service that does
@@ -17,24 +15,23 @@ command:
 
     If the \"ypserv\" package is installed, this is a finding.
   "
-  desc  "fix", "
+  desc "fix", "
     Configure the operating system to disable non-essential capabilities by
 removing the \"ypserv\" package from the system with the following command:
 
     # yum remove ypserv
   "
   impact 0.7
-  tag severity: nil
-  tag gtitle: "SRG-OS-000095-GPOS-00049"
-  tag gid: "V-204443"
-  tag rid: "SV-86593r2_rule"
-  tag stig_id: "RHEL-07-020010"
-  tag fix_id: "F-78321r1_fix"
-  tag cci: ["CCI-000381"]
+  tag 'severity': 'high'
+  tag 'gtitle': 'SRG-OS-000095-GPOS-00049'
+  tag 'gid': 'V-204443'
+  tag 'rid': 'SV-204443r505924_rule'
+  tag 'stig_id': 'RHEL-07-020010'
+  tag 'fix_id': 'F-4567r88522_fix'
+  tag 'cci': ["CCI-000381"]
   tag nist: ["CM-7 a"]
 
   describe package("ypserv") do
     it { should_not be_installed }
   end
 end
-

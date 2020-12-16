@@ -1,11 +1,8 @@
-# -*- encoding : utf-8 -*-
 control "V-204474" do
-  title "The Red Hat Enterprise Linux operating system must be configured so
-that all local initialization files for interactive users are owned by the home
-directory user or root."
-  desc  "Local initialization files are used to configure the user's shell
-environment upon logon. Malicious modification of these files could compromise
-accounts upon logon."
+  title 'The Red Hat Enterprise Linux operating system must be configured so that all local initialization files for
+    interactive users are owned by the home directory user or root.'
+  desc "Local initialization files are used to configure the user's shell environment upon logon. Malicious modification
+    of these files could compromise accounts upon logon."
   desc  "rationale", ""
   desc  "check", "
     Verify the local initialization files of all local interactive users are
@@ -49,13 +46,13 @@ either the directory owner or root with the following command:
     # chown smithj /home/smithj/.[^.]*
   "
   impact 0.5
-  tag severity: nil
-  tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-204474"
-  tag rid: "SV-86653r3_rule"
-  tag stig_id: "RHEL-07-020690"
-  tag fix_id: "F-78381r4_fix"
-  tag cci: ["CCI-000366"]
+  tag 'severity': 'medium'
+  tag 'gtitle': 'SRG-OS-000480-GPOS-00227'
+  tag 'gid': 'V-204474'
+  tag 'rid': 'SV-204474r505924_rule'
+  tag 'stig_id': 'RHEL-07-020690'
+  tag 'fix_id': 'F-4598r462464_fix'
+  tag 'cci': ["CCI-000366"]
   tag nist: ["CM-6 b"]
 
   exempt_home_users = input('exempt_home_users')
@@ -64,13 +61,13 @@ either the directory owner or root with the following command:
   ignore_shells = non_interactive_shells.join('|')
 
   findings = Set[]
-  users.where{ !shell.match(ignore_shells) && (uid >= 1000 || uid == 0)}.entries.each do |user_info|
-    next if exempt_home_users.include?("#{user_info.username}")
-    findings = findings + command("find #{user_info.home} -name '.*' -not -user #{user_info.username} -a -not -user root").stdout.split("\n")
+  users.where { !shell.match(ignore_shells) && (uid >= 1000 || uid == 0)}.entries.each do |user_info|
+    next if exempt_home_users.include?(user_info.username.to_s)
+
+    findings += command("find #{user_info.home} -name '.*' -not -user #{user_info.username} -a -not -user root").stdout.split("\n")
   end
   describe "Files and Directories not owned by the user or root of the parent home directory" do
     subject { findings.to_a }
     it { should be_empty }
   end
 end
-

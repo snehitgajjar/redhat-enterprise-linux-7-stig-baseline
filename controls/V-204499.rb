@@ -1,9 +1,8 @@
-# -*- encoding : utf-8 -*-
 control "V-204499" do
-  title "The Red Hat Enterprise Linux operating system must be configured so
-that the file integrity tool is configured to verify extended attributes."
-  desc  "Extended attributes in file systems are used to contain arbitrary data
-and file metadata with security implications."
+  title 'The Red Hat Enterprise Linux operating system must be configured so that the file integrity tool is configured
+    to verify extended attributes.'
+  desc 'Extended attributes in file systems are used to contain arbitrary data and file metadata with security
+    implications.'
   desc  "rationale", ""
   desc  "check", "
     Verify the file integrity tool is configured to verify extended attributes.
@@ -40,7 +39,7 @@ lists.
 in the \"/etc/aide.conf\" file, or extended attributes are not being checked by
 another file integrity tool, this is a finding.
   "
-  desc  "fix", "
+  desc "fix", "
     Configure the file integrity tool to check file and directory extended
 attributes.
 
@@ -48,13 +47,13 @@ attributes.
 uncommented file and directory selection lists.
   "
   impact 0.3
-  tag severity: nil
-  tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-204499"
-  tag rid: "SV-86695r3_rule"
-  tag stig_id: "RHEL-07-021610"
-  tag fix_id: "F-78423r2_fix"
-  tag cci: ["CCI-000366"]
+  tag 'severity': 'low'
+  tag 'gtitle': 'SRG-OS-000480-GPOS-00227'
+  tag 'gid': 'V-204499'
+  tag 'rid': 'SV-204499r505924_rule'
+  tag 'stig_id': 'RHEL-07-021610'
+  tag 'fix_id': 'F-4623r88690_fix'
+  tag 'cci': ["CCI-000366"]
   tag nist: ["CM-6 b"]
 
   describe package("aide") do
@@ -63,9 +62,7 @@ uncommented file and directory selection lists.
 
   findings = []
   aide_conf.where { !selection_line.start_with? '!' }.entries.each do |selection|
-    unless selection.rules.include? 'xattrs'
-      findings.append(selection.selection_line)
-    end
+    findings.append(selection.selection_line) unless selection.rules.include? 'xattrs'
   end
 
   describe "List of monitored files/directories without 'xattrs' rule" do
@@ -73,4 +70,3 @@ uncommented file and directory selection lists.
     it { should be_empty }
   end
 end
-

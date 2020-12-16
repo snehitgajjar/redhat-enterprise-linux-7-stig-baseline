@@ -1,10 +1,8 @@
-# -*- encoding : utf-8 -*-
 control "V-204473" do
-  title "The Red Hat Enterprise Linux operating system must be configured so
-that all files and directories contained in local interactive user home
-directories have a mode of 0750 or less permissive."
-  desc  "If a local interactive user files have excessive permissions,
-unintended users may be able to access or modify them."
+  title 'The Red Hat Enterprise Linux operating system must be configured so that all files and directories contained in
+    local interactive user home directories have a mode of 0750 or less permissive.'
+  desc 'If a local interactive user files have excessive permissions, unintended users may be able to access or modify
+    them.'
   desc  "rationale", ""
   desc  "check", "
     Verify all files and directories contained in a local interactive user home
@@ -36,13 +34,13 @@ directory with the following command:
     # chmod 0750 /home/smithj/<file>
   "
   impact 0.5
-  tag severity: nil
-  tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-204473"
-  tag rid: "SV-86651r2_rule"
-  tag stig_id: "RHEL-07-020680"
-  tag fix_id: "F-78379r1_fix"
-  tag cci: ["CCI-000366"]
+  tag 'severity': 'medium'
+  tag 'gtitle': 'SRG-OS-000480-GPOS-00227'
+  tag 'gid': 'V-204473'
+  tag 'rid': 'SV-204473r505924_rule'
+  tag 'stig_id': 'RHEL-07-020680'
+  tag 'fix_id': 'F-4597r88612_fix'
+  tag 'cci': ["CCI-000366"]
   tag nist: ["CM-6 b"]
 
   exempt_home_users = input('exempt_home_users')
@@ -51,13 +49,13 @@ directory with the following command:
   ignore_shells = non_interactive_shells.join('|')
 
   findings = Set[]
-  users.where{ !shell.match(ignore_shells) && (uid >= 1000 || uid == 0)}.entries.each do |user_info|
-    next if exempt_home_users.include?("#{user_info.username}")
-    findings = findings + command("find #{user_info.home} -xdev ! -name '.*' -perm /027 ! -type l").stdout.split("\n")
+  users.where { !shell.match(ignore_shells) && (uid >= 1000 || uid == 0)}.entries.each do |user_info|
+    next if exempt_home_users.include?(user_info.username.to_s)
+
+    findings += command("find #{user_info.home} -xdev ! -name '.*' -perm /027 ! -type l").stdout.split("\n")
   end
   describe "Home directories with excessive permissions" do
     subject { findings.to_a }
     it { should be_empty }
   end
 end
-

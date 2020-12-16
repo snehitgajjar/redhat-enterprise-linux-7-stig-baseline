@@ -1,10 +1,8 @@
-# -*- encoding : utf-8 -*-
 control "V-204613" do
-  title "The Red Hat Enterprise Linux operating system must not respond to
-Internet Protocol version 4 (IPv4) Internet Control Message Protocol (ICMP)
-echoes sent to a broadcast address."
-  desc  "Responding to broadcast (ICMP) echoes facilitates network mapping and
-provides a vector for amplification attacks."
+  title 'The Red Hat Enterprise Linux operating system must not respond to Internet Protocol version 4 (IPv4) Internet
+    Control Message Protocol (ICMP) echoes sent to a broadcast address.'
+  desc 'Responding to broadcast (ICMP) echoes facilitates network mapping and provides a vector for amplification
+    attacks.'
   desc  "rationale", ""
   desc  "check", "
     Verify the system does not respond to IPv4 ICMP echoes sent to a broadcast
@@ -36,17 +34,16 @@ directory (or modify the line to have the required value):
     # sysctl --system
   "
   impact 0.5
-  tag severity: nil
-  tag gtitle: "SRG-OS-000480-GPOS-00227"
-  tag gid: "V-204613"
-  tag rid: "SV-86911r2_rule"
-  tag stig_id: "RHEL-07-040630"
-  tag fix_id: "F-78641r2_fix"
-  tag cci: ["CCI-000366"]
+  tag 'severity': 'medium'
+  tag 'gtitle': 'SRG-OS-000480-GPOS-00227'
+  tag 'gid': 'V-204613'
+  tag 'rid': 'SV-204613r505924_rule'
+  tag 'stig_id': 'RHEL-07-040630'
+  tag 'fix_id': 'F-4737r89032_fix'
+  tag 'cci': ["CCI-000366"]
   tag nist: ["CM-6 b"]
 
   describe kernel_parameter('net.ipv4.icmp_echo_ignore_broadcasts') do
     its('value') { should eq 1 }
   end
 end
-

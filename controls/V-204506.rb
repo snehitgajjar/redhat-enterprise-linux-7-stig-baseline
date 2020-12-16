@@ -1,18 +1,11 @@
-# -*- encoding : utf-8 -*-
 control "V-204506" do
-  title "The Red Hat Enterprise Linux operating system must configure the
-au-remote plugin to off-load audit logs using the audisp-remote daemon."
-  desc  "Information stored in one location is vulnerable to accidental or
-incidental deletion or alteration.
-
-    Off-loading is a common process in information systems with limited audit
-storage capacity.
-
-    Without the configuration of the \"au-remote\" plugin, the audisp-remote
-daemon will not off load the logs from the system being audited.
-
-
-  "
+  title 'The Red Hat Enterprise Linux operating system must be configured to off-load audit logs onto a different system
+    or storage media from the system being audited.'
+  desc 'Information stored in one location is vulnerable to accidental or incidental deletion or alteration.
+    Off-loading is a common process in information systems with limited audit storage capacity.
+    One method of off-loading audit logs in Red Hat Enterprise Linux is with the use of the audisp-remote dameon.  Without
+    the configuration of the "au-remote" plugin, the audisp-remote daemon will not off load the logs from the system being
+    audited.'
   desc  "rationale", ""
   desc  "check", "
     Verify the \"au-remote\" plugin is configured to always off-load audit logs
@@ -35,7 +28,7 @@ is commented out, this is a finding.
     If the \"type\" setting is not set to \"always\", or the line is commented
 out, this is a finding.
   "
-  desc  "fix", "
+  desc "fix", "
     Edit the /etc/audisp/plugins.d/au-remote.conf file and add or update the
 following values:
 
@@ -48,14 +41,14 @@ following values:
     # service auditd restart
   "
   impact 0.5
-  tag severity: nil
-  tag gtitle: "SRG-OS-000342-GPOS-00133"
-  tag satisfies: ["SRG-OS-000342-GPOS-00133", "SRG-OS-000479-GPOS-00224"]
-  tag gid: "V-204506"
-  tag rid: "SV-95729r1_rule"
-  tag stig_id: "RHEL-07-030201"
-  tag fix_id: "F-87851r2_fix"
-  tag cci: ["CCI-001851"]
+  tag 'severity': 'medium'
+  tag 'gtitle': 'SRG-OS-000342-GPOS-00133'
+  tag 'satisfies': %w(SRG-OS-000342-GPOS-00133 SRG-OS-000479-GPOS-00224)
+  tag 'gid': 'V-204506'
+  tag 'rid': 'SV-204506r505924_rule'
+  tag 'stig_id': 'RHEL-07-030201'
+  tag 'fix_id': 'F-4630r462470_fix'
+  tag 'cci': ["CCI-001851"]
   tag nist: ["AU-4 (1)"]
 
   test_file = '/etc/audisp/plugins.d/au-remote.conf'
@@ -72,4 +65,3 @@ following values:
     end
   end
 end
-

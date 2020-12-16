@@ -1,15 +1,9 @@
-# -*- encoding : utf-8 -*-
 control "V-204429" do
-  title "The Red Hat Enterprise Linux operating system must be configured so
-that users must provide a password for privilege escalation."
-  desc  "Without re-authentication, users may access resources or perform tasks
-for which they do not have authorization.
-
-    When operating systems provide the capability to escalate a functional
-capability, it is critical the user re-authenticate.
-
-
-  "
+  title 'The Red Hat Enterprise Linux operating system must be configured so that users must provide a password for
+    privilege escalation.'
+  desc 'Without re-authentication, users may access resources or perform tasks for which they do not have authorization.
+    When operating systems provide the capability to escalate a functional capability, it is critical the user
+    re-authenticate.'
   desc  "rationale", ""
   desc  "check", "
     If passwords are not being used for authentication, this is Not Applicable.
@@ -24,7 +18,7 @@ files with the following command:
 
     If any uncommented line is found with a \"NOPASSWD\" tag, this is a finding.
   "
-  desc  "fix", "
+  desc "fix", "
     Configure the operating system to require users to supply a password for
 privilege escalation.
 
@@ -41,30 +35,30 @@ command:
     Remove any occurrences of \"NOPASSWD\" tags in the file.
   "
   impact 0.5
-  tag severity: nil
-  tag gtitle: "SRG-OS-000373-GPOS-00156"
-  tag satisfies: ["SRG-OS-000373-GPOS-00156", "SRG-OS-000373-GPOS-00157",
-"SRG-OS-000373-GPOS-00158"]
-  tag gid: "V-204429"
-  tag rid: "SV-86571r3_rule"
-  tag stig_id: "RHEL-07-010340"
-  tag fix_id: "F-78299r2_fix"
-  tag cci: ["CCI-002038"]
+  tag 'severity': 'medium'
+  tag 'gtitle': 'SRG-OS-000373-GPOS-00156'
+  tag 'satisfies': %w(SRG-OS-000373-GPOS-00156 SRG-OS-000373-GPOS-00157 SRG-OS-000373-GPOS-00158)
+  tag 'gid': 'V-204429'
+  tag 'rid': 'SV-204429r505924_rule'
+  tag 'stig_id': 'RHEL-07-010340'
+  tag 'fix_id': 'F-4553r499373_fix'
+  tag 'cci': ["CCI-002038"]
   tag nist: ["IA-11"]
 
   processed = []
   to_process = ['/etc/sudoers', '/etc/sudoers.d']
 
-  while !to_process.empty?
+  until to_process.empty?
     in_process = to_process.pop
     next if processed.include? in_process
+
     processed.push in_process
 
     if file(in_process).directory?
       to_process.concat(
         command("find #{in_process} -maxdepth 1 -mindepth 1").
-          stdout.strip.split("\n").
-          select { |f| file(f).file? }
+          stdout.strip.split("\n")
+          .select { |f| file(f).file? }
       )
     elsif file(in_process).file?
       to_process.concat(
@@ -93,4 +87,3 @@ command:
     end
   end
 end
-

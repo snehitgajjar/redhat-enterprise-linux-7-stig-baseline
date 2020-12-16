@@ -1,16 +1,10 @@
-# -*- encoding : utf-8 -*-
 control "V-204581" do
-  title "The Red Hat Enterprise Linux operating system must implement
-cryptography to protect the integrity of Lightweight Directory Access Protocol
-(LDAP) authentication communications."
-  desc  "Without cryptographic integrity protections, information can be
-altered by unauthorized users without detection.
-
-    Cryptographic mechanisms used for protecting the integrity of information
-include, for example, signed hash functions using asymmetric cryptography
-enabling distribution of the public key to verify the hash information while
-maintaining the confidentiality of the key used to generate the hash.
-  "
+  title 'The Red Hat Enterprise Linux operating system must implement cryptography to protect the integrity of
+    Lightweight Directory Access Protocol (LDAP) authentication communications.'
+  desc 'Without cryptographic integrity protections, information can be altered by unauthorized users without detection.
+    Cryptographic mechanisms used for protecting the integrity of information include, for example, signed hash functions
+    using asymmetric cryptography enabling distribution of the public key to verify the hash information while maintaining
+    the confidentiality of the key used to generate the hash.'
   desc  "rationale", ""
   desc  "check", "
     If LDAP is not being utilized, this requirement is Not Applicable.
@@ -44,7 +38,7 @@ preset: disabled)
 
     If the \"ldap_id_use_start_tls\" option is not \"true\", this is a finding.
   "
-  desc  "fix", "
+  desc "fix", "
     Configure the operating system to implement cryptography to protect the
 integrity of LDAP authentication sessions.
 
@@ -53,21 +47,21 @@ integrity of LDAP authentication sessions.
     ldap_id_use_start_tls = true
   "
   impact 0.5
-  tag severity: nil
-  tag gtitle: "SRG-OS-000250-GPOS-00093"
-  tag gid: "V-204581"
-  tag rid: "SV-86851r4_rule"
-  tag stig_id: "RHEL-07-040180"
-  tag fix_id: "F-78581r2_fix"
-  tag cci: ["CCI-001453"]
+  tag 'severity': 'medium'
+  tag 'gtitle': 'SRG-OS-000250-GPOS-00093'
+  tag 'gid': 'V-204581'
+  tag 'rid': 'SV-204581r505924_rule'
+  tag 'stig_id': 'RHEL-07-040180'
+  tag 'fix_id': 'F-4705r88936_fix'
+  tag 'cci': ["CCI-001453"]
   tag nist: ["AC-17 (2)"]
 
   sssd_id_ldap_enabled = (package('sssd').installed? and
     !command('grep "^\s*id_provider\s*=\s*ldap" /etc/sssd/sssd.conf').stdout.strip.empty?)
 
-  pam_ldap_enabled = (!command('grep "^[^#]*pam_ldap\.so" /etc/pam.d/*').stdout.strip.empty?)
+  pam_ldap_enabled = !command('grep "^[^#]*pam_ldap\.so" /etc/pam.d/*').stdout.strip.empty?
 
-  if !(sssd_id_ldap_enabled or pam_ldap_enabled)
+  unless sssd_id_ldap_enabled || pam_ldap_enabled
     impact 0.0
     describe "LDAP not enabled" do
       skip "LDAP not enabled using any known mechanisms, this control is Not Applicable."
@@ -93,4 +87,3 @@ integrity of LDAP authentication sessions.
     end
   end
 end
-
